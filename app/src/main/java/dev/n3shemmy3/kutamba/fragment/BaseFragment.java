@@ -20,4 +20,7 @@ public class BaseFragment extends Fragment {
             appBarLayout.setLifted(false);
         }
     }
+    public AppBarLayout getAppbar() {
+        return getActivity().findViewById(R.id.appbar);
+    }
 }

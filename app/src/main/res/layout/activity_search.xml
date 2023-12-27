@@ -5,22 +5,37 @@
     android:id="@+id/coordinator"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-        >
+        
+>
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:liftOnScroll="true"
-            >
+            
+    >
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:menu="@menu/menu_toolbar_search"
-        />
-            
-        
+        >
+            <EditText
+                android:id="@+id/searchView"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:hint="@string/action_search"
+                android:singleLine="true"
+                android:paddingHorizontal="4dp"
+                android:imeOptions="actionSearch"
+                android:inputType="textNoSuggestions"
+                android:background="@android:color/transparent">
+                <requestFocus />
+            </EditText>
+                
+        </com.google.android.material.appbar.MaterialToolbar>
+
+
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.core.widget.NestedScrollView
@@ -28,12 +43,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
-            >
+            
+    >
 
         <LinearLayout
             android:layout_height="1000dp"
             android:layout_width="match_parent"
-                >
+                
+        >
         </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>

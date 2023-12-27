@@ -43,7 +43,6 @@ public class MainActivity extends AppCompatActivity implements NavController.OnD
     private AppBarLayout appbar;
     private CollapsingToolbarLayout collToolbar;
     private MaterialToolbar toolbar;
-    private SearchView searchView;
     private FloatingActionButton fab;
     
     private AppBarConfiguration appBarConfig;
@@ -66,7 +65,6 @@ public class MainActivity extends AppCompatActivity implements NavController.OnD
         appbar = findViewById(R.id.appbar);
         collToolbar = findViewById(R.id.collToolbar);
         toolbar = findViewById(R.id.toolbar);
-        searchView = findViewById(R.id.searchView);
         fab = findViewById(R.id.fab);
         navHost = (NavHostFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.navHost);

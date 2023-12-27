@@ -7,10 +7,13 @@ import android.view.MenuItem;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.SearchView;
+import androidx.core.app.NavUtils;
+import androidx.core.app.TaskStackBuilder;
+import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowCompat;
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.appbar.MaterialToolbar;
+import com.google.android.material.search.SearchView;
 import dev.n3shemmy3.kutamba.R;
 import dev.n3shemmy3.kutamba.util.AppUtils;
 
@@ -27,6 +30,9 @@ public class SearchActivity extends AppCompatActivity {
         setContentView(R.layout.activity_search);
         onCreateLayout();
         onCodeInit(state);
+        String transitionName = "appBarTransition";
+        ViewCompat.setTransitionName(appbar, transitionName);
+
     }
     
     private void onCreateLayout() {
@@ -35,7 +41,7 @@ public class SearchActivity extends AppCompatActivity {
         
         setSupportActionBar(toolbar);
         actionBar = getSupportActionBar();
-        if (actionBar != null) actionBar.setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         
         AppUtils.setViewInets(appbar, true, true, true, false);
     }
@@ -43,27 +49,14 @@ public class SearchActivity extends AppCompatActivity {
     private void onCodeInit(Bundle state) {
         
     }
+    
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_toolbar_search, menu);
-
-        MenuItem searchItem = menu.findItem(R.id.action_search);
-        SearchView searchView = (SearchView) searchItem.getActionView();
-
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-                // Handle the query submission
-                return true;
-            }
-
-            @Override
-            public boolean onQueryTextChange(String newText) {
-                // Handle the query text change
-                return true;
-            }
-        });
-
-        return true;
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle the Up button click
+        if (item.getItemId() == android.R.id.home) {
+            onBackPressed();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

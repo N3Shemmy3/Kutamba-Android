@@ -21,11 +21,6 @@ public class SettingsFragment extends BaseFragment implements MenuProvider {
 
     
     @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        setAppBarExpanded(false);
-    }
-    @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle state) {
         return inflater.inflate(R.layout.fragment_list, container, false);
         

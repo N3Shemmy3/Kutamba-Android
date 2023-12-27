@@ -12,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.CallSuper;
 import androidx.annotation.MainThread;
+import androidx.core.app.ActivityOptionsCompat;
 import androidx.core.view.MenuProvider;
 import androidx.fragment.app.Fragment;
 
@@ -60,7 +61,13 @@ public class MainFragment extends BaseFragment implements MenuProvider {
     public boolean onMenuItemSelected(@NonNull MenuItem menuItem) {
         int itemId = menuItem.getItemId();
         if  (R.id.menu_search == itemId ) {
-            startActivity(new Intent(getActivity(), SearchActivity.class));
+             String transitionName = "appBarTransition";
+            ActivityOptionsCompat options =
+            ActivityOptionsCompat.makeSceneTransitionAnimation(
+              requireActivity(),
+              getAppbar(), // The shared element
+              transitionName);
+            startActivity(new Intent(getActivity(), SearchActivity.class), options.toBundle());
             return false;
         }
         
