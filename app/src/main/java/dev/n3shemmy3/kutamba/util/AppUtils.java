@@ -18,6 +18,7 @@ public class AppUtils {
        ViewCompat.setOnApplyWindowInsetsListener(view, (v, windowInsets) -> {
                 Insets insets = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars());
                 MarginLayoutParams mlp = (MarginLayoutParams) v.getLayoutParams();
+                
                 if (left) mlp.leftMargin = insets.left;
                 if (top) mlp.topMargin = insets.top;
                 if (right) mlp.rightMargin = insets.right;

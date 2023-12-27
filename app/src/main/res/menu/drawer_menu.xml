@@ -3,12 +3,12 @@
     <group android:id="@+id/primary">
         <item
             android:id="@+id/menu_home"
-            android:icon="@drawable/outline_menu_24"
-            android:title="Menu Item" />
+            android:icon="@drawable/outline_home_24"
+            android:title="@string/label_home" />
         <item
-            android:id="@+id/two"
-            android:icon="@drawable/outline_menu_24"
-            android:title="Menu Item" />
+            android:id="@+id/menu_favourites"
+            android:icon="@drawable/outline_bookmark_border_24"
+            android:title="@string/label_favourites" />
        <item
             android:id="@+id/three"
             android:icon="@drawable/outline_menu_24"
@@ -23,6 +23,6 @@
     <item
         android:id="@+id/menu_settings"
         android:icon="@drawable/outline_settings_24"
-        android:title="Settings" />
+        android:title="@string/label_settings" />
     <!-- TODO END STEP 9.8 -->
 </menu>

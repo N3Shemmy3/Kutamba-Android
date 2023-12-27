@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import androidx.annotation.MainThread;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.core.graphics.Insets;
 import androidx.core.view.MarginLayoutParamsCompat;
@@ -12,6 +13,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowCompat;
 import androidx.core.view.WindowInsetsCompat;
 import com.google.android.material.appbar.AppBarLayout;
+import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.navigation.NavigationView;
 import androidx.navigation.Navigation;
 import android.widget.Toast;
@@ -35,8 +37,9 @@ public class MainActivity extends AppCompatActivity {
     private DrawerLayout drawer;
     private NavigationView navView;
     private CoordinatorLayout coordinator;
-    private MaterialToolbar toolbar;
     private AppBarLayout appbar;
+    private CollapsingToolbarLayout collToolbar;
+    private MaterialToolbar toolbar;
     private FloatingActionButton fab;
     private NavHostFragment navHost;
     private NavController navController;
@@ -56,27 +59,23 @@ public class MainActivity extends AppCompatActivity {
         coordinator = findViewById(R.id.coordinator);
         navView = findViewById(R.id.navView);
         appbar = findViewById(R.id.appbar);
+        collToolbar = findViewById(R.id.collToolbar);
         toolbar = findViewById(R.id.toolbar);
         fab = findViewById(R.id.fab);
-        
-        
         navHost = (NavHostFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.navHost);
-      //  if (navHost != null) 
         navController = navHost.getNavController();
+        
         appBarConfig =
-                new AppBarConfiguration.Builder(navController.getGraph()).build();
-        topLevelDestinations = new HashSet<>();
-        topLevelDestinations.add(R.id.menu_home);
-        topLevelDestinations.add(R.id.two);
-        appBarConfig = new AppBarConfiguration.Builder(topLevelDestinations)
+                new AppBarConfiguration.Builder(navController.getGraph())
             .setOpenableLayout(drawer)
             .build();
         setSupportActionBar(toolbar);
+        NavigationUI.setupWithNavController(collToolbar, toolbar, navController, appBarConfig);
+        NavigationUI.setupWithNavController(navView, navController);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfig);
-        NavigationUI.setupWithNavController(navView,navController);
         AppUtils.setViewInets(appbar, true, true, true, false);
-        AppUtils.setViewInets(fab, false, false, false, false);
+        AppUtils.setViewInets(fab, false, false, false, true);
     }
         
 
@@ -84,22 +83,11 @@ public class MainActivity extends AppCompatActivity {
        
     }
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        boolean retValue = super.onCreateOptionsMenu(menu);
-        return retValue;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        return NavigationUI.onNavDestinationSelected(item, Navigation.findNavController(this, R.id.navHost))
-                || super.onOptionsItemSelected(item);
-    }
-
-    @Override
     public boolean onSupportNavigateUp() {
-        return NavigationUI.navigateUp(Navigation.findNavController(this, R.id.navHost), appBarConfig);
+        navController = Navigation.findNavController(this, R.id.navHost);
+        return NavigationUI.navigateUp(navController, appBarConfig)
+            || super.onSupportNavigateUp();
     }
-
     @Override
     @MainThread
     public void onBackPressed() {

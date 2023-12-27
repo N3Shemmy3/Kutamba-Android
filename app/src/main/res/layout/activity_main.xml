@@ -5,9 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/drawer"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    app:drawerLayoutCornerSize="0dp"
-    android:background="?android:colorBackground">
+    android:layout_height="match_parent">
 
 <androidx.coordinatorlayout.widget.CoordinatorLayout
     android:id="@+id/coordinator"
@@ -18,14 +16,23 @@
         android:id="@+id/appbar"
         android:layout_width="match_parent"
 	    android:layout_height="wrap_content">
-                 
-        <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/toolbar"
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/collToolbar"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            app:layout_scrollFlags="scroll|enterAlways|snap"
-            android:background="@android:color/transparent"/>
-        
+            android:layout_height="?attr/collapsingToolbarLayoutLargeSize"
+            style="?attr/collapsingToolbarLayoutLargeStyle"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
+                
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:elevation="0dp"
+                app:layout_collapseMode="pin"/>
+                
+         </com.google.android.material.appbar.CollapsingToolbarLayout>
+    
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabbar"
             android:layout_width="match_parent"
@@ -44,8 +51,7 @@
         android:layout_width="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         app:navGraph="@navigation/nav_graph"
-        app:defaultNavHost="true"
-        />
+        app:defaultNavHost="true"/>
     
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
@@ -53,23 +59,18 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="16dp"
-        app:srcCompat="@android:drawable/ic_dialog_email" />    
-
+        app:srcCompat="@drawable/outline_add_24" />
+    
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
-    <FrameLayout
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:background="?android:colorBackground"
-        android:backgroundTint="?android:colorBackground"
-        android:layout_gravity="start">
-        
+            
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navView"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:background="?android:colorBackground"
-        android:backgroundTint="?android:colorBackground"
+        app:drawerLayoutCornerSize="1dp"
+        style="?attr/floatingActionButtonLargeStyle"
         app:menu="@menu/drawer_menu" />
-    </FrameLayout>
+    
 </androidx.drawerlayout.widget.DrawerLayout>
