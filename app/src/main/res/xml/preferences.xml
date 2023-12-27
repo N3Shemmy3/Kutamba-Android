@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory
+        app:title="Basic Preferences">
+
+        <Preference
+            app:key="preference"
+            app:title="Preference Title"
+            app:summary="Preference Summary"
+            app:icon="@drawable/outline_menu_24"/>
+
+
+        <Preference
+            app:key="stylized"
+            app:title="Preference Title"
+            app:summary="Preference Summary"
+            app:icon="@drawable/outline_menu_24"/>
+
+
+        <Preference
+            app:key="icon"
+            app:title="Preference Title"
+            app:summary="Preference Summary"
+            app:icon="@drawable/outline_menu_24"/>
+
+        <Preference
+            app:key="single_line_title"
+            app:title="Prefernce Title"
+            app:summary="Preference Summary"
+            app:singleLineTitle="true"/>
+    </PreferenceCategory>
+
+</PreferenceScreen>
