@@ -12,6 +12,22 @@
         <action
             android:id="@+id/open_profileFragment"
             app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/open_searchFragment"
+            app:destination="@id/searchFragment">
+          
+        </action>
+
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="dev.n3shemmy3.kutamba.fragment.SearchFragment"
+        android:label="@string/label_search"
+        tools:layout="@layout/fragment_search">
+        <argument
+            android:name="showSearchView"
+            app:argType="boolean"
+            android:defaultValue="true" />
 
     </fragment>
     
@@ -20,6 +36,7 @@
         android:name="dev.n3shemmy3.kutamba.fragment.ProfileFragment"
         android:label="@string/label_profile"
         tools:layout="@layout/fragment_profile">
+        
     </fragment>
     
     

@@ -1,17 +1,47 @@
 {
   "allFiles": [
     {
+      "file": "/storage/emulated/0/AndroidIDEProjects/Kutamba /app/src/main/java/dev/n3shemmy3/kutamba/fragment/SearchFragment.java",
+      "selection": {
+        "end": {
+          "column": 5,
+          "index": 1161,
+          "line": 36
+        },
+        "start": {
+          "column": 5,
+          "index": 1161,
+          "line": 36
+        }
+      }
+    },
+    {
+      "file": "/storage/emulated/0/AndroidIDEProjects/Kutamba /app/src/main/java/dev/n3shemmy3/kutamba/fragment/ProfileFragment.java",
+      "selection": {
+        "end": {
+          "column": 23,
+          "index": 707,
+          "line": 21
+        },
+        "start": {
+          "column": 23,
+          "index": 707,
+          "line": 21
+        }
+      }
+    },
+    {
       "file": "/storage/emulated/0/AndroidIDEProjects/Kutamba /app/src/main/res/layout/activity_main.xml",
       "selection": {
         "end": {
-          "column": 0,
-          "index": 0,
-          "line": 0
+          "column": 41,
+          "index": 2248,
+          "line": 50
         },
         "start": {
-          "column": 0,
-          "index": 0,
-          "line": 0
+          "column": 41,
+          "index": 2248,
+          "line": 50
         }
       }
     },
@@ -19,14 +49,29 @@
       "file": "/storage/emulated/0/AndroidIDEProjects/Kutamba /app/src/main/res/navigation/nav_graph.xml",
       "selection": {
         "end": {
-          "column": 13,
-          "index": 877,
-          "line": 25
+          "column": 12,
+          "index": 1081,
+          "line": 29
         },
         "start": {
-          "column": 13,
-          "index": 877,
-          "line": 25
+          "column": 12,
+          "index": 1081,
+          "line": 29
+        }
+      }
+    },
+    {
+      "file": "/storage/emulated/0/AndroidIDEProjects/Kutamba /app/src/main/res/values-night/themes.xml",
+      "selection": {
+        "end": {
+          "column": 0,
+          "index": 94,
+          "line": 2
+        },
+        "start": {
+          "column": 0,
+          "index": 94,
+          "line": 2
         }
       }
     },
@@ -34,47 +79,47 @@
       "file": "/storage/emulated/0/AndroidIDEProjects/Kutamba /app/src/main/res/menu/toolbar_menu_home.xml",
       "selection": {
         "end": {
-          "column": 40,
-          "index": 447,
-          "line": 12
+          "column": 11,
+          "index": 375,
+          "line": 10
         },
         "start": {
-          "column": 40,
-          "index": 447,
-          "line": 12
+          "column": 11,
+          "index": 375,
+          "line": 10
         }
       }
     },
     {
-      "file": "/storage/emulated/0/AndroidIDEProjects/Kutamba /app/src/main/java/dev/n3shemmy3/kutamba/fragment/MainFragment.java",
+      "file": "/storage/emulated/0/AndroidIDEProjects/Kutamba /app/build.gradle",
       "selection": {
         "end": {
-          "column": 14,
-          "index": 1736,
-          "line": 51
+          "column": 0,
+          "index": 0,
+          "line": 0
         },
         "start": {
-          "column": 14,
-          "index": 1736,
-          "line": 51
+          "column": 0,
+          "index": 0,
+          "line": 0
         }
       }
     },
     {
-      "file": "/storage/emulated/0/AndroidIDEProjects/Kutamba /app/src/main/java/dev/n3shemmy3/kutamba/activity/MainActivity.java",
+      "file": "/storage/emulated/0/AndroidIDEProjects/Kutamba /.gitignore",
       "selection": {
         "end": {
-          "column": 43,
-          "index": 3204,
-          "line": 80
+          "column": 12,
+          "index": 495,
+          "line": 32
         },
         "start": {
-          "column": 43,
-          "index": 3204,
-          "line": 80
+          "column": 12,
+          "index": 495,
+          "line": 32
         }
       }
     }
   ],
-  "selectedFile": "/storage/emulated/0/AndroidIDEProjects/Kutamba /app/src/main/java/dev/n3shemmy3/kutamba/activity/MainActivity.java"
+  "selectedFile": "/storage/emulated/0/AndroidIDEProjects/Kutamba /.gitignore"
 }

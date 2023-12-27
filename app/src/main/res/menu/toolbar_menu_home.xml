@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <item
-        android:id="@+id/menu_search"
+        android:id="@+id/searchFragment"
         android:icon="@drawable/outline_search_24"
         android:name="@string/label_search" 
         app:showAsAction="always"/>
