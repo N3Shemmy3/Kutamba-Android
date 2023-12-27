@@ -9,5 +9,10 @@
         android:icon="@drawable/outline_search_24"
         android:name="@string/label_search" 
         app:showAsAction="always"/>
+    <item
+        android:id="@+id/profileFragment"
+        android:icon="@drawable/outline_account_circle_24"
+        android:name="@string/label_profile" 
+        app:showAsAction="always"/>
 
 </menu>

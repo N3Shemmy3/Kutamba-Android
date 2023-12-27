@@ -8,6 +8,20 @@
         android:id="@+id/mainFragment"
         android:name="dev.n3shemmy3.kutamba.fragment.MainFragment"
         android:label="@string/label_home"
-        tools:layout="@layout/fragment_main" />
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/open_profileFragment"
+            app:destination="@id/profileFragment" />
+
+    </fragment>
+    
+   <fragment
+        android:id="@+id/profileFragment"
+        android:name="dev.n3shemmy3.kutamba.fragment.ProfileFragment"
+        android:label="@string/label_profile"
+        tools:layout="@layout/fragment_profile">
+        <action />
+    </fragment>
+    
     
 </navigation>

@@ -43,7 +43,6 @@ public class MainActivity extends AppCompatActivity {
     private FloatingActionButton fab;
     private NavHostFragment navHost;
     private NavController navController;
-    private Set<Integer> topLevelDestinations;
     
     @Override
     protected void onCreate(Bundle state) {
