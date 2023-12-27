@@ -15,7 +15,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Lifecycle;
 import dev.n3shemmy3.kutamba.R;
 
-public class ProfileFragment extends Fragment implements MenuProvider {
+public class ProfileFragment extends BaseFragment implements MenuProvider {
     
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle state) {

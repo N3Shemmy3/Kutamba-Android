@@ -1,5 +1,7 @@
 package dev.n3shemmy3.kutamba.fragment;
 
+import android.app.Activity;
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -12,13 +14,21 @@ import androidx.annotation.Nullable;
 import androidx.core.view.MenuProvider;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Lifecycle;
+import com.google.android.material.appbar.AppBarLayout;
 import dev.n3shemmy3.kutamba.R;
 
-public class SearchFragment extends Fragment implements MenuProvider {
+public class SettingsFragment extends BaseFragment implements MenuProvider {
+
     
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        setAppBarExpanded(false);
+    }
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle state) {
         return inflater.inflate(R.layout.fragment_list, container, false);
+        
     }
     
     @Override

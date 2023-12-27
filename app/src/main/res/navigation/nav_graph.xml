@@ -14,16 +14,16 @@
             app:destination="@id/profileFragment" />
         <action
             android:id="@+id/open_searchFragment"
-            app:destination="@id/searchFragment">
+            app:destination="@id/settingsFragment">
           
         </action>
 
     </fragment>
     <fragment
-        android:id="@+id/searchFragment"
-        android:name="dev.n3shemmy3.kutamba.fragment.SearchFragment"
-        android:label="@string/label_search"
-        tools:layout="@layout/fragment_search">
+        android:id="@+id/settingsFragment"
+        android:name="dev.n3shemmy3.kutamba.fragment.SettingsFragment"
+        android:label="@string/label_settings"
+        tools:layout="@layout/fragment_list">
         <argument
             android:name="showSearchView"
             app:argType="boolean"
