@@ -20,7 +20,6 @@
         android:name="dev.n3shemmy3.kutamba.fragment.ProfileFragment"
         android:label="@string/label_profile"
         tools:layout="@layout/fragment_profile">
-        <action />
     </fragment>
     
     

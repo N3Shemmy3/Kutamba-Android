@@ -1,0 +1,80 @@
+{
+  "allFiles": [
+    {
+      "file": "/storage/emulated/0/AndroidIDEProjects/Kutamba /app/src/main/res/layout/activity_main.xml",
+      "selection": {
+        "end": {
+          "column": 0,
+          "index": 0,
+          "line": 0
+        },
+        "start": {
+          "column": 0,
+          "index": 0,
+          "line": 0
+        }
+      }
+    },
+    {
+      "file": "/storage/emulated/0/AndroidIDEProjects/Kutamba /app/src/main/res/navigation/nav_graph.xml",
+      "selection": {
+        "end": {
+          "column": 13,
+          "index": 877,
+          "line": 25
+        },
+        "start": {
+          "column": 13,
+          "index": 877,
+          "line": 25
+        }
+      }
+    },
+    {
+      "file": "/storage/emulated/0/AndroidIDEProjects/Kutamba /app/src/main/res/menu/toolbar_menu_home.xml",
+      "selection": {
+        "end": {
+          "column": 40,
+          "index": 447,
+          "line": 12
+        },
+        "start": {
+          "column": 40,
+          "index": 447,
+          "line": 12
+        }
+      }
+    },
+    {
+      "file": "/storage/emulated/0/AndroidIDEProjects/Kutamba /app/src/main/java/dev/n3shemmy3/kutamba/fragment/MainFragment.java",
+      "selection": {
+        "end": {
+          "column": 14,
+          "index": 1736,
+          "line": 51
+        },
+        "start": {
+          "column": 14,
+          "index": 1736,
+          "line": 51
+        }
+      }
+    },
+    {
+      "file": "/storage/emulated/0/AndroidIDEProjects/Kutamba /app/src/main/java/dev/n3shemmy3/kutamba/activity/MainActivity.java",
+      "selection": {
+        "end": {
+          "column": 43,
+          "index": 3204,
+          "line": 80
+        },
+        "start": {
+          "column": 43,
+          "index": 3204,
+          "line": 80
+        }
+      }
+    }
+  ],
+  "selectedFile": "/storage/emulated/0/AndroidIDEProjects/Kutamba /app/src/main/java/dev/n3shemmy3/kutamba/activity/MainActivity.java"
+}

@@ -13,6 +13,9 @@ import androidx.core.view.MenuProvider;
 import androidx.fragment.app.Fragment;
 
 import androidx.lifecycle.Lifecycle;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.ui.NavigationUI;
 import dev.n3shemmy3.kutamba.R;
 
 public class MainFragment extends Fragment implements MenuProvider {
@@ -44,7 +47,11 @@ public class MainFragment extends Fragment implements MenuProvider {
 
     @Override
     public boolean onMenuItemSelected(@NonNull MenuItem menuItem) {
-        int id = menuItem.getItemId();
-        return false;
+        NavController navController = Navigation.findNavController(requireActivity(), R.id.navHost);
+        return NavigationUI.onNavDestinationSelected(menuItem, navController)
+            || false;
     }
+       
+    
 }
+ 
