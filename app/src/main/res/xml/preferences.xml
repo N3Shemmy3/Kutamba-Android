@@ -6,7 +6,7 @@
         app:iconSpaceReserved="false"
         app:title="Basic Preferences">
 
-        <Preference
+        <SwitchPreference
             app:key="preference"
             app:title="Preference Title"
             app:summary="Preference Summary"

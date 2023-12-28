@@ -1,2 +1,19 @@
 <resources>
+    <!-- Shape Appearance-->
+    <style name="shapeAppearanceSmall" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">4dp</item>
+    </style>
+    
+    <style name="shapeAppearanceMedium" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">8dp</item>
+  </style>
+    
+    <style name="shapeAppearanceLarge" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">12dp</item>
+    </style>
+    
+    
 </resources>

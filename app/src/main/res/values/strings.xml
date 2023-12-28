@@ -5,6 +5,9 @@
     
         <!-- Fragment Labels -->
     <string name="label_home">Home</string>
+    <string name="label_top_airing">Top Airing</string>
+    <string name="label_popular">Popular</string>
+    <string name="label_explore">Explore</string>
     <string name="label_search">Search</string>
     <string name="label_latest">Latest</string>
     <string name="label_favourites">Favourites</string>

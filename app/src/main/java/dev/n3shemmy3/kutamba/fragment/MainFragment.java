@@ -49,7 +49,7 @@ public class MainFragment extends BaseFragment implements MenuProvider {
     @CallSuper
     public void onResume() {
         super.onResume();
-        setAppBarExpanded(true);
+       // setAppBarExpanded(true);
     }
     
     @Override

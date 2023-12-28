@@ -1,25 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:app="http://schemas.android.com/apk/res-auto"
-  android:layout_width="match_parent"
-  android:layout_height="match_parent"
-  android:gravity="center">
-    
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+        
+>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="1000dp"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:gravity="center">
-        
-        <TextView
-            android:layout_width="wrap_content"
+        android:paddingHorizontal="@dimen/activity_horizontal_padding"
+        android:gravity="center"
+            
+    >
+        <include layout="@layout/item_horizontal_card" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler1"
             android:layout_height="wrap_content"
-            android:text="Hello Shemmy !"
-                />
+            android:layout_width="match_parent"
+            android:clipToPadding="false"
+            android:layout_marginBottom="16dp"
+                
+        />
+
         <TextView
-            android:layout_width="wrap_content"
+            android:id="@+id/text1"
+            android:text="Continue watching"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Welcome to the mainFragment"
-                />
+            android:minHeight="48dp"
+            android:gravity="center_vertical"
+            android:drawableEnd="@drawable/outline_arrow_forward_24"
+            android:textAppearance="?textAppearanceTitleLarge"
+                
+        />
+        <include layout="@layout/item_horizontal_card" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler2"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:clipToPadding="false"
+            android:layout_marginBottom="16dp"
+                
+        />
+
+        <TextView
+            android:id="@+id/text2"
+            android:text="New on tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:gravity="center_vertical"
+            android:drawableEnd="@drawable/outline_arrow_forward_24"
+            android:textAppearance="?textAppearanceTitleLarge"
+                
+        />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler3"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:clipToPadding="false"
+                
+        />
+        <include layout="@layout/item_horizontal_card" />
+
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>

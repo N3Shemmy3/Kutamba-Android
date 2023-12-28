@@ -42,6 +42,11 @@
         <item name="android:navigationBarDividerColor" tools:targetApi="o_mr1">@null</item>
         <item name="android:enforceNavigationBarContrast" tools:targetApi="Q">false</item>
         <item name="android:enforceStatusBarContrast" tools:targetApi="Q">false</item>
+        
+        <item name="shapeAppearanceSmallComponent">@style/shapeAppearanceSmall</item>
+        <item name="shapeAppearanceMediumComponent">@style/shapeAppearanceMedium</item>
+        <item name="shapeAppearanceLargeComponent">@style/shapeAppearanceLarge</item>
+        
     </style>
     
     <style name ="SplashTheme" parent="AppTheme">

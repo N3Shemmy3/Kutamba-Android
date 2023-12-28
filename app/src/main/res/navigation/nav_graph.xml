@@ -9,7 +9,7 @@
     <fragment
         android:id="@+id/mainFragment"
         android:name="dev.n3shemmy3.kutamba.fragment.MainFragment"
-        android:label="@string/label_home"
+        android:label="@string/label_explore"
         tools:layout="@layout/fragment_main"
             >
       
