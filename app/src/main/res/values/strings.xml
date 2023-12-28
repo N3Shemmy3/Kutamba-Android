@@ -13,7 +13,12 @@
     <string name="label_profile">Profile</string>
     <string name="label_more">More</string>
     <string name="label_debug">Debug</string>
-
+    <string name="label_about">About</string>
+ 
+    
+    <!-- Fragment Preferences-->
+    <string name="pre_open_source_licenses">Open source licenses</string>
+    
     <!-- Actions -->
     <string name="action_settings">Settings</string>
     <string name="action_menu">Menu</string>

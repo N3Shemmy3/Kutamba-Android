@@ -30,9 +30,6 @@ public class SearchActivity extends AppCompatActivity {
         setContentView(R.layout.activity_search);
         onCreateLayout();
         onCodeInit(state);
-        String transitionName = "appBarTransition";
-        ViewCompat.setTransitionName(appbar, transitionName);
-
     }
     
     private void onCreateLayout() {

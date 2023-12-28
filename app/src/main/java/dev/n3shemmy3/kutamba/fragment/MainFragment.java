@@ -61,13 +61,7 @@ public class MainFragment extends BaseFragment implements MenuProvider {
     public boolean onMenuItemSelected(@NonNull MenuItem menuItem) {
         int itemId = menuItem.getItemId();
         if  (R.id.menu_search == itemId ) {
-             String transitionName = "appBarTransition";
-            ActivityOptionsCompat options =
-            ActivityOptionsCompat.makeSceneTransitionAnimation(
-              requireActivity(),
-              getAppbar(), // The shared element
-              transitionName);
-            startActivity(new Intent(getActivity(), SearchActivity.class), options.toBundle());
+            startActivity(new Intent(getActivity(), SearchActivity.class));
             return false;
         }
         
