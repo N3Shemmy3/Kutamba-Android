@@ -56,18 +56,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:paddingHorizontal="@dimen/activity_horizontal_padding"
                 android:gravity="center"
                     
             >
-                <include layout="@layout/item_horizontal_card" />
-
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recycler1"
                     android:layout_height="wrap_content"
                     android:layout_width="match_parent"
                     android:clipToPadding="false"
+                    android:paddingHorizontal="@dimen/activity_horizontal_padding"
                     android:layout_marginBottom="16dp"
                         
                 />
@@ -79,18 +77,18 @@
                     android:layout_height="wrap_content"
                     android:minHeight="48dp"
                     android:gravity="center_vertical"
+                    android:paddingHorizontal="@dimen/activity_horizontal_padding"
                     android:drawableEnd="@drawable/outline_arrow_forward_24"
                     android:textAppearance="?textAppearanceTitleLarge"
                         
                 />
-                <include layout="@layout/item_horizontal_card" />
-
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recycler2"
                     android:layout_height="wrap_content"
                     android:layout_width="match_parent"
                     android:clipToPadding="false"
+                    android:paddingHorizontal="@dimen/activity_horizontal_padding"
                     android:layout_marginBottom="16dp"
                         
                 />
@@ -102,6 +100,7 @@
                     android:layout_height="wrap_content"
                     android:minHeight="48dp"
                     android:gravity="center_vertical"
+                    android:paddingHorizontal="@dimen/activity_horizontal_padding"
                     android:drawableEnd="@drawable/outline_arrow_forward_24"
                     android:textAppearance="?textAppearanceTitleLarge"
                         
@@ -110,10 +109,10 @@
                     android:id="@+id/recycler3"
                     android:layout_height="wrap_content"
                     android:layout_width="match_parent"
+                    android:paddingHorizontal="@dimen/activity_horizontal_padding"
                     android:clipToPadding="false"
                         
                 />
-                <include layout="@layout/item_horizontal_card" />
 
             </LinearLayout>
         </androidx.core.widget.NestedScrollView>
@@ -129,7 +128,7 @@
         />
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
-    
+
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navView"
         android:layout_width="wrap_content"
@@ -139,5 +138,6 @@
         app:drawerLayoutCornerSize="1dp"
         style="?attr/floatingActionButtonLargeStyle"
         app:menu="@menu/drawer_menu"
-            />
+            
+    />
 </androidx.drawerlayout.widget.DrawerLayout>

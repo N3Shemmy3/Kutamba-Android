@@ -25,15 +25,25 @@ import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.navigation.NavigationView;
 import dev.n3shemmy3.kutamba.R;
+import dev.n3shemmy3.kutamba.adapter.AnimeAdapter;
+import dev.n3shemmy3.kutamba.model.Anime;
 import dev.n3shemmy3.kutamba.util.AppUtils;
+import java.util.ArrayList;
 
 public class MainFragment extends BaseFragment implements MenuProvider {
     
+    
+    private AppBarConfiguration appBarConfig;
+    private NavHostFragment navHost;
+    private NavController navController;
+
     private DrawerLayout drawer;
     private NavigationView navView;
     private CoordinatorLayout coordinator;
@@ -41,10 +51,9 @@ public class MainFragment extends BaseFragment implements MenuProvider {
     private CollapsingToolbarLayout collToolbar;
     private MaterialToolbar toolbar;
     
-    private AppBarConfiguration appBarConfig;
-    private NavHostFragment navHost;
-    private NavController navController;
-    
+    private RecyclerView recycler1, recycler2, recycler3;
+    private AnimeAdapter adapter;
+        
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle state) {
         return inflater.inflate(R.layout.fragment_main, container, false);
@@ -65,6 +74,10 @@ public class MainFragment extends BaseFragment implements MenuProvider {
         appbar = view.findViewById(R.id.appbar);
         collToolbar = view.findViewById(R.id.collToolbar);
         toolbar = view.findViewById(R.id.toolbar);
+        recycler1 = view.findViewById(R.id.recycler1);
+        recycler2 = view.findViewById(R.id.recycler2);
+        recycler3 = view.findViewById(R.id.recycler3);
+        
         navController = getNavController();
         appBarConfig =
                 new AppBarConfiguration.Builder(navController.getGraph())
@@ -76,10 +89,34 @@ public class MainFragment extends BaseFragment implements MenuProvider {
         NavigationUI.setupActionBarWithNavController((AppCompatActivity) requireActivity(), navController, appBarConfig);
         AppUtils.setViewInets(appbar, true, true, true, false);
     }
-    
-    private void onCodeInit(Bundle state) {
-       
+
+  private void onCodeInit(Bundle state) {
+    ArrayList<Anime> animes = new ArrayList<>();
+    for (int i = 0; i < 30; ++i) {
+      animes.add(
+          new Anime(
+              "id",
+              "https://unsplash.com/photos/aerial-view-photography-of-road-between-highrise-building-CAFq0pv9HjY",
+              "Anime title" + i,
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""));
     }
+    adapter = new AnimeAdapter(getContext(), animes);
+    recycler1.setAdapter(adapter);
+    recycler2.setAdapter(adapter);
+    recycler3.setAdapter(adapter);
+    recycler1.setLayoutManager(
+        new LinearLayoutManager(getContext(), RecyclerView.HORIZONTAL, false));
+    recycler2.setLayoutManager(
+        new LinearLayoutManager(getContext(), RecyclerView.HORIZONTAL, false));
+    recycler3.setLayoutManager(
+        new LinearLayoutManager(getContext(), RecyclerView.HORIZONTAL, false));
+  }
+
     @Override
     @MainThread
     @CallSuper
