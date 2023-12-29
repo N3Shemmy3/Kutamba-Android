@@ -1,31 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation
-        xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:android="http://schemas.android.com/apk/res/android"
     app:startDestination="@id/mainFragment"
-        >
+        
+>
 
     <fragment
         android:id="@+id/mainFragment"
         android:name="dev.n3shemmy3.kutamba.fragment.MainFragment"
         android:label="@string/label_explore"
         tools:layout="@layout/fragment_main"
-            >
-      
-
-    </fragment>
+            
+    />
     <fragment
         android:id="@+id/settingsFragment"
         android:name="dev.n3shemmy3.kutamba.fragment.SettingsFragment"
         android:label="@string/label_settings"
         tools:layout="@layout/fragment_list"
-            >
-        <argument
-            android:name="showSearchView"
-            app:argType="boolean"
-            android:defaultValue="true"
-                />
+            
+    >
 
     </fragment>
 
@@ -34,17 +29,44 @@
         android:name="dev.n3shemmy3.kutamba.fragment.ProfileFragment"
         android:label="@string/label_profile"
         tools:layout="@layout/fragment_profile"
-            >
-        
-    </fragment>
-    
+            
+    />
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="dev.n3shemmy3.kutamba.fragment.SearchFragment"
+        android:label="@string/label_search"
+        tools:layout="@layout/fragment_search"
+            
+    />
+
     <action
         android:id="@+id/open_profileFragment"
         app:destination="@id/profileFragment"
-            />
+        app:enterAnim="@anim/slide_in"
+        app:exitAnim="@anim/fade_out"
+        app:popEnterAnim="@anim/fade_in"
+        app:popExitAnim="@anim/slide_out"
+            
+    />
+
     <action
         android:id="@+id/open_searchFragment"
+        app:destination="@id/searchFragment"
+        app:enterAnim="@anim/slide_in"
+        app:exitAnim="@anim/fade_out"
+        app:popEnterAnim="@anim/fade_in"
+        app:popExitAnim="@anim/slide_out"
+            
+    />
+
+    <action
+        android:id="@+id/open_settingsFragment"
         app:destination="@id/settingsFragment"
-        />
+        app:enterAnim="@anim/slide_in"
+        app:exitAnim="@anim/fade_out"
+        app:popEnterAnim="@anim/fade_in"
+        app:popExitAnim="@anim/slide_out"
+            
+    />
 
 </navigation>

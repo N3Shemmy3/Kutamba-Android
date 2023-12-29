@@ -1,26 +1,32 @@
 package dev.n3shemmy3.kutamba.fragment;
 
 import android.content.Context;
+import android.view.View;
+import androidx.annotation.IdRes;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 import com.google.android.material.appbar.AppBarLayout;
 import dev.n3shemmy3.kutamba.R;
 
 public class BaseFragment extends Fragment {
-    @Override
-    public void onAttach(Context context) {
-        setAppBarExpanded(true);
-        super.onAttach(context);
     
+    
+    public FragmentManager getSupportFragmentManager(){
+      return requireActivity().getSupportFragmentManager();
+    }
+    public ActionBar getSupportActionBar(Toolbar toolbar){
+        return ((AppCompatActivity) getActivity()).getSupportActionBar();
+    }
+    public void setSupportActionBar(Toolbar toolbar){
+        ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
+    }
+    public NavController getNavController() {
+        return Navigation.findNavController(getView());
     }
     
-    public void setAppBarExpanded(boolean expanded){
-        AppBarLayout appBarLayout = getActivity().findViewById(R.id.appbar);
-        if (appBarLayout != null) {
-            appBarLayout.setExpanded(expanded);
-            appBarLayout.setLifted(false);
-        }
-    }
-    public AppBarLayout getAppbar() {
-        return getActivity().findViewById(R.id.appbar);
-    }
 }

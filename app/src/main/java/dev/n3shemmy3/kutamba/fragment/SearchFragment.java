@@ -1,6 +1,5 @@
 package dev.n3shemmy3.kutamba.fragment;
 
-
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -16,21 +15,20 @@ import androidx.lifecycle.Lifecycle;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 import com.google.android.material.appbar.AppBarLayout;
-import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.appbar.MaterialToolbar;
 import dev.n3shemmy3.kutamba.R;
 import dev.n3shemmy3.kutamba.util.AppUtils;
 
-public class ProfileFragment extends BaseFragment implements MenuProvider {
+public class SearchFragment extends BaseFragment implements MenuProvider {
     
     private AppBarLayout appbar;
-    private CollapsingToolbarLayout collToolbar;
     private MaterialToolbar toolbar;
     private AppBarConfiguration appBarConfig;
     
+    
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle state) {
-        return inflater.inflate(R.layout.fragment_profile, container, false);
+        return inflater.inflate(R.layout.fragment_search, container, false);
     }
     
     @Override
@@ -42,16 +40,14 @@ public class ProfileFragment extends BaseFragment implements MenuProvider {
     
     private void onCreateLayout(View view) {
         requireActivity().addMenuProvider(this, getViewLifecycleOwner(), Lifecycle.State.RESUMED);
-         appbar = view.findViewById(R.id.appbar);
-        collToolbar = view.findViewById(R.id.collToolbar);
+        appbar = view.findViewById(R.id.appbar);
         toolbar = view.findViewById(R.id.toolbar);
         appBarConfig =
                 new AppBarConfiguration.Builder(getNavController().getGraph())
             .build();
         setSupportActionBar(toolbar);
-        NavigationUI.setupWithNavController(collToolbar,toolbar, getNavController(), appBarConfig);
+        NavigationUI.setupWithNavController(toolbar, getNavController(), appBarConfig);
         AppUtils.setViewInets(appbar, true, true, true, false);
-
     }
     
     private void onCodeInit(Bundle state) {
@@ -68,4 +64,5 @@ public class ProfileFragment extends BaseFragment implements MenuProvider {
         int id = menuItem.getItemId();
         return false;
     }
+
 }

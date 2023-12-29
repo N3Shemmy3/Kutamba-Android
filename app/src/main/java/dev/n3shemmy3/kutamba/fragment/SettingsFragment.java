@@ -1,41 +1,60 @@
 package dev.n3shemmy3.kutamba.fragment;
 
 
-import android.content.Intent;
+import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.ViewGroup;
 import android.os.Bundle;
-import androidx.preference.Preference;
-import androidx.preference.PreferenceFragmentCompat;
-import androidx.preference.PreferenceScreen;
-import com.google.android.gms.oss.licenses.OssLicensesMenuActivity;
+import android.view.View;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.core.view.MenuProvider;
+import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Lifecycle;
+import androidx.navigation.ui.AppBarConfiguration;
+import androidx.navigation.ui.NavigationUI;
+import com.google.android.material.appbar.AppBarLayout;
+import com.google.android.material.appbar.CollapsingToolbarLayout;
+import com.google.android.material.appbar.MaterialToolbar;
 import dev.n3shemmy3.kutamba.R;
+import dev.n3shemmy3.kutamba.util.AppUtils;
 
-public class SettingsFragment extends PreferenceFragmentCompat {
- @Override
-    public void onCreatePreferences(Bundle state, String rootKey) {
-        setPreferencesFromResource(R.xml.preferences, rootKey);
-        
+public class SettingsFragment extends BaseFragment{
     
-        findPreference(getString(R.string.label_about)).setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
-                @Override
-                public boolean onPreferenceClick(Preference preference) {
-                    // Handle the click event here
-                    // Return true if you want to consume the click event
-                    openLicensws();
-                    return true;
-                }
-            });
-    }
+    private AppBarLayout appbar;
+    private CollapsingToolbarLayout collToolbar;
+    private MaterialToolbar toolbar;
+    private AppBarConfiguration appBarConfig;
+    
+    
     @Override
-    public void setPreferenceScreen(PreferenceScreen preferenceScreen) {
-        super.setPreferenceScreen(preferenceScreen);
-        if (preferenceScreen != null) {
-            int count = preferenceScreen.getPreferenceCount();
-            for (int i = 0; i < count; i++)
-                preferenceScreen.getPreference(i).setIconSpaceReserved(false);
-        }
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle state) {
+        return inflater.inflate(R.layout.fragment_settings, container, false);
     }
     
-    private void openLicensws(){
-       startActivity(new Intent(getActivity(), OssLicensesMenuActivity.class));
+    @Override
+    public void onViewCreated(View view, Bundle state) {
+        super.onViewCreated(view, state);
+        onCreateLayout(view);
+        onCodeInit(state);
     }
+    
+    private void onCreateLayout(View view) {
+        appbar = view.findViewById(R.id.appbar);
+        collToolbar = view.findViewById(R.id.collToolbar);
+        toolbar = view.findViewById(R.id.toolbar);
+        appBarConfig =
+                new AppBarConfiguration.Builder(getNavController().getGraph())
+            .build();
+        setSupportActionBar(toolbar);
+        NavigationUI.setupWithNavController(collToolbar,toolbar, getNavController(), appBarConfig);
+        AppUtils.setViewInets(appbar, true, true, true, false);
+    }
+    
+    private void onCodeInit(Bundle state) {
+       
+    }
+    
 }

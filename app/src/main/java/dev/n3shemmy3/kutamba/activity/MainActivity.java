@@ -46,8 +46,8 @@ public class MainActivity extends AppCompatActivity implements NavController.OnD
     private FloatingActionButton fab;
     
     private AppBarConfiguration appBarConfig;
-    private NavHostFragment navHost;
     private NavController navController;
+    private NavHostFragment navHost;
     
     @Override
     protected void onCreate(Bundle state) {
@@ -59,28 +59,10 @@ public class MainActivity extends AppCompatActivity implements NavController.OnD
     }
     
     private void onCreateLayout(Bundle state) {
-        drawer = findViewById(R.id.drawer);
-        coordinator = findViewById(R.id.coordinator);
-        navView = findViewById(R.id.navView);
-        appbar = findViewById(R.id.appbar);
-        collToolbar = findViewById(R.id.collToolbar);
-        toolbar = findViewById(R.id.toolbar);
-        fab = findViewById(R.id.fab);
         navHost = (NavHostFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.navHost);
         navController = navHost.getNavController();
-        
-        appBarConfig =
-                new AppBarConfiguration.Builder(navController.getGraph())
-            .setOpenableLayout(drawer)
-            .build();
-        setSupportActionBar(toolbar);
-        NavigationUI.setupWithNavController(collToolbar, toolbar, navController, appBarConfig);
-        NavigationUI.setupWithNavController(navView, navController);
-        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfig);
-        AppUtils.setViewInets(appbar, true, true, true, false);
-        AppUtils.setViewInets(fab, false, false, false, true);
-    }
+             }
         
 
     private void onCodeInit(Bundle state) {
@@ -91,23 +73,14 @@ public class MainActivity extends AppCompatActivity implements NavController.OnD
         @NonNull NavController controller,
         @NonNull NavDestination destination,
         Bundle args) {
-        fab.setVisibility(args.containsKey("showTabbar")? View.VISIBLE: View.GONE);
-    }
+        }
     @Override
     public boolean onSupportNavigateUp() {
         navController = Navigation.findNavController(this, R.id.navHost);
         return NavigationUI.navigateUp(navController, appBarConfig)
             || super.onSupportNavigateUp();
     }
-    @Override
-    @MainThread
-    public void onBackPressed() {
-        if (drawer.isOpen()) {
-            drawer.close(); 
-        }else {
-            super.onBackPressed();
-        }
-    }
+    
     
     @Override
     protected void onDestroy() {
