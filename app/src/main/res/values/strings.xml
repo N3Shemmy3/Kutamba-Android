@@ -20,6 +20,10 @@
  
     
     <!-- Fragment Preferences-->
+    <string name="pref_title_category">Category Preference</string>
+    <string name="pref_title">Preference</string>
+    <string name="pref_title_switch">Switch Preference</string>
+    <string name="pref_secondary_text">Secondary text</string>
     <string name="pre_open_source_licenses">Open source licenses</string>
     
     <!-- Actions -->

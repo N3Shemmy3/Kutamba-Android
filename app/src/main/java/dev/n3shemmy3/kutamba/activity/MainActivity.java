@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity implements NavController.OnD
         navHost = (NavHostFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.navHost);
         navController = navHost.getNavController();
-             }
+     }
         
 
     private void onCodeInit(Bundle state) {
