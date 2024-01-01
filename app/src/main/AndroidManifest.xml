@@ -29,6 +29,10 @@
             android:name=".activity.MainActivity"
             android:exported="true"
                 />
+       <activity
+            android:name=".activity.DebugActivity"
+            android:exported="true"
+                />
         <activity
             android:name="com.google.android.gms.oss.licenses.OssLicensesMenuActivity"
                 />

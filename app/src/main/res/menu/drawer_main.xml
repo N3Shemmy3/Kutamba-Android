@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:id="@+id/primary">
+        <item
+            android:id="@+id/mainFragment"
+            android:icon="@drawable/outline_home_24"
+            android:title="@string/label_home" />
+        <item
+            android:id="@+id/menu_favourites"
+            android:icon="@drawable/outline_bookmark_border_24"
+            android:title="@string/label_favourites" />
+       <item
+            android:id="@+id/three"
+            android:icon="@drawable/outline_menu_24"
+            android:title="Menu Item" />
+        <item
+            android:id="@+id/four"
+            android:icon="@drawable/outline_menu_24"
+            android:title="Menu Item" />
+        <item
+            android:id="@+id/settingsFragment"
+            android:icon="@drawable/outline_settings_24"
+            android:title="@string/label_settings"
+                />
+    <!-- TODO END STEP 9.8 -->
+    </group>
+    <!-- TODO STEP 9.8 - Add a menu item for settings_fragment -->
+    
+</menu>

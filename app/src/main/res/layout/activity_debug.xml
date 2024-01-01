@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:id="@+id/coordinator"
+        
+>
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+            
+    >
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/collToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/collapsingToolbarLayoutLargeSize"
+            style="?attr/collapsingToolbarLayoutLargeStyle"
+            app:expandedTitleTextAppearance="@attr/textAppearanceHeadline3"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
+                
+        >
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:elevation="0dp"
+                app:menu="@menu/toolbox_debug"
+                app:navigationIcon="@drawable/outline_close_24"
+                app:navigationIconTint="?colorOnSurface"
+                app:layout_collapseMode="pin"
+                    
+            />
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+        android:id="@+id/scrollView"
+            
+    >
+
+        <br.tiagohm.codeview.CodeView
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            app:cv_show_line_number="true"
+            app:cv_zoom_enable="true"
+            app:cv_font_size="14"
+            app:cv_wrap_line="false"
+            app:cv_highlight_line_number="36"
+            app:cv_start_line_number="1"
+            android:id="@+id/codeView"
+                
+        />
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

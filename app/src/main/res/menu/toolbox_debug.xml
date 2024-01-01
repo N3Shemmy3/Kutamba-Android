@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <item
+        android:id="@+id/menuReport"
+        android:icon="@drawable/outline_bug_report_24"
+        android:name="@string/action_report" 
+        app:showAsAction="always"/>
+
+</menu>
