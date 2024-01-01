@@ -11,7 +11,7 @@ android {
     
     defaultConfig {
         applicationId "dev.n3shemmy3.kutamba"
-        minSdk 26
+        minSdk 27
         targetSdk 34
         versionCode 1
         versionName "1.0"
