@@ -116,6 +116,7 @@
     <string name="action_move_to_bottom">Move to bottom</string>
     <string name="action_install">Install</string>
     <string name="action_share">Share</string>
+    <string name="action_report">Report</string>
     <string name="action_save">Save</string>
     <string name="action_reset">Reset</string>
     <string name="action_undo">Undo</string>
