@@ -1,0 +1,10 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    
+   <style name="AppTheme" parent="Base.AppTheme">
+        <item name="android:windowLightStatusBar">@bool/lightStatusBar</item>
+		<item name="android:windowLightNavigationBar">@bool/lightNavigationBar</item>	
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+  </style>
+
+</resources>

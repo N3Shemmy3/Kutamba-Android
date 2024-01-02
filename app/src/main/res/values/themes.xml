@@ -1,7 +1,9 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
   <!-- Base application theme. -->
-  <style name="Base.AppTheme" parent="Theme.Material3.DayNight.NoActionBar">
-    
+    <style name="Base.AppTheme" parent="Theme.Material3.DayNight.NoActionBar">
+        
+        <item name="android:forceDarkAllowed" tools:targetApi="Q">false</item>
+
         <item name="colorPrimary">@color/md_theme_primary</item>
         <item name="colorOnPrimary">@color/md_theme_onPrimary</item>
         <item name="colorPrimaryContainer">@color/md_theme_primaryContainer</item>
@@ -32,26 +34,38 @@
         <item name="colorShadow">@color/md_theme_shadow</item>
         -->
         <item name="colorPrimaryInverse">@color/md_theme_primaryInverse</item>
-		  
-        </style>
-    <style name="AppTheme" parent="Base.AppTheme">
+		 
+        <item name="android:divider">?colorOutline</item>
+        <item name="android:listDivider">?colorOutline</item>
+        <!-- Ripples -->
+        <item name="colorControlHighlight">?attr/colorSurfaceVariant</item>
+
+        <!-- Handles RTL Text -->
+        <item name="android:textAlignment">gravity</item>
+        <item name="android:textDirection">locale</item>
+        
+        
         <item name="android:windowLightStatusBar">@bool/lightStatusBar</item>
-		<item name="android:windowLightNavigationBar">@bool/lightNavigationBar</item>	
         <item name="android:statusBarColor">@android:color/transparent</item>
-        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/black</item>
         <item name="android:navigationBarDividerColor" tools:targetApi="o_mr1">@null</item>
         <item name="android:enforceNavigationBarContrast" tools:targetApi="Q">false</item>
         <item name="android:enforceStatusBarContrast" tools:targetApi="Q">false</item>
-        
         <item name="shapeAppearanceSmallComponent">@style/shapeAppearanceSmall</item>
         <item name="shapeAppearanceMediumComponent">@style/shapeAppearanceMedium</item>
         <item name="shapeAppearanceLargeComponent">@style/shapeAppearanceLarge</item>
-        
+    </style>
+    
+    <style name="AppTheme" parent="Base.AppTheme">
     </style>
     
     <style name ="SplashTheme" parent="AppTheme">
-        <item name="android:windowSplashScreenBackground">?android:colorBackground</item>
-        <item name="android:windowSplashScreenBehavior">icon_preferred</item>
+        <item name="android:windowBackground">@drawable/splash_background</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">false</item>
     </style>
+
     
 </resources>
