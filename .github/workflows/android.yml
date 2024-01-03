@@ -1,4 +1,4 @@
-name: Pre release builds
+name: commit-Release Builds
 
 on:
   push:
@@ -22,10 +22,10 @@ jobs:
 
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
-    - name: Build with Gradle
-      run: ./gradlew build
+    - name: Build Debug APK
+      run: ./gradlew assembleDebug
       
-    - name: "Release Build"
+    - name: "Commit Builds"
       uses: "marvinpinto/action-automatic-releases@latest"
       with:
         repo_token: "${{ secrets.GITHUB_TOKEN }}"
