@@ -137,7 +137,7 @@
         android:background="?android:colorBackground"
         app:drawerLayoutCornerSize="1dp"
         style="?attr/floatingActionButtonLargeStyle"
-        app:menu="@menu/drawer_menu"
+        app:menu="@menu/drawer_main"
             
     />
 </androidx.drawerlayout.widget.DrawerLayout>

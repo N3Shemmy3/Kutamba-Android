@@ -30,8 +30,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 android:elevation="0dp"
-                app:menu="@menu/toolbox_debug"
                 app:navigationIcon="@drawable/outline_close_24"
+                app:menu="@menu/toolbar_debug"
                 app:navigationIconTint="?colorOnSurface"
                 app:layout_collapseMode="pin"
                     

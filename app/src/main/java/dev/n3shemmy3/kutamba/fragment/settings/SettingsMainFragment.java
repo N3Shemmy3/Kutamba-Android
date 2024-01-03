@@ -1,5 +1,6 @@
 package dev.n3shemmy3.kutamba.fragment.settings;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.snackbar.Snackbar;
 import dev.n3shemmy3.kutamba.R;
+import dev.n3shemmy3.kutamba.activity.DebugActivity;
 import dev.n3shemmy3.kutamba.adapter.PreferenceAdapter;
 import dev.n3shemmy3.kutamba.fragment.BaseFragment;
 import dev.n3shemmy3.kutamba.model.Preference;
@@ -80,7 +82,7 @@ public class SettingsMainFragment extends BaseFragment {
               R.string.pref_secondary_text,
               Preference.SWITCH,
               (preference, position) -> {
-                snackbar.show();
+                startActivity(new Intent(getActivity(), DebugActivity.class));
               }));
     }
     adapter.add(list);

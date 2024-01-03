@@ -137,7 +137,7 @@ public class MainFragment extends BaseFragment implements MenuProvider {
     */
     @Override
     public void onCreateMenu(@NonNull Menu menu, @NonNull MenuInflater menuInflater) {
-        menuInflater.inflate(R.menu.toolbar_menu_home, menu);
+        menuInflater.inflate(R.menu.toolbar_main, menu);
     }
 
     @Override

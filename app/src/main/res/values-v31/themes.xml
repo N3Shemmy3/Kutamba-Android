@@ -9,6 +9,6 @@
     
    <style name ="SplashTheme" parent="AppTheme">
         <item name="android:windowSplashScreenBackground">?android:colorBackground</item>
-        <item name="android:windowSplashScreenBehavior">icon_preferred</item>
+        <item name="windowSplashScreenAnimatedIcon">@mipmap/ic_launcher</item>
     </style>
 </resources>
