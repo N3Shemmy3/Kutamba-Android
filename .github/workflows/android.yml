@@ -25,7 +25,7 @@ jobs:
     - name: Build Debug APK
       run: ./gradlew assembleDebug
       
-    - name: "Commit Builds"
+    - name: "Release Build"
       uses: "marvinpinto/action-automatic-releases@latest"
       with:
         repo_token: "${{ secrets.GITHUB_TOKEN }}"
@@ -33,3 +33,19 @@ jobs:
         prerelease: true
         title: "Development Build"
         files: /home/runner/work/Kutamba-Android/Kutamba-Android/app/build/outputs/apk/debug/app-debug.apk
+
+    - name: Add commit notes
+      uses: actions/github-script@v6
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        script: |
+          const { context, github } = require('@actions/github');
+          const commitMessage = github.context.payload.head_commit.message;
+          const commitSha = context.sha;
+
+          github.git.createCommit({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            message: commitMessage,
+            tree: commitSha,
+          });
