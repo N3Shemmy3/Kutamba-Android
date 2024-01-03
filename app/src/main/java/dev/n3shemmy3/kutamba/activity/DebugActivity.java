@@ -63,7 +63,7 @@ public class DebugActivity extends AppCompatActivity {
         .setFontSize(15)
         .setZoomEnabled(true)
         .setShowLineNumber(true)
-        .setStartLineNumber(9000)
+        .setStartLineNumber(0)
         .apply();
   }
 
@@ -81,5 +81,10 @@ public class DebugActivity extends AppCompatActivity {
   @Override
   public void onBackPressed() {
     super.onBackPressed();
+        if (codeView.getCode().toString().length() > 0) {
+            finish();
+        } else {
+            finishAffinity();
+        }
   }
 }

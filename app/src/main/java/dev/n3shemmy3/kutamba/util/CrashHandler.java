@@ -59,13 +59,13 @@ public class CrashHandler implements UncaughtExceptionHandler {
             Handler handler = new Handler(Looper.myLooper());
             while (true) {
                 try {
-                    handler.post(() -> {
-						Intent intent = new Intent(mContext, DebugActivity.class);
-						intent.putExtra("logs", getCrashInfo(thread.getName(), ex));
-						mContext.startActivity(intent);
-						
-                        //Toast.makeText(mContext, R.string.label_debug, Toast.LENGTH_SHORT).show();
-                    });
+                    handler.post(
+                            () -> {
+                                Intent intent = new Intent(mContext, DebugActivity.class);
+                                intent.putExtra("logs", getCrashInfo(thread.getName(), ex));
+                                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                                mContext.startActivity(intent);
+                            });
                     Looper.loop();
                 } catch (Throwable t) {
                     saveCrashInfo(thread.getName(), t);

@@ -11,5 +11,4 @@ public class App extends Application {
         super.onCreate();
         CrashHandler.INSTANCE.init(getApplicationContext());
     }
-    
 }
