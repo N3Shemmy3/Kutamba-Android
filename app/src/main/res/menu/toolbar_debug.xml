@@ -7,7 +7,7 @@
     <item
         android:id="@+id/menuReport"
         android:icon="@drawable/outline_bug_report_24"
-        android:name="@string/action_report" 
+        android:title="@string/action_report" 
         app:showAsAction="always"/>
 
 </menu>
