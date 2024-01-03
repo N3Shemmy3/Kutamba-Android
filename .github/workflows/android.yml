@@ -25,17 +25,7 @@ jobs:
     - name: Build with Gradle
       run: ./gradlew build
       
-  pre-release:
-  
-    name: "Pre Release"
-    runs-on: "ubuntu-latest"
-
-    steps:
-      # ...
-      - name: "Build & test"
-        run: |
-          echo "done!"
-
+    - name: "Release Build"
       - uses: "marvinpinto/action-automatic-releases@latest"
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
