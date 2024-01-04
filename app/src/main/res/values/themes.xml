@@ -56,8 +56,6 @@
         <item name="shapeAppearanceSmallComponent">@style/shapeAppearanceSmall</item>
         <item name="shapeAppearanceMediumComponent">@style/shapeAppearanceMedium</item>
         <item name="shapeAppearanceLargeComponent">@style/shapeAppearanceLarge</item>
-      <item name="preferenceTheme">@style/ThemeOverlay.App.Preference</item>
-    
     </style>
     
     <style name="AppTheme" parent="Base.AppTheme">

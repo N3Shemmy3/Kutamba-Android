@@ -16,4 +16,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Kutamba"
 
-include(":app", ":preference")
+include(":app")
