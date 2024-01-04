@@ -1,37 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen
+<androidx.preference.PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <PreferenceCategory
+    <androidx.preference.PreferenceCategory
         app:iconSpaceReserved="false"
         app:title="Basic Preferences">
 
-        <SwitchPreference
+        <androidx.preference.SwitchPreferenceCompat
             app:key="preference"
             app:title="Preference Title"
             app:summary="Preference Summary"
             app:icon="@drawable/outline_menu_24"
-            />
+            android:layout="@layout/item_preference"
+        />
 
-
-        <Preference
+        <androidx.preference.Preference
             app:key="stylized"
             app:title="Preference Title"
             app:summary="Preference Summary"
-            app:icon="@drawable/outline_menu_24"/>
+            app:icon="@drawable/outline_menu_24"
+            android:layout="@layout/item_preference"
+        />
 
 
-        <Preference
+        <androidx.preference.Preference
             app:key="icon"
             app:title="Preference Title"
             app:summary="Preference Summary"
-            app:icon="@drawable/outline_menu_24"/>
-
-        <Preference
+            app:icon="@drawable/outline_menu_24"
+            android:layout="@layout/item_preference"
+        />
+        <androidx.preference.Preference
             app:key="@string/label_about"
             app:title="@string/label_about"
             app:summary="Kutamba Debug V.0"
-            app:icon="@drawable/outline_info_24"/>
-    </PreferenceCategory>
+            app:icon="@drawable/outline_info_24"
+            android:layout="@layout/item_preference"
+        />
+    </androidx.preference.PreferenceCategory>
 
-</PreferenceScreen>
+</androidx.preference.PreferenceScreen>

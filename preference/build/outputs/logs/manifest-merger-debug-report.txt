@@ -1,0 +1,16 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /storage/emulated/0/AndroidIDEProjects/Kutamba/preference/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest3089768137896554106.xml:2:13-83
+INJECTED from /storage/emulated/0/AndroidIDEProjects/Kutamba/preference/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest3089768137896554106.xml:2:13-83
+	package
+		INJECTED from /storage/emulated/0/AndroidIDEProjects/Kutamba/preference/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest3089768137896554106.xml
+	xmlns:android
+		ADDED from /storage/emulated/0/AndroidIDEProjects/Kutamba/preference/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest3089768137896554106.xml:2:23-81
+uses-sdk
+INJECTED from /storage/emulated/0/AndroidIDEProjects/Kutamba/preference/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest3089768137896554106.xml reason: use-sdk injection requested
+INJECTED from /storage/emulated/0/AndroidIDEProjects/Kutamba/preference/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest3089768137896554106.xml
+INJECTED from /storage/emulated/0/AndroidIDEProjects/Kutamba/preference/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest3089768137896554106.xml
+	android:targetSdkVersion
+		INJECTED from /storage/emulated/0/AndroidIDEProjects/Kutamba/preference/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest3089768137896554106.xml
+	android:minSdkVersion
+		INJECTED from /storage/emulated/0/AndroidIDEProjects/Kutamba/preference/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest3089768137896554106.xml

@@ -21,9 +21,7 @@ import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.appbar.MaterialToolbar;
 import dev.n3shemmy3.kutamba.R;
-import dev.n3shemmy3.kutamba.adapter.PreferenceAdapter;
 import dev.n3shemmy3.kutamba.fragment.BaseFragment;
-import dev.n3shemmy3.kutamba.model.Preference;
 import dev.n3shemmy3.kutamba.util.AppUtils;
 
 public class SettingsFragment extends BaseFragment {
@@ -58,6 +56,7 @@ public class SettingsFragment extends BaseFragment {
         NavController navController = Navigation.findNavController(requireActivity(), R.id.settingsNavHost);
         NavigationUI.setupWithNavController(collToolbar,toolbar, getNavController(), appBarConfig);
         AppUtils.setViewInets(appbar, true, true, true, false);
+        //AppUtils.setViewInets()
     }
     
     private void onCodeInit(Bundle state) {

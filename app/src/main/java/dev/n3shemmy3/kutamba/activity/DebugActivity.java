@@ -63,7 +63,7 @@ public class DebugActivity extends AppCompatActivity {
         .setFontSize(15)
         .setZoomEnabled(true)
         .setShowLineNumber(true)
-        .setStartLineNumber(0)
+        .setStartLineNumber(1)
         .apply();
   }
 
