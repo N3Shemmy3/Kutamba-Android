@@ -1,4 +1,4 @@
-name: commit-Release Builds
+name: Commit Builds
 
 on:
   push:
