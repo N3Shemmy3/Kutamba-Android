@@ -6,17 +6,17 @@
     android:layout_width="wrap_content"
     android:id="@+id/item"
     android:layout_marginEnd="10dp"
-        >
+    >
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/itemImg"
         android:layout_height="160dp"
-        android:layout_width="120dp"
+        android:layout_width="110dp"
         android:adjustViewBounds="true"
         android:scaleType="centerCrop"
         app:shapeAppearanceOverlay="?shapeAppearanceMediumComponent"
         app:srcCompat="@drawable/flowers"
-        />
+    />
 
     <TextView
         android:layout_height="wrap_content"
@@ -27,6 +27,6 @@
         android:layout_below="@id/itemImg"
         android:textAppearance="?textAppearanceBodyLarge"
         android:id="@+id/itemTitle"
-        />
+    />
 
 </RelativeLayout>

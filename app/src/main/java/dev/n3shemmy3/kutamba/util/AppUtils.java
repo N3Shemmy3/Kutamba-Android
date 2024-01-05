@@ -27,4 +27,18 @@ public class AppUtils {
                 return WindowInsetsCompat.CONSUMED;
         }); 
     }
+   public static void setViewInetsPadding(View view, boolean left, boolean top, boolean right, boolean bottom) {
+       ViewCompat.setOnApplyWindowInsetsListener(view, (v, windowInsets) -> {
+                Insets insets = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars());
+                //MarginLayoutParams mlp = (MarginLayoutParams) v.getLayoutParams();
+                int topP=0, leftP=0, rightP=0, bottomP=0;
+                if (left) leftP = insets.left;
+                if (top) topP = insets.top;
+                if (right) rightP = insets.right;
+                if (bottom) bottomP = insets.bottom;
+                //v.setLayoutParams(mlp);
+                v.setPadding(leftP,topP,rightP,bottomP);
+                return WindowInsetsCompat.CONSUMED;
+        }); 
+    }
 }

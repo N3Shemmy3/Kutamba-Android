@@ -14,9 +14,9 @@
     />
    
     <fragment
-        android:id="@+id/profileFragment"
-        android:name="dev.n3shemmy3.kutamba.fragment.ProfileFragment"
-        android:label="@string/label_profile"
+        android:id="@+id/animeFragment"
+        android:name="dev.n3shemmy3.kutamba.fragment.AnimeFragment"
+        android:label="Odd Taxi"
         tools:layout="@layout/fragment_profile"
             
     />
@@ -28,12 +28,30 @@
             
     />
     
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="dev.n3shemmy3.kutamba.fragment.ProfileFragment"
+        android:label="@string/label_profile"
+        tools:layout="@layout/fragment_profile"
+            
+    />
+    
+    
     <include 
         app:graph="@navigation/settings_graph" />
 
    <action
         android:id="@+id/open_mainFragment"
         app:destination="@id/mainFragment"
+        app:enterAnim="@anim/enter_from_right"
+        app:exitAnim="@anim/exit_to_left"
+        app:popEnterAnim="@anim/enter_from_left"
+        app:popExitAnim="@anim/exit_to_right"
+            
+    />
+   <action
+        android:id="@+id/open_animeFragment"
+        app:destination="@id/animeFragment"
         app:enterAnim="@anim/enter_from_right"
         app:exitAnim="@anim/exit_to_left"
         app:popEnterAnim="@anim/enter_from_left"

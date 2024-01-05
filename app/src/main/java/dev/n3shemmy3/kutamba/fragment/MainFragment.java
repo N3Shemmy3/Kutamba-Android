@@ -41,7 +41,9 @@ import dev.n3shemmy3.kutamba.util.AppUtils;
 import java.util.ArrayList;
 
 public class MainFragment extends BaseFragment
-        implements MenuProvider, NavigationView.OnNavigationItemSelectedListener {
+        implements MenuProvider,
+                NavigationView.OnNavigationItemSelectedListener,
+                AnimeAdapter.OnAnimeItemClickListener {
 
     private AppBarConfiguration appBarConfig;
     private NavHostFragment navHost;
@@ -128,7 +130,7 @@ public class MainFragment extends BaseFragment
                             "",
                             ""));
         }
-        adapter = new AnimeAdapter(getContext(), animes);
+        adapter = new AnimeAdapter(getContext(), animes, this);
         recycler1.setAdapter(adapter);
         recycler2.setAdapter(adapter);
         recycler3.setAdapter(adapter);
@@ -138,6 +140,11 @@ public class MainFragment extends BaseFragment
                 new LinearLayoutManager(getContext(), RecyclerView.HORIZONTAL, false));
         recycler3.setLayoutManager(
                 new LinearLayoutManager(getContext(), RecyclerView.HORIZONTAL, false));
+    }
+
+    @Override
+    public void onItemClick(Anime anime) {
+        getNavController().navigate(R.id.open_animeFragment);
     }
 
     @Override
@@ -177,10 +184,10 @@ public class MainFragment extends BaseFragment
         NavOptions.Builder optionsBuilder = new NavOptions.Builder();
         if (itemId == R.id.mainFragment) {
             optionsBuilder
-                    .setEnterAnim(android.R.anim.fade_in)
-                    .setExitAnim(android.R.anim.fade_in)
-                    .setPopEnterAnim(android.R.anim.fade_in)
-                    .setPopExitAnim(android.R.anim.fade_out);
+                    .setEnterAnim(R.anim.enter_from_left)
+                    .setExitAnim(R.anim.exit_to_left)
+                    .setPopEnterAnim(R.anim.enter_from_left)
+                    .setPopExitAnim(R.anim.exit_to_right);
         } else {
             optionsBuilder
                     .setEnterAnim(R.anim.enter_from_left)
