@@ -1,6 +1,7 @@
 package dev.n3shemmy3.kutamba.adapter;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
@@ -64,7 +65,8 @@ public class PreferenceAdapter extends RecyclerView.Adapter<ViewHolder> {
         CategoryPreferenceViewHolder cHolder = (CategoryPreferenceViewHolder) holder;
         cHolder.itemIcon.setImageResource(pref.getIcon());
         cHolder.itemText.setText(pref.getTitle());
-        cHolder.item.setOnClickListener(view -> pref.performClick(position));
+        cHolder.itemText.setTypeface(cHolder.itemText.getTypeface(), Typeface.BOLD_ITALIC);
+        cHolder.item.setClickable(false);
 
         break;
       case Preference.NORMAL:

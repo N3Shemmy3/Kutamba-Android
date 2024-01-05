@@ -11,19 +11,8 @@
         android:name="dev.n3shemmy3.kutamba.fragment.MainFragment"
         android:label="@string/label_explore"
         tools:layout="@layout/fragment_main"
-            
     />
-    <fragment
-        android:id="@+id/settingsFragment"
-        android:name="dev.n3shemmy3.kutamba.fragment.settings.SettingsFragment"
-        android:label="@string/label_settings"
-        tools:layout="@layout/fragment_list"
-    >
-        <include app:graph="@navigation/settings_graph" />
-
- 
-    </fragment>
-
+   
     <fragment
         android:id="@+id/profileFragment"
         android:name="dev.n3shemmy3.kutamba.fragment.ProfileFragment"
@@ -38,34 +27,46 @@
         tools:layout="@layout/fragment_search"
             
     />
+    
+    <include 
+        app:graph="@navigation/settings_graph" />
 
+   <action
+        android:id="@+id/open_mainFragment"
+        app:destination="@id/mainFragment"
+        app:enterAnim="@anim/enter_from_right"
+        app:exitAnim="@anim/exit_to_left"
+        app:popEnterAnim="@anim/enter_from_left"
+        app:popExitAnim="@anim/exit_to_right"
+            
+    />
     <action
         android:id="@+id/open_profileFragment"
         app:destination="@id/profileFragment"
-        app:enterAnim="@anim/slide_in"
-        app:exitAnim="@anim/fade_out"
-        app:popEnterAnim="@anim/fade_in"
-        app:popExitAnim="@anim/slide_out"
+        app:enterAnim="@anim/enter_from_right"
+        app:exitAnim="@anim/exit_to_left"
+        app:popEnterAnim="@anim/enter_from_left"
+        app:popExitAnim="@anim/exit_to_right"
             
     />
 
     <action
         android:id="@+id/open_searchFragment"
         app:destination="@id/searchFragment"
-        app:enterAnim="@anim/slide_in"
-        app:exitAnim="@anim/fade_out"
-        app:popEnterAnim="@anim/fade_in"
-        app:popExitAnim="@anim/slide_out"
+        app:enterAnim="@anim/enter_from_right"
+        app:exitAnim="@anim/exit_to_left"
+        app:popEnterAnim="@anim/enter_from_left"
+        app:popExitAnim="@anim/exit_to_right"
             
     />
 
     <action
         android:id="@+id/open_settingsFragment"
-        app:destination="@id/settings_graph"
-        app:enterAnim="@anim/slide_in"
-        app:exitAnim="@anim/fade_out"
-        app:popEnterAnim="@anim/fade_in"
-        app:popExitAnim="@anim/slide_out"
+        app:destination="@id/settingsFragment"
+        app:enterAnim="@anim/enter_from_right"
+        app:exitAnim="@anim/exit_to_left"
+        app:popEnterAnim="@anim/enter_from_left"
+        app:popExitAnim="@anim/exit_to_right"
             
     />
 

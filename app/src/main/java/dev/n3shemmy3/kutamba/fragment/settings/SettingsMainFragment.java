@@ -19,70 +19,51 @@ import java.util.ArrayList;
 
 public class SettingsMainFragment extends BaseFragment {
 
-  private RecyclerView recycler;
-  private LinearLayoutManager lManager;
-  private PreferenceAdapter adapter;
+    private RecyclerView recycler;
+    private LinearLayoutManager lManager;
+    private PreferenceAdapter adapter;
 
-  @Override
-  public View onCreateView(
-      @NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle state) {
-    return inflater.inflate(R.layout.list_recycler, container, false);
-  }
-
-  @Override
-  public void onViewCreated(View view, Bundle state) {
-    super.onViewCreated(view, state);
-    onCreateLayout(view);
-    onCodeInit(state);
-  }
-
-  private void onCreateLayout(View view) {
-    recycler = view.findViewById(R.id.recycler);
-    lManager = new LinearLayoutManager(getContext());
-    adapter = new PreferenceAdapter();
-    recycler.setHasFixedSize(true);
-    recycler.setLayoutManager(lManager);
-    recycler.setAdapter(adapter);
-    AppUtils.setViewInets(recycler, false, false, false, true);
-  }
-
-  private void onCodeInit(Bundle state) {
-    Snackbar snackbar = Snackbar.make(getView(), "Your message here", Snackbar.LENGTH_SHORT);
-    snackbar.setAction("Action", v -> {});
-
-    ArrayList<Preference> list = new ArrayList<>();
-    for (int i = 0; i < 9; ++i) {
-      list.add(
-          new Preference(
-              list.size() - 1,
-              R.drawable.outline_menu_24,
-              R.string.pref_title_category,
-              R.string.pref_secondary_text,
-              Preference.CATEGORY,
-              (preference, position) -> {
-                snackbar.show();
-              }));
-      list.add(
-          new Preference(
-              list.size() - 1,
-              R.drawable.outline_settings_24,
-              R.string.pref_title,
-              R.string.pref_secondary_text,
-              Preference.NORMAL,
-              (preference, position) -> {
-                snackbar.show();
-              }));
-      list.add(
-          new Preference(
-              list.size() - 1,
-              R.drawable.outline_lock_24,
-              R.string.pref_title_switch,
-              R.string.pref_secondary_text,
-              Preference.SWITCH,
-              (preference, position) -> {
-                snackbar.show();
-              }));
+    @Override
+    public View onCreateView(
+            @NonNull LayoutInflater inflater,
+            @Nullable ViewGroup container,
+            @Nullable Bundle state) {
+        return inflater.inflate(R.layout.list_recycler, container, false);
     }
-    adapter.add(list);
-  }
+
+    @Override
+    public void onViewCreated(View view, Bundle state) {
+        super.onViewCreated(view, state);
+        onCreateLayout(view);
+        onCodeInit(state);
+    }
+
+    private void onCreateLayout(View view) {
+        recycler = view.findViewById(R.id.recycler);
+        lManager = new LinearLayoutManager(getContext());
+        adapter = new PreferenceAdapter();
+        recycler.setHasFixedSize(true);
+        recycler.setLayoutManager(lManager);
+        recycler.setAdapter(adapter);
+        AppUtils.setViewInets(recycler, false, false, false, true);
+    }
+
+    private void onCodeInit(Bundle state) {
+        Snackbar snackbar = Snackbar.make(getView(), "Your message here", Snackbar.LENGTH_SHORT);
+        snackbar.setAction("Action", v -> {});
+
+        ArrayList<Preference> list = new ArrayList<>();
+
+        list.add(
+                new Preference(
+                        list.size() - 1,
+                        R.drawable.outline_aod_24,
+                        R.string.display_title,
+                        R.string.diaplay_contents,
+                        Preference.NORMAL,
+                        (preference, position) -> {
+                            getNavController().navigate(R.id.open_settingsDisplayFragment);
+                        }));
+        adapter.add(list);
+    }
 }

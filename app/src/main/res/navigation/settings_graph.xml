@@ -1,14 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/settings_graph"
-    app:startDestination="@id/settingsMainFragment">
+    android:id="@+id/settingsGraph"
+    app:startDestination="@id/settingsFragment">
 
-   <fragment
-        android:id="@+id/settingsMainFragment"
-        android:name="dev.n3shemmy3.kutamba.fragment.settings.SettingsMainFragment"
-        android:label="@string/label_settings">
-    </fragment>
-
+     <fragment
+        android:id="@+id/settingsFragment"
+        android:name="dev.n3shemmy3.kutamba.fragment.settings.SettingsFragment"
+        android:label="@string/label_settings"
+    />
+    
+    <fragment
+        android:id="@+id/settingsDisplayFragment"
+        android:name="dev.n3shemmy3.kutamba.fragment.settings.SettingsDisplayFragment"
+        android:label="@string/display_title"
+    />
+    
+    <action
+        android:id="@+id/open_settingsDisplayFragment"
+        app:destination="@id/settingsDisplayFragment"
+        app:enterAnim="@anim/enter_from_right"
+        app:exitAnim="@anim/exit_to_left"
+        app:popEnterAnim="@anim/enter_from_left"
+        app:popExitAnim="@anim/exit_to_right"
+    />
 </navigation>

@@ -81,10 +81,6 @@ public class DebugActivity extends AppCompatActivity {
   @Override
   public void onBackPressed() {
     super.onBackPressed();
-        if (codeView.getCode().toString().length() > 0) {
-            finish();
-        } else {
-            finishAffinity();
-        }
+   finishAffinity();
   }
 }

@@ -28,6 +28,14 @@ public class Preference {
     this.type = type;
     this.onClickListener = onClickListener;
   }
+   public Preference(
+      int id, int icon, int title, int secondaryText, int type) {
+    this.id = id;
+    this.icon = icon;
+    this.title = title;
+    this.secondaryText = secondaryText;
+    this.type = type;
+  }
 
   public int getId() {
     return this.id;

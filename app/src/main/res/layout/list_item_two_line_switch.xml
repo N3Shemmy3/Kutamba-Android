@@ -4,9 +4,11 @@
     android:layout_height="wrap_content"
     android:layout_width="match_parent"
     android:background="?attr/selectableItemBackground"
-    android:minHeight="64dp"
+    android:minHeight="48dp"
+    android:paddingVertical="10dp"
+    android:clickable="true"
     android:id="@+id/item"
-        >
+>
 
     <ImageView
         android:layout_height="wrap_content"
@@ -14,20 +16,20 @@
         android:layout_centerVertical="true"
         android:padding="16dp"
         android:id="@+id/itemIcon"
-            />
+    />
 
     <TextView
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:layout_alignBaseline="@id/itemIcon"
         android:paddingEnd="16dp"
-        android:textAppearance="?attr/textAppearanceHeadlineSmall"
+        android:textAppearance="?attr/textAppearanceTitleLarge"
         android:textColor="@color/list_item_tint"
         android:maxLines="1"
         android:layout_toEndOf="@id/itemIcon"
         android:id="@+id/itemText"
-        android:paddingTop="10dp"
-            />
+        
+    />
 
     <TextView
         android:layout_height="wrap_content"
@@ -40,7 +42,7 @@
         android:maxLines="2"
         android:id="@+id/itemSecondaryText"
         android:layout_gravity="center_vertical"
-            />
+    />
 
     <com.google.android.material.materialswitch.MaterialSwitch
         android:id="@+id/itemSwitch"
@@ -49,8 +51,10 @@
         android:layout_centerVertical="true"
         android:layout_alignParentEnd="true"
         android:paddingEnd="16dp"
+        android:clickable="false"
+        android:focusable="false"
         android:enabled="true"
-            />
+    />
 
 
 </RelativeLayout>

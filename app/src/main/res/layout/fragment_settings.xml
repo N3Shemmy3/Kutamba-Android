@@ -5,14 +5,12 @@
     android:id="@+id/coordinator"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-        
 >
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-            
     >
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
@@ -22,7 +20,6 @@
             style="?attr/collapsingToolbarLayoutLargeStyle"
             app:expandedTitleTextAppearance="@attr/textAppearanceHeadline3"
             app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
-                
         >
 
             <com.google.android.material.appbar.MaterialToolbar
@@ -31,7 +28,6 @@
                 android:layout_height="?attr/actionBarSize"
                 android:elevation="0dp"
                 app:layout_collapseMode="pin"
-                    
             />
         </com.google.android.material.appbar.CollapsingToolbarLayout>
 
@@ -39,15 +35,13 @@
     </com.google.android.material.appbar.AppBarLayout>
 
 
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/settingsNavHost"
-        android:name="androidx.navigation.fragment.NavHostFragment"
-        android:layout_height="match_parent"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler"
         android:layout_width="match_parent"
-        app:navGraph="@navigation/settings_graph"
-        app:defaultNavHost="true"
+        android:layout_height="match_parent"
+        android:paddingBottom="88dp"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
-            
+        android:clipToPadding="false"
     />
 
 
