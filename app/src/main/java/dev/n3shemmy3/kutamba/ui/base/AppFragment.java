@@ -11,7 +11,6 @@ import androidx.annotation.Nullable;
 
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.appbar.MaterialToolbar;
-import com.google.android.material.transition.MaterialSharedAxis;
 
 import dev.n3shemmy3.kutamba.R;
 import dev.n3shemmy3.kutamba.ui.util.InsetsUtil;
@@ -26,7 +25,7 @@ public abstract class AppFragment extends BaseFragment {
 
     @LayoutRes
     public int getLayoutId() {
-        return R.layout.fragment_app;
+        return R.layout.fragment_appbar;
     }
 
 

@@ -26,7 +26,7 @@ public abstract class BaseSettingsFragment extends BaseFragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         if (root != null) return root;
-        root = inflater.inflate(R.layout.fragment_settings, container, false);
+        root = inflater.inflate(R.layout.fragment_cappbar, container, false);
         MaterialToolbar toolbar = root.findViewById(R.id.toolBar);
         toolbar.setTitle(title);
         toolbar.setNavigationOnClickListener(v -> navigateUp());
