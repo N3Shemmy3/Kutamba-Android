@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="dev.n3shemmy3.kutamba.ui.main.MainFragment">
+        <action
+            android:id="@+id/openSearch"
+            app:destination="@id/searchFragment" />
+        <action
+            android:id="@+id/openSettings"
+            app:destination="@id/settingsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="dev.n3shemmy3.kutamba.ui.search.SearchFragment">
+        <action
+            android:id="@+id/openSearch"
+            app:destination="@id/searchFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="dev.n3shemmy3.kutamba.ui.settings.SettingsFragment" >
+        <action
+            android:id="@+id/openAppearanceSettings"
+            app:destination="@id/appearanceSettingsFragment" />
+        <action
+            android:id="@+id/openBrowseSettings"
+            app:destination="@id/browseSettingsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/appearanceSettingsFragment"
+        android:name="dev.n3shemmy3.kutamba.ui.settings.AppearanceSettingsFragment"/>
+
+    <fragment
+        android:id="@+id/browseSettingsFragment"
+        android:name="dev.n3shemmy3.kutamba.ui.settings.BrowseSettingsFragment"/>
+
+</navigation>

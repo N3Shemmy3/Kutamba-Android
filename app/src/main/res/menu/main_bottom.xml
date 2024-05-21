@@ -1,0 +1,23 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/mainFragemnt"
+        android:enabled="true"
+        android:icon="@drawable/selector_video_library_24"
+        android:title="@string/label_library"/>
+    <item
+        android:id="@+id/historyFragment"
+        android:enabled="true"
+        android:icon="@drawable/selector_history_24"
+        android:title="@string/label_history"/>
+    <item
+        android:id="@+id/browseFragment"
+        android:enabled="true"
+        android:icon="@drawable/selector_explore_24"
+        android:title="@string/label_browse"/>
+    <item
+        android:id="@+id/moreFragment"
+        android:enabled="true"
+        android:icon="@drawable/selector_more_horiz_24"
+        android:title="@string/label_more"/>
+</menu>

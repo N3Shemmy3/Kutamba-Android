@@ -1,0 +1,13 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    >
+    <Preference
+        android:layout="@layout/item_preference"
+        app:icon="@drawable/outline_dark_mode_24"
+        app:key="Theme"
+        app:summary="Follow system"
+        app:title="Theme"
+        />
+
+</PreferenceScreen>

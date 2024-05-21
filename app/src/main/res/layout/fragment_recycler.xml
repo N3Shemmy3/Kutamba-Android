@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<dev.n3shemmy3.kutamba.ui.widget.ThemedSwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/refreshLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:id="@+id/wrapperView"
+        android:layout_width="match_parent"
+        android:animateLayoutChanges="true"
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:nestedScrollingEnabled="false"
+            android:clipToPadding="false" />
+
+        <RelativeLayout
+            android:id="@+id/statusView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingHorizontal="@dimen/activity_padding_horizontal"
+            android:paddingVertical="@dimen/activity_padding_vertical">
+
+            <com.google.android.material.progressindicator.CircularProgressIndicator
+                android:id="@+id/statusLoader"
+                style="@style/Widget.Material3.CircularProgressIndicator.Medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_centerHorizontal="true"
+                android:indeterminate="true"
+                app:trackCornerRadius="8dp" />
+
+            <TextView
+                android:id="@+id/statusTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_margin="@dimen/activity_padding_horizontal"
+                android:textAppearance="@style/TextAppearance.Material3.DisplayLarge" />
+
+
+            <TextView
+                android:id="@+id/statusSubTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/statusTitle"
+                android:layout_centerHorizontal="true"
+                android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
+
+            <Button
+                android:id="@+id/statusButton"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/statusSubTitle"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="16dp"
+                android:text="@string/action_retry" />
+        </RelativeLayout>
+    </FrameLayout>
+</dev.n3shemmy3.kutamba.ui.widget.ThemedSwipeRefreshLayout>
