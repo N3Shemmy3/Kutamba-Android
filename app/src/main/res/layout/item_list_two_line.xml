@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/selectableItemBackground"
+    android:minHeight="64dp">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/itemIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:adjustViewBounds="true"
+        android:padding="16dp"
+        android:scaleType="centerCrop"
+        app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Small"
+        tools:srcCompat="@drawable/outline_menu_24" />
+
+    <TextView
+        android:id="@+id/itemText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toStartOf="@id/itemAction"
+        android:layout_toEndOf="@id/itemIcon"
+        android:maxLines="1"
+        android:paddingTop="16dp"
+        android:paddingEnd="16dp"
+        android:textAppearance="?attr/textAppearanceSubtitle1"
+        android:textColor="@color/mtrl_list_item_tint"
+        tools:ignore="RtlSymmetry"
+        tools:text="Three line item" />
+
+    <TextView
+        android:id="@+id/itemSecondary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/itemText"
+        android:layout_gravity="center_vertical"
+        android:layout_toStartOf="@id/itemAction"
+        android:layout_toEndOf="@id/itemIcon"
+        android:maxLines="2"
+        android:paddingEnd="16dp"
+        android:textAppearance="?attr/textAppearanceBody2"
+        android:textColor="@color/mtrl_list_item_tint"
+        tools:ignore="RtlSymmetry"
+        tools:text="Secondary" />
+
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/itemAction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:adjustViewBounds="true"
+        android:padding="16dp"
+        android:scaleType="centerCrop"
+        app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Small"
+        tools:srcCompat="@drawable/outline_menu_24" />
+
+</RelativeLayout>

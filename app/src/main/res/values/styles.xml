@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="More.Fragment.Button" parent="Widget.Material3.Button.TonalButton">
+        <item name="android:paddingVertical">16dp</item>
+        <item name="android:paddingHorizontal">10dp</item>
+        <item name="android:gravity">start</item>
+        <item name="iconSize">22dp</item>
+        <item name="android:inset">0dp</item>
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearance.Material3.Corner.Small</item>
+    </style>
+</resources>

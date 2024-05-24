@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/loaderView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:translationZ="100dp"
+    android:visibility="gone"
+    android:background="?android:colorBackground"
+    android:clickable="true"
+    android:focusable="true">
+
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        style="@style/Widget.Material3.CircularProgressIndicator.Medium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        app:trackCornerRadius="@dimen/item_anime_radius"
+        android:layout_centerHorizontal="true"
+        android:indeterminate="true" />
+</RelativeLayout>

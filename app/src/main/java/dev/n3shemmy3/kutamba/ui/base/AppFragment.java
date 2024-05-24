@@ -18,7 +18,7 @@ import dev.n3shemmy3.kutamba.ui.util.InsetsUtil;
 /*
  A Top Level Fragment that provides an appbar & FragmentContainer
  */
-public abstract class AppCompatFragment extends BaseFragment {
+public abstract class AppFragment extends BaseFragment {
 
     public AppBarLayout appbar;
     public MaterialToolbar toolbar;
@@ -27,8 +27,6 @@ public abstract class AppCompatFragment extends BaseFragment {
     public int getLayoutId() {
         return R.layout.fragment_appbar;
     }
-
-
 
     @Nullable
     @Override
