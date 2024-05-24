@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <!-- Preference -->
+    <style name="MaterialPreference.Theme" parent="@style/PreferenceThemeOverlay">
+        <item name="dialogPreferenceStyle">@style/MaterialPreference.AlertDialog</item>
+        <item name="editTextPreferenceStyle">@style/MaterialPreference.EditText</item>
+        <item name="footerPreferenceStyle">@style/MaterialPreference.Category</item>
+        <item name="preferenceCategoryStyle">@style/MaterialPreference.Category</item>
+        <item name="preferenceCategoryTitleTextAppearance">@style/TextAppearance.Preference.MaterialCategoryTitle</item>
+        <item name="preferenceScreenStyle">@style/MaterialPreference.Screen</item>
+        <item name="preferenceStyle">@style/MaterialPreference.Preference</item>
+        <item name="switchPreferenceCompatStyle">@style/MaterialPreference.Switch</item>
+    </style>
+
+    <style name="MaterialPreference.Dialog" parent="@style/Preference.DialogPreference.Material">
+        <item name="layout">@layout/preference_item</item>
+        <item name="iconSpaceReserved">@bool/pref_icon_space_reserved</item>
+    </style>
+
+    <style name="MaterialPreference.EditText" parent="@style/Preference.DialogPreference.EditTextPreference.Material">
+        <item name="layout">@layout/preference_item</item>
+        <item name="dialogLayout">@layout/preference_dialog_view_edittext</item>
+        <item name="iconSpaceReserved">@bool/pref_icon_space_reserved</item>
+    </style>
+
+    <style name="MaterialPreference.Category" parent="@style/Preference.Category.Material">
+        <item name="iconSpaceReserved">@bool/pref_icon_space_reserved</item>
+        <item name="allowDividerAbove">@bool/pref_allow_divider</item>
+        <item name="allowDividerBelow">@bool/pref_allow_divider</item>
+    </style>
+
+    <style name="MaterialPreference.Screen" parent="@style/Preference.PreferenceScreen.Material">
+        <item name="layout">@layout/preference_item</item>
+        <item name="iconSpaceReserved">@bool/pref_icon_space_reserved</item>
+    </style>
+
+    <style name="MaterialPreference.Preference" parent="@style/Preference.Material">
+        <item name="layout">@layout/preference_item</item>
+        <item name="iconSpaceReserved">@bool/pref_icon_space_reserved</item>
+    </style>
+
+    <style name="MaterialPreference.Switch" parent="@style/Preference.SwitchPreferenceCompat.Material">
+        <item name="android:widgetLayout">@layout/preference_item_switch</item>
+        <item name="layout">@layout/preference_item</item>
+        <item name="iconSpaceReserved">@bool/pref_icon_space_reserved</item>
+    </style>
+
+    <style name="TextAppearance.Preference.MaterialCategoryTitle" parent="TextAppearance.Material3.TitleSmall">
+        <item name="android:textColor">?attr/colorPrimary</item>
+    </style>
+
+    <style name="TextAppearance.Preference.MaterialTitle" parent="TextAppearance.Material3.TitleLarge">
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="MaterialPreference.AlertDialog" parent="MaterialAlertDialog.Material3">
+    </style>
+
+</resources>

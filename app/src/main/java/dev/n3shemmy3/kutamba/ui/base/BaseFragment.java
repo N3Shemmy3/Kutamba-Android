@@ -63,7 +63,7 @@ public abstract class BaseFragment extends Fragment {
         getNavController().navigateUp();
     }
 
-    public final OnBackPressedCallback onBackPressedCallback = new OnBackPressedCallback(true) {
+    public final OnBackPressedCallback onBackPressendCallback = new OnBackPressedCallback(true) {
         @Override
         public void handleOnBackPressed() {
             if (onBackPressed()) return;

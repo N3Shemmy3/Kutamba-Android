@@ -21,6 +21,7 @@ import com.google.android.material.color.MaterialColors;
 import java.util.Objects;
 
 import dev.n3shemmy3.kutamba.ui.util.InsetsUtil;
+import dev.n3shemmy3.material.preference.MaterialPreferenceFragment;
 
 public  abstract class BasePreferenceFragment extends PreferenceFragmentCompat implements SharedPreferences.OnSharedPreferenceChangeListener {
     @Override

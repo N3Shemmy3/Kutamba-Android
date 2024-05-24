@@ -24,21 +24,26 @@
 
     <fragment
         android:id="@+id/settingsFragment"
-        android:name="dev.n3shemmy3.kutamba.ui.settings.SettingsFragment" >
+        android:name="dev.n3shemmy3.kutamba.ui.settings.SettingsFragment">
         <action
             android:id="@+id/openAppearanceSettings"
             app:destination="@id/appearanceSettingsFragment" />
         <action
             android:id="@+id/openBrowseSettings"
             app:destination="@id/browseSettingsFragment" />
+        <action
+            android:id="@+id/openAboutSettingsFragment"
+            app:destination="@id/aboutSettingsFragment" />
     </fragment>
 
     <fragment
         android:id="@+id/appearanceSettingsFragment"
-        android:name="dev.n3shemmy3.kutamba.ui.settings.AppearanceSettingsFragment"/>
+        android:name="dev.n3shemmy3.kutamba.ui.settings.AppearanceSettingsFragment" />
 
     <fragment
         android:id="@+id/browseSettingsFragment"
-        android:name="dev.n3shemmy3.kutamba.ui.settings.BrowseSettingsFragment"/>
-
+        android:name="dev.n3shemmy3.kutamba.ui.settings.BrowseSettingsFragment" />
+    <fragment
+        android:id="@+id/aboutSettingsFragment"
+        android:name="dev.n3shemmy3.kutamba.ui.settings.AboutSettingsFragment" />
 </navigation>

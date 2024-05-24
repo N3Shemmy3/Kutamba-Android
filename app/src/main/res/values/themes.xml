@@ -11,10 +11,17 @@
         <item name="android:windowLightStatusBar">@bool/isLightTheme</item>
         <item name="android:navigationBarColor">@android:color/transparent</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
+        <!--
+        <item name="android:textAppearanceListItem">@style/TextAppearance.Preference.MaterialTitle
+        </item>
+        <item name="preferenceTheme">@style/MaterialPreference.Theme</item>
+       -->
+        <item name="android:listPreferredItemPaddingLeft">@dimen/activity_padding_horizontal</item>
+        <item name="android:listPreferredItemPaddingRight">@dimen/activity_padding_horizontal</item>
+
     </style>
 
     <style name="Theme.Kutamba" parent="Base.Theme.Kutamba">
 
     </style>
-
 </resources>

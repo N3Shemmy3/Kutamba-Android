@@ -1,18 +1,18 @@
-package com.projectmaterial.preference;
+package dev.n3shemmy3.material.preference;
 
-import android.content.DialogInterface;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.preference.MultiSelectListPreference;
+
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
-public class M3MultiSelectListPreferenceDialogFragmentCompat extends M3PreferenceDialogFragmentCompat {
+public class MaterialMultiSelectListPreferenceDialog extends MaterialPreferenceDialog {
     private static final String SAVE_STATE_VALUES =
             "M3MultiSelectListPreferenceDialogFragmentCompat.values";
     private static final String SAVE_STATE_CHANGED =
@@ -32,9 +32,9 @@ public class M3MultiSelectListPreferenceDialogFragmentCompat extends M3Preferenc
     CharSequence[] mEntryValues;
     
     @NonNull
-    public static M3MultiSelectListPreferenceDialogFragmentCompat newInstance(@NonNull String key) {
-        final M3MultiSelectListPreferenceDialogFragmentCompat fragment =
-                new M3MultiSelectListPreferenceDialogFragmentCompat();
+    public static MaterialMultiSelectListPreferenceDialog newInstance(@NonNull String key) {
+        final MaterialMultiSelectListPreferenceDialog fragment =
+                new MaterialMultiSelectListPreferenceDialog();
         final Bundle b = new Bundle(1);
         b.putString(ARG_KEY, key);
         fragment.setArguments(b);
@@ -90,16 +90,13 @@ public class M3MultiSelectListPreferenceDialogFragmentCompat extends M3Preferenc
             checkedItems[i] = mNewValues.contains(mEntryValues[i].toString());
         }
         builder.setMultiChoiceItems(mEntries, checkedItems,
-                new DialogInterface.OnMultiChoiceClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which, boolean isChecked) {
-                        if (isChecked) {
-                            mPreferenceChanged |= mNewValues.add(
-                                    mEntryValues[which].toString());
-                        } else {
-                            mPreferenceChanged |= mNewValues.remove(
-                                    mEntryValues[which].toString());
-                        }
+                (dialog, which, isChecked) -> {
+                    if (isChecked) {
+                        mPreferenceChanged |= mNewValues.add(
+                                mEntryValues[which].toString());
+                    } else {
+                        mPreferenceChanged |= mNewValues.remove(
+                                mEntryValues[which].toString());
                     }
                 });
     }

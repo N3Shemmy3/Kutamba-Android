@@ -7,7 +7,6 @@
         app:icon="@drawable/outline_dark_mode_24"
         app:key="Theme"
         app:summary="Follow system"
-        app:title="Theme"
-        />
+        app:title="Theme" />
 
 </PreferenceScreen>

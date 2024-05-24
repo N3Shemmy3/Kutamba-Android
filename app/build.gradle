@@ -18,7 +18,7 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.debug
         }
@@ -39,6 +39,7 @@ dependencies {
     implementation libs.fragment
     implementation libs.navigation
     implementation libs.navigationUi
+   // implementation project(':materialpreference')
     implementation libs.preference
     implementation libs.recyclerview
     implementation libs.swiperefreshlayout

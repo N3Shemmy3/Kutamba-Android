@@ -1,4 +1,4 @@
-package com.projectmaterial.preference;
+package dev.n3shemmy3.material.preference;
 
 import android.app.Dialog;
 import android.content.DialogInterface;
@@ -7,10 +7,11 @@ import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.preference.ListPreference;
-import com.google.android.material.dialog.MaterialAlertDialogBuilder;
-import com.projectmaterial.videos.R;
 
-public class M3ListPreferenceDialogFragmentCompat extends M3PreferenceDialogFragmentCompat {
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+
+
+public class MaterialListPreferenceDialog extends MaterialPreferenceDialog {
     private CharSequence[] mEntries;
     private CharSequence[] mEntryValues;
     private int mClickedDialogEntryIndex;
@@ -19,8 +20,8 @@ public class M3ListPreferenceDialogFragmentCompat extends M3PreferenceDialogFrag
     private static final String SAVE_STATE_ENTRY_VALUES = "M3ListPreferenceDialogFragment.entryValues";
 
     @NonNull
-    public static M3ListPreferenceDialogFragmentCompat newInstance(@NonNull String key) {
-        M3ListPreferenceDialogFragmentCompat fragment = new M3ListPreferenceDialogFragmentCompat();
+    public static MaterialListPreferenceDialog newInstance(@NonNull String key) {
+        MaterialListPreferenceDialog fragment = new MaterialListPreferenceDialog();
         Bundle savedInstanceState = new Bundle(1);
         savedInstanceState.putString(ARG_KEY, key);
         fragment.setArguments(savedInstanceState);
@@ -60,7 +61,7 @@ public class M3ListPreferenceDialogFragmentCompat extends M3PreferenceDialogFrag
     @NonNull
     @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
-        MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(requireContext(), R.style.ThemeOverlay_SettingsLib_MaterialAlertDialog_Centered);
+        MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(requireContext());
         builder.setIcon(getPreference().getDialogIcon());
         builder.setNegativeButton(getPreference().getNegativeButtonText(), this);
         builder.setPositiveButton(getPreference().getPositiveButtonText(), this);
@@ -73,8 +74,7 @@ public class M3ListPreferenceDialogFragmentCompat extends M3PreferenceDialogFrag
             builder.setMessage(getPreference().getDialogMessage());
         }
         onPrepareDialogBuilder(builder);
-        Dialog dialog = builder.create();
-        return dialog;
+        return builder.create();
     }
     
     @Override

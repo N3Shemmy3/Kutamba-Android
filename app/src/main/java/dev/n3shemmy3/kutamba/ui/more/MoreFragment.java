@@ -7,9 +7,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import dev.n3shemmy3.kutamba.R;
-import dev.n3shemmy3.kutamba.ui.base.AppFragment;
+import dev.n3shemmy3.kutamba.ui.base.AppCompatFragment;
 
-public class MoreFragment extends AppFragment {
+public class MoreFragment extends AppCompatFragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);

@@ -1,4 +1,4 @@
-package com.projectmaterial.preference;
+package dev.n3shemmy3.material.preference;
 
 import android.os.Bundle;
 import android.view.View;
@@ -15,7 +15,7 @@ import androidx.preference.PreferenceFragmentCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 @SuppressWarnings("deprecation")
-public abstract class M3PreferenceFragmentCompat extends PreferenceFragmentCompat {
+public abstract class MaterialPreferenceFragment extends PreferenceFragmentCompat {
     private RecyclerView mRecyclerView;
     
     @Override
@@ -38,7 +38,7 @@ public abstract class M3PreferenceFragmentCompat extends PreferenceFragmentCompa
     @Override
     public void onDisplayPreferenceDialog(@NonNull Preference preference) {
         if (preference instanceof EditTextPreference) {
-            showEditTextPreferenceDialog((M3EditTextPreference) preference);
+            showEditTextPreferenceDialog((MaterialEditTextPreference) preference);
         } else if (preference instanceof ListPreference) {
             showListPreferenceDialog((ListPreference) preference);
         } else if (preference instanceof MultiSelectListPreference) {
@@ -48,8 +48,8 @@ public abstract class M3PreferenceFragmentCompat extends PreferenceFragmentCompa
         }
     }
     
-    private void showEditTextPreferenceDialog(M3EditTextPreference preference) {
-        M3EditTextPreferenceDialogFragmentCompat dialogFragment = new M3EditTextPreferenceDialogFragmentCompat();
+    private void showEditTextPreferenceDialog(MaterialEditTextPreference preference) {
+        MaterialEditTextPreferenceDialog dialogFragment = new MaterialEditTextPreferenceDialog();
         Bundle bundle = new Bundle(1);
         bundle.putString("key", preference.getKey());
         dialogFragment.setArguments(bundle);
@@ -58,7 +58,7 @@ public abstract class M3PreferenceFragmentCompat extends PreferenceFragmentCompa
     }
     
     private void showListPreferenceDialog(ListPreference preference) {
-        M3ListPreferenceDialogFragmentCompat dialogFragment = new M3ListPreferenceDialogFragmentCompat();
+        MaterialPreferenceDialog dialogFragment = new MaterialMultiSelectListPreferenceDialog();
         Bundle bundle = new Bundle(1);
         bundle.putString("key", preference.getKey());
         dialogFragment.setArguments(bundle);
@@ -67,7 +67,7 @@ public abstract class M3PreferenceFragmentCompat extends PreferenceFragmentCompa
     }
     
     private void showMultiSelectListPreferenceDialog(MultiSelectListPreference preference) {
-        M3MultiSelectListPreferenceDialogFragmentCompat dialogFragment = new M3MultiSelectListPreferenceDialogFragmentCompat();
+        MaterialPreferenceDialog dialogFragment = new MaterialMultiSelectListPreferenceDialog();
         Bundle bundle = new Bundle(1);
         bundle.putString("key", preference.getKey());
         dialogFragment.setArguments(bundle);

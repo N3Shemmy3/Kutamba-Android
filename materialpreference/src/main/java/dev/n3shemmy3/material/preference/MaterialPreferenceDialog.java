@@ -1,4 +1,4 @@
-package com.projectmaterial.preference;
+package dev.n3shemmy3.material.preference;
 
 import android.app.Dialog;
 import android.content.DialogInterface;
@@ -10,7 +10,7 @@ import androidx.annotation.Nullable;
 import androidx.preference.PreferenceDialogFragmentCompat;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
-public abstract class M3PreferenceDialogFragmentCompat extends PreferenceDialogFragmentCompat {
+public abstract class MaterialPreferenceDialog extends PreferenceDialogFragmentCompat {
     private int mWhichButtonClicked;
     
     @Override

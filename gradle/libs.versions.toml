@@ -35,4 +35,5 @@ viewpager2 = { group = "androidx.viewpager2", name = "viewpager2", version.ref =
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
+androidLibrary = { id = "com.android.library", version.ref = "agp" }
 

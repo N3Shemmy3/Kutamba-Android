@@ -2,7 +2,7 @@
 <resources>
     <dimen name="activity_padding_horizontal">24dp</dimen>
     <dimen name="activity_padding_vertical">20dp</dimen>
-    <dimen name="view_padding_vertical">16dp</dimen>
+    <dimen name="view_padding_vertical">8dp</dimen>
     <dimen name="view_padding_horizontal">16dp</dimen>
 
 </resources>

@@ -7,20 +7,22 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.StringRes;
+import androidx.fragment.app.Fragment;
 
 import com.google.android.material.appbar.MaterialToolbar;
 
 import dev.n3shemmy3.kutamba.R;
+import dev.n3shemmy3.kutamba.ui.settings.AboutSettingsFragment;
 import dev.n3shemmy3.kutamba.ui.util.InsetsUtil;
 
 public abstract class BaseSettingsFragment extends BaseFragment {
-    public BaseSettingsFragment(@StringRes int title, @NonNull BasePreferenceFragment fragment) {
+    public BaseSettingsFragment(@StringRes int title, @NonNull Fragment fragment) {
         this.title = title;
         this.fragment = fragment;
     }
 
     private final int title;
-    private final BasePreferenceFragment fragment;
+    private final Fragment fragment;
     private View root;
 
     @Override

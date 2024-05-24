@@ -1,16 +1,10 @@
-<PreferenceScreen
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-
-    >
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <Preference
-        app:key="repository"
-        app:icon="@drawable/outline_source_24"
-        app:title="Repository Api"
-        app:summary="The base api link for content"
         android:layout="@layout/item_preference"
-
-        />
+        app:icon="@drawable/outline_source_24"
+        app:key="repository"
+        app:summary="The base api link for content"
+        app:title="Repository Api" />
 
 </PreferenceScreen>

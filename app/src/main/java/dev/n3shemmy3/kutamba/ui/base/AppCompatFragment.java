@@ -18,7 +18,7 @@ import dev.n3shemmy3.kutamba.ui.util.InsetsUtil;
 /*
  A Top Level Fragment that provides an appbar & FragmentContainer
  */
-public abstract class AppFragment extends BaseFragment {
+public abstract class AppCompatFragment extends BaseFragment {
 
     public AppBarLayout appbar;
     public MaterialToolbar toolbar;
@@ -39,7 +39,6 @@ public abstract class AppFragment extends BaseFragment {
         appbar = root.findViewById(R.id.appBar);
         InsetsUtil.addSystemBarsInsets(appbar);
         toolbar.setNavigationOnClickListener(v -> navigateUp());
-        requireActivity().getOnBackPressedDispatcher().addCallback(getViewLifecycleOwner(), onBackPressedCallback);
         return root;
     }
 }

@@ -6,7 +6,6 @@ import androidx.annotation.NonNull;
 import androidx.preference.Preference;
 
 import dev.n3shemmy3.kutamba.R;
-import dev.n3shemmy3.kutamba.ui.base.BaseFragment;
 import dev.n3shemmy3.kutamba.ui.base.BasePreferenceFragment;
 import dev.n3shemmy3.kutamba.ui.base.BaseSettingsFragment;
 
@@ -27,6 +26,8 @@ public class SettingsFragment extends BaseSettingsFragment {
             switch (preference.getKey()) {
                 case "appearance" -> navigate(R.id.openAppearanceSettings);
                 case "browse" -> navigate(R.id.openBrowseSettings);
+                case "about" -> navigate(R.id.openAboutSettingsFragment);
+
             }
             return super.onPreferenceTreeClick(preference);
         }

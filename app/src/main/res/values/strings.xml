@@ -16,6 +16,7 @@
     <string name="label_menu">Menu</string>
     <string name="label_settings">Settings</string>
     <string name="label_appearance">Appearance</string>
+    <string name="label_about">About</string>
 
     <!-- Recycler States-->
     <string name="state_empty">Nothing here yet</string>

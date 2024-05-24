@@ -1,59 +1,53 @@
-<PreferenceScreen
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
 
     >
     <Preference
-        app:key="appearance"
+        android:layout="@layout/item_preference"
         app:icon="@drawable/outline_palette_24"
-        app:title="Appearance"
+        app:key="appearance"
         app:summary="Thems, Date, Language"
-        android:layout="@layout/item_preference"
+        app:title="Appearance"
 
         />
 
     <Preference
-        app:key="signature"
+        android:layout="@layout/item_preference"
         app:icon="@drawable/outline_settings_24"
-        app:title="Preference Title"
-        app:summary="Preference Summary"
-        android:layout="@layout/item_preference"
-
-        />
-
-    <Preference
         app:key="signature"
-        app:icon="@drawable/outline_settings_24"
-        app:title="Preference Title"
         app:summary="Preference Summary"
-        android:layout="@layout/item_preference"
+        app:title="Preference Title"
 
         />
 
     <Preference
+        android:layout="@layout/item_preference"
+        app:icon="@drawable/outline_settings_24"
         app:key="signature"
-        app:icon="@drawable/outline_settings_24"
-        app:title="Preference Title"
         app:summary="Preference Summary"
+        app:title="Preference Title"
+
+        />
+
+    <Preference
         android:layout="@layout/item_preference"
+        app:icon="@drawable/outline_settings_24"
+        app:key="signature"
+        app:summary="Preference Summary"
+        app:title="Preference Title"
 
         />
     <Preference
-        app:key="browse"
+        android:layout="@layout/item_preference"
         app:icon="@drawable/outline_new_releases_24"
-        app:title="@string/label_browse"
+        app:key="browse"
         app:summary="Repositories,Filters,Sources"
-        android:layout="@layout/item_preference"
-
-        />
+        app:title="@string/label_browse" />
 
     <Preference
-        app:key="about"
-        app:icon="@drawable/outline_settings_24"
-        app:title="About"
-        app:summary="About Application"
         android:layout="@layout/item_preference"
-
-        />
+        app:icon="@drawable/outline_info_24"
+        app:key="about"
+        app:summary="About Application"
+        app:title="About" />
 </PreferenceScreen>
