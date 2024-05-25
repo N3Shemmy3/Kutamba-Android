@@ -14,6 +14,9 @@
             android:id="@+id/openDetails"
             app:destination="@id/detailsFragment" />
         <action
+            android:id="@+id/openMenu"
+            app:destination="@id/menuFragment" />
+        <action
             android:id="@+id/openSettings"
             app:destination="@id/settingsFragment" />
     </fragment>
@@ -27,8 +30,11 @@
 
     <fragment
         android:id="@+id/detailsFragment"
-        android:name="dev.n3shemmy3.kutamba.ui.details.DetailsFragment">
-    </fragment>
+        android:name="dev.n3shemmy3.kutamba.ui.details.DetailsFragment" />
+
+    <fragment
+        android:id="@+id/menuFragment"
+        android:name="dev.n3shemmy3.kutamba.ui.menu.MenuFragment" />
 
     <fragment
         android:id="@+id/settingsFragment"
@@ -47,7 +53,6 @@
     <fragment
         android:id="@+id/appearanceSettingsFragment"
         android:name="dev.n3shemmy3.kutamba.ui.settings.AppearanceSettingsFragment" />
-
     <fragment
         android:id="@+id/browseSettingsFragment"
         android:name="dev.n3shemmy3.kutamba.ui.settings.BrowseSettingsFragment" />

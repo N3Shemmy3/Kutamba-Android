@@ -28,7 +28,7 @@ public class MainFragment extends AppFragment implements Toolbar.OnMenuItemClick
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         toolbar.setOnMenuItemClickListener(this);
         avatar = toolbar.getMenu().findItem(R.id.actionMenu).getActionView().findViewById(R.id.avatar);
-        avatar.setOnClickListener(v -> navigate(R.id.openDetails));
+        avatar.setOnClickListener(v -> navigate(R.id.openMenu));
     }
 
     @SuppressLint("NonConstantResourceId")
@@ -36,7 +36,7 @@ public class MainFragment extends AppFragment implements Toolbar.OnMenuItemClick
     public boolean onMenuItemClick(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.actionSearch -> navigate(R.id.openSearch);
-            case R.id.actionMenu -> navigate(R.id.openDetails);
+            case R.id.actionMenu -> navigate(R.id.openMenu);
         }
         return true;
     }

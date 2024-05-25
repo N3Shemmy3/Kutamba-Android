@@ -10,7 +10,7 @@ import androidx.viewpager2.adapter.FragmentStateAdapter;
 import dev.n3shemmy3.kutamba.ui.base.BaseFragment;
 import dev.n3shemmy3.kutamba.ui.history.HistoryFragment;
 import dev.n3shemmy3.kutamba.ui.library.LibraryFragment;
-import dev.n3shemmy3.kutamba.ui.more.MoreFragment;
+import dev.n3shemmy3.kutamba.ui.menu.MenuFragment;
 import dev.n3shemmy3.kutamba.ui.search.SearchFragment;
 
 public class MainPagerAdapter extends FragmentStateAdapter {
@@ -26,7 +26,7 @@ public class MainPagerAdapter extends FragmentStateAdapter {
     final LibraryFragment libraryFragment = new LibraryFragment();
     final HistoryFragment historyFragment = new HistoryFragment();
     final SearchFragment browseFragment = new SearchFragment();
-    final MoreFragment moreFragment = new MoreFragment();
+    final MenuFragment menuFragment = new MenuFragment();
 
     @NonNull
     @Override
@@ -43,7 +43,7 @@ public class MainPagerAdapter extends FragmentStateAdapter {
                 fragment = browseFragment;
                 break;
             case 3:
-                fragment = moreFragment;
+                fragment = menuFragment;
                 break;
         }
         assert fragment != null;

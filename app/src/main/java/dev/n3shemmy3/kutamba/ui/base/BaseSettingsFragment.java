@@ -12,7 +12,6 @@ import androidx.fragment.app.Fragment;
 import com.google.android.material.appbar.MaterialToolbar;
 
 import dev.n3shemmy3.kutamba.R;
-import dev.n3shemmy3.kutamba.ui.settings.AboutSettingsFragment;
 import dev.n3shemmy3.kutamba.ui.util.InsetsUtil;
 
 public abstract class BaseSettingsFragment extends BaseFragment {
@@ -28,7 +27,7 @@ public abstract class BaseSettingsFragment extends BaseFragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         if (root != null) return root;
-        root = inflater.inflate(R.layout.fragment_cappbar, container, false);
+        root = inflater.inflate(R.layout.fragment_collappbar, container, false);
         MaterialToolbar toolbar = root.findViewById(R.id.toolBar);
         toolbar.setTitle(title);
         toolbar.setNavigationOnClickListener(v -> navigateUp());

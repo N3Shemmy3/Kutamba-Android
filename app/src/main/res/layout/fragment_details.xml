@@ -13,6 +13,6 @@
        app:srcCompat="@drawable/avatar"
        android:foreground="@color/header_foreground_overlay"
        />
-    <include layout="@layout/fragment_cappbar"/>
+    <include layout="@layout/fragment_collappbar"/>
 
 </FrameLayout>
