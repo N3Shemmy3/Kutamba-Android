@@ -27,7 +27,7 @@ import dev.n3shemmy3.kutamba.ui.widget.ThemedSwipeRefreshLayout;
     Based on the list content
  */
 public abstract class BaseRecyclerFragment extends BaseFragment {
-
+    public BaseRecyclerFragment(){}
     protected View root;
     protected ThemedSwipeRefreshLayout refreshLayout;
     protected FrameLayout wrapperView;
@@ -81,5 +81,33 @@ public abstract class BaseRecyclerFragment extends BaseFragment {
         RecyclerView.LayoutManager layoutManager = onCreateLayoutManager();
         layoutManager.onRestoreInstanceState(getArguments().getParcelable("layoutManager"));
         recyclerView.setLayoutManager(layoutManager);
+    }  public void setRefreshEnabled(boolean refreshEnabled) {
+        this.refreshEnabled = refreshEnabled;
+        if (refreshLayout != null) refreshLayout.setEnabled(refreshEnabled);
+    }
+
+    public void showLoader() {
+        if (statusView == null) return;
+        isLoading = true;
+        setRefreshEnabled(false);
+        statusView.setVisibility(View.VISIBLE);
+        statusLoader.show();
+
+        recyclerView.setVisibility(View.GONE);
+        statusTitle.setVisibility(View.GONE);
+        statusSubTitle.setVisibility(View.GONE);
+        statusButton.setVisibility(View.GONE);
+    }
+
+    public void showRecycler() {
+        if (recyclerView == null) return;
+        isLoading = false;
+        recyclerView.setVisibility(View.VISIBLE);
+
+        statusView.setVisibility(View.GONE);
+        statusLoader.hide();
+        statusTitle.setVisibility(View.GONE);
+        statusSubTitle.setVisibility(View.GONE);
+        statusButton.setVisibility(View.GONE);
     }
 }

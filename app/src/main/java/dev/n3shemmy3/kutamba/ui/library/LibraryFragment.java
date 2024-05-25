@@ -14,6 +14,6 @@ public class LibraryFragment extends AppFragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         toolbar.setTitle(R.string.label_library);
-        toolbar.setOnClickListener(v -> navigate(R.id.openSettings));
+        toolbar.setOnClickListener(v -> navigate(R.id.openDetails));
     }
 }

@@ -36,10 +36,14 @@ public abstract class BaseFragment extends Fragment {
     }
 
     public void setContentView(@IdRes int layoutId, Fragment fragment, Bundle bundle) {
+        int id = requireView().findViewById(R.id.fragmentContainer) == null ?
+                R.id.settingsContainer
+                :
+                layoutId;
         getChildFragmentManager()
                 .beginTransaction()
                 .setReorderingAllowed(true)
-                .add(layoutId, fragment.getClass(), bundle)
+                .add(id, fragment.getClass(), bundle)
                 .commit();
     }
 

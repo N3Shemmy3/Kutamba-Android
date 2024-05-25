@@ -11,6 +11,9 @@
             android:id="@+id/openSearch"
             app:destination="@id/searchFragment" />
         <action
+            android:id="@+id/openDetails"
+            app:destination="@id/detailsFragment" />
+        <action
             android:id="@+id/openSettings"
             app:destination="@id/settingsFragment" />
     </fragment>
@@ -20,6 +23,11 @@
         <action
             android:id="@+id/openSearch"
             app:destination="@id/searchFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="dev.n3shemmy3.kutamba.ui.details.DetailsFragment">
     </fragment>
 
     <fragment
