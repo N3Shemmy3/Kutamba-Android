@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView.ViewHolder;
 import com.google.android.material.imageview.ShapeableImageView;
 
 import dev.n3shemmy3.kutamba.R;
+import dev.n3shemmy3.kutamba.data.model.BaseModel;
 import dev.n3shemmy3.kutamba.data.model.ListItem;
 import dev.n3shemmy3.kutamba.ui.interfaces.OnItemClickListener;
 

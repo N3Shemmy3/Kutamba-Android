@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import dev.n3shemmy3.kutamba.R;
 import dev.n3shemmy3.kutamba.data.model.ListItem;
@@ -25,7 +26,7 @@ public class TwoLineItemViewHolder extends SingleLineItemViewHolder {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ListItem item, @NonNull OnItemClickListener<ListItem> listener) {
+    public void onBindViewHolder(@NonNull ListItem item, @Nullable OnItemClickListener<ListItem> listener) {
         super.onBindViewHolder(item, listener);
         itemSecondary.setText(item.getSecondary());
     }

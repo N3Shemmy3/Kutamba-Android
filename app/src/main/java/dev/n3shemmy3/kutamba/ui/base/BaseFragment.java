@@ -6,6 +6,8 @@ import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.IdRes;
 import androidx.annotation.MainThread;
 import androidx.annotation.Nullable;
+import androidx.core.view.HapticFeedbackConstantsCompat;
+import androidx.core.view.ViewCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.navigation.NavController;
@@ -64,6 +66,7 @@ public abstract class BaseFragment extends Fragment {
 
     @MainThread
     public void navigateUp() {
+        ViewCompat.performHapticFeedback(requireView(), HapticFeedbackConstantsCompat.CONTEXT_CLICK);
         getNavController().navigateUp();
     }
 

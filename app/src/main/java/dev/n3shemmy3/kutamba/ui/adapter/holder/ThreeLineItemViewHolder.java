@@ -6,8 +6,10 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import dev.n3shemmy3.kutamba.R;
+import dev.n3shemmy3.kutamba.data.model.BaseModel;
 import dev.n3shemmy3.kutamba.data.model.ListItem;
 import dev.n3shemmy3.kutamba.ui.interfaces.OnItemClickListener;
 
@@ -24,7 +26,7 @@ public class ThreeLineItemViewHolder extends TwoLineItemViewHolder {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ListItem item, @NonNull OnItemClickListener<ListItem> listener) {
+    public void onBindViewHolder(@NonNull ListItem item,@Nullable OnItemClickListener<ListItem> listener) {
         super.onBindViewHolder(item, listener);
         itemTertiary.setText(item.getTertiary());
     }
