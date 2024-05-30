@@ -50,7 +50,7 @@ public class MainFragment extends AppFragment implements Toolbar.OnMenuItemClick
             for (int a = 0; a < 10; a++) {
                 items.add(new MediaItem());
             }
-            list.add(new SectionItem("Section" + i, items));
+            list.add(new SectionItem("Section " + i, items));
         }
         ItemAdapter itemAdapter = new ItemAdapter();
         itemAdapter.addItems(list);

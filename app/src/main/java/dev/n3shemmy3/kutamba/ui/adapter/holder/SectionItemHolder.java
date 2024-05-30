@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import dev.n3shemmy3.kutamba.R;
 import dev.n3shemmy3.kutamba.data.model.SectionItem;
+import dev.n3shemmy3.kutamba.ui.adapter.decor.HorizontalSpaceItemDecoration;
 import dev.n3shemmy3.kutamba.ui.adapter.recycler.MediaAdapter;
 import dev.n3shemmy3.kutamba.ui.interfaces.OnItemClickListener;
 
@@ -30,6 +31,7 @@ public class SectionItemHolder extends RecyclerView.ViewHolder {
 
         itemRecycler.setAdapter(adapter);
         itemRecycler.setLayoutManager(layoutManager);
+        itemRecycler.addItemDecoration(new HorizontalSpaceItemDecoration(view.getContext(), R.dimen.activity_padding_horizontal, R.dimen.zero));
     }
 
     public void onBindViewHolder(@NonNull SectionItem item, @Nullable OnItemClickListener<SectionItem> listener) {

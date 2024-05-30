@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.library.LibraryFragment">
+    android:background="?android:colorBackground"
+    tools:context=".ui.menu.MenuFragment">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBar"
@@ -22,20 +23,10 @@
             app:expandedTitleTextAppearance="@style/TextAppearance.Material3.HeadlineLarge"
             app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
 
-            <com.google.android.material.imageview.ShapeableImageView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:adjustViewBounds="true"
-                android:fitsSystemWindows="true"
-                android:scaleType="centerCrop"
-                android:src="@drawable/avatar" />
-
-
             <com.google.android.material.appbar.MaterialToolbar
                 android:id="@+id/toolBar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                android:background="@android:color/transparent"
                 android:elevation="0dp"
                 android:paddingStart="4dp"
                 android:paddingEnd="8dp"
@@ -111,7 +102,8 @@
                     android:layout_below="@id/two"
                     android:layout_toEndOf="@id/spacer"
                     android:text="@string/label_settings"
-                    app:icon="@drawable/outline_settings_24" />
+                    app:icon="@drawable/outline_settings_24"
+                    tools:ignore="OnClick" />
             </RelativeLayout>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>

@@ -5,6 +5,17 @@ import android.os.Parcelable;
 
 import androidx.annotation.NonNull;
 public class BaseModel implements Parcelable {
+
+    private String id;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
     public BaseModel(){}
     protected BaseModel(Parcel in) {
     }

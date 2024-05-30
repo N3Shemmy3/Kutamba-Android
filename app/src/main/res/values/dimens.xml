@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <dimen name="zero">0dp</dimen>
     <dimen name="activity_padding_horizontal">24dp</dimen>
     <dimen name="activity_padding_vertical">20dp</dimen>
     <dimen name="view_padding_vertical">8dp</dimen>

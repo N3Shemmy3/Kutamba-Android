@@ -28,7 +28,6 @@ public class MenuFragment extends AppFragment {
         if (savedInstanceState == null) {
          //   setContentView(new RecyclerFragment());
         }
+        view.findViewById(R.id.four).setOnClickListener(v -> navigate(R.id.openSettings));
     }
-
-
 }

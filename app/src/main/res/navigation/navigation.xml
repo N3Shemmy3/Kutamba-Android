@@ -34,7 +34,11 @@
 
     <fragment
         android:id="@+id/menuFragment"
-        android:name="dev.n3shemmy3.kutamba.ui.menu.MenuFragment" />
+        android:name="dev.n3shemmy3.kutamba.ui.menu.MenuFragment" >
+        <action
+            android:id="@+id/openSettings"
+            app:destination="@id/settingsFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/settingsFragment"

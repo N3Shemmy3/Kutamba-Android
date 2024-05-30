@@ -1,11 +1,13 @@
 package dev.n3shemmy3.kutamba.ui.adapter.recycler;
 
+import android.os.Parcelable;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import dev.n3shemmy3.kutamba.data.model.BaseModel;
 import dev.n3shemmy3.kutamba.data.model.ListItem;
@@ -21,6 +23,8 @@ import dev.n3shemmy3.kutamba.ui.interfaces.OnItemClickListener;
 public class ItemAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private ArrayList<BaseModel> list = new ArrayList<>();
+    private HashMap<String, Parcelable> scrollStates = new HashMap<>();
+    private RecyclerView.RecycledViewPool viewPool = new RecyclerView.RecycledViewPool();
 
     public ItemAdapter() {
     }
@@ -79,6 +83,20 @@ public class ItemAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         this.list.addAll(list);
     }
 
+    public String getSectionID(int position) {
+        return getItem(position).getId();
+    }
+
+    @Override
+    public void onViewRecycled(@NonNull RecyclerView.ViewHolder holder) {
+        super.onViewRecycled(holder);
+        if (holder instanceof SectionItemHolder) {
+            String key = getSectionID(holder.getLayoutPosition());
+            RecyclerView recyclerView = ((SectionItemHolder) holder).itemRecycler;
+            if (recyclerView.getLayoutManager() != null)
+                scrollStates.put(key, recyclerView.getLayoutManager().onSaveInstanceState());
+        }
+    }
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
