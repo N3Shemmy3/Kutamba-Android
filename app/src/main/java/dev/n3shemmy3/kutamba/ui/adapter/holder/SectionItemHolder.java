@@ -12,19 +12,24 @@ import androidx.recyclerview.widget.RecyclerView;
 import dev.n3shemmy3.kutamba.R;
 import dev.n3shemmy3.kutamba.data.model.ListItem;
 import dev.n3shemmy3.kutamba.data.model.SectionItem;
+import dev.n3shemmy3.kutamba.ui.adapter.recycler.MediaAdapter;
 import dev.n3shemmy3.kutamba.ui.interfaces.OnItemClickListener;
 
 public class SectionItemHolder extends RecyclerView.ViewHolder {
-    private TextView itemTitle;
-    private RecyclerView itemRecycler;
+    public TextView itemTitle;
+    public RecyclerView itemRecycler;
+    public MediaAdapter adapter;
 
     public SectionItemHolder(@NonNull View view) {
         super(view);
         itemTitle = view.findViewById(R.id.itemTitle);
         itemRecycler = view.findViewById(R.id.itemRecycler);
+        adapter = new MediaAdapter();
     }
 
     public void onBindViewHolder(@NonNull SectionItem item, @Nullable OnItemClickListener<SectionItem> listener) {
+        itemTitle.setText(item.getTitle());
+        itemRecycler.setAdapter(adapter);
 
     }
 

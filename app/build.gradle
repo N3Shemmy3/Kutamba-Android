@@ -37,6 +37,7 @@ dependencies {
     implementation libs.constraintlayout
     implementation libs.coordinator
     implementation libs.fragment
+    implementation libs.glide
     implementation libs.navigation
     implementation libs.navigationUi
    // implementation project(':materialpreference')
