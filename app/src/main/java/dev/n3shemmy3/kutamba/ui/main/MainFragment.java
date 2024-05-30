@@ -17,10 +17,9 @@ import com.google.android.material.imageview.ShapeableImageView;
 import java.util.ArrayList;
 
 import dev.n3shemmy3.kutamba.R;
-import dev.n3shemmy3.kutamba.data.model.BaseModel;
 import dev.n3shemmy3.kutamba.data.model.MediaItem;
 import dev.n3shemmy3.kutamba.data.model.SectionItem;
-import dev.n3shemmy3.kutamba.ui.adapter.recycler.ItemAdapter;
+import dev.n3shemmy3.kutamba.ui.adapter.recycler.SectionAdapter;
 import dev.n3shemmy3.kutamba.ui.base.AppFragment;
 import dev.n3shemmy3.kutamba.ui.util.InsetsUtil;
 
@@ -44,7 +43,7 @@ public class MainFragment extends AppFragment implements Toolbar.OnMenuItemClick
         avatar.setOnClickListener(v -> navigate(R.id.openMenu));
 
         ConcatAdapter concatAdapter = new ConcatAdapter();
-        ArrayList<BaseModel> list = new ArrayList<>();
+        ArrayList<SectionItem> list = new ArrayList<>();
         for (int i = 0; i < 6; i++) {
             ArrayList<MediaItem> items = new ArrayList<>();
             for (int a = 0; a < 10; a++) {
@@ -52,9 +51,9 @@ public class MainFragment extends AppFragment implements Toolbar.OnMenuItemClick
             }
             list.add(new SectionItem("Section " + i, items));
         }
-        ItemAdapter itemAdapter = new ItemAdapter();
-        itemAdapter.addItems(list);
-        concatAdapter.addAdapter(0, itemAdapter);
+        SectionAdapter sectionAdapter = new SectionAdapter();
+        sectionAdapter.addItems(list);
+        concatAdapter.addAdapter(0, sectionAdapter);
 
         recyclerView.setAdapter(concatAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));

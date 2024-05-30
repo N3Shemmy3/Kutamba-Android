@@ -1,43 +1,45 @@
 package dev.n3shemmy3.kutamba.ui.adapter.recycler;
 
+import android.os.Parcelable;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.ArrayList;
+import java.util.HashMap;
 
 import dev.n3shemmy3.kutamba.data.model.SectionItem;
+import dev.n3shemmy3.kutamba.ui.adapter.holder.BaseViewHolder;
 import dev.n3shemmy3.kutamba.ui.adapter.holder.SectionItemHolder;
+import dev.n3shemmy3.kutamba.ui.interfaces.OnItemClickListener;
 
-public class SectionAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
-
-    private final ArrayList<SectionItem> sectionItems = new ArrayList<>();
-
-    public SectionAdapter() {
-    }
-
+public class SectionAdapter extends BaseAdapter<SectionItem> {
+    private HashMap<String, Parcelable> scrollStates = new HashMap<>();
+    private RecyclerView.RecycledViewPool viewPool = new RecyclerView.RecycledViewPool();
     @NonNull
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public BaseViewHolder<SectionItem> onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         return SectionItemHolder.create(parent);
     }
-
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-        ((SectionItemHolder) holder).onBindViewHolder(getItem(position), null);
+    public void onViewRecycled(@NonNull BaseViewHolder<SectionItem> holder) {
+        super.onViewRecycled(holder);
+        //save scroll state
+        if (holder instanceof SectionItemHolder) {
+            String key = getSectionID(holder.getLayoutPosition());
+            RecyclerView recyclerView = ((SectionItemHolder) holder).itemRecycler;
+            if (recyclerView.getLayoutManager() != null)
+                scrollStates.put(key, recyclerView.getLayoutManager().onSaveInstanceState());
+        }
     }
-
     @Override
-    public int getItemCount() {
-        return sectionItems.size();
+    public void onBindViewHolder(@NonNull BaseViewHolder<SectionItem> holder, int position) {
+        super.onBindViewHolder(holder, position);
+        SectionItem item = getItem(position);
+        String key = getSectionID(holder.getLayoutPosition());
+        ((SectionItemHolder) holder).onBindViewHolder(scrollStates.get(key), viewPool,item, onItemClickListener);
     }
-
-    public SectionItem getItem(int position) {
-        return sectionItems.get(position);
-    }
-
-    public void setItem(SectionItem item) {
-        sectionItems.add(item);
+    private String getSectionID(int position) {
+        return this.items.get(position).getId();
     }
 }

@@ -17,7 +17,7 @@ import dev.n3shemmy3.kutamba.R;
 import dev.n3shemmy3.kutamba.data.model.MediaItem;
 import dev.n3shemmy3.kutamba.ui.interfaces.OnItemClickListener;
 
-public class DiscoverItemHolder extends RecyclerView.ViewHolder {
+public class DiscoverItemHolder extends BaseViewHolder<MediaItem> {
 
     private ShapeableImageView itemIcon;
     private Button itemAction;

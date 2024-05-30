@@ -16,7 +16,7 @@ import dev.n3shemmy3.kutamba.R;
 import dev.n3shemmy3.kutamba.data.model.MediaItem;
 import dev.n3shemmy3.kutamba.ui.interfaces.OnItemClickListener;
 
-public class MediaItemHolder extends RecyclerView.ViewHolder {
+public class MediaItemHolder extends BaseViewHolder<MediaItem> {
     private ShapeableImageView itemIcon;
     private TextView itemTitle;
 

@@ -50,7 +50,7 @@ public class HorizontalSpaceItemDecoration extends RecyclerView.ItemDecoration {
             outRect.left = startSpace;
         }
         if (isLastItem(view, parent)) {
-            outRect.right = endSpacing(view, parent);
+            outRect.right = startSpace;
         } else {
             outRect.right = spacing;
         }

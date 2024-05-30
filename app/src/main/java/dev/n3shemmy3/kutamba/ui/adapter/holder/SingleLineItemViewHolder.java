@@ -21,7 +21,7 @@ import dev.n3shemmy3.kutamba.ui.interfaces.OnItemClickListener;
 /**
  * A simple single line list item.
  */
-public class SingleLineItemViewHolder extends ViewHolder {
+public class SingleLineItemViewHolder extends BaseViewHolder<ListItem> {
 
     public final ShapeableImageView itemIcon;
     public final TextView itemText;
