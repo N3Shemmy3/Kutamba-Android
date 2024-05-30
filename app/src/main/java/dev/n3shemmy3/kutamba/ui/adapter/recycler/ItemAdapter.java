@@ -10,7 +10,9 @@ import java.util.ArrayList;
 import dev.n3shemmy3.kutamba.data.model.BaseModel;
 import dev.n3shemmy3.kutamba.data.model.ListItem;
 import dev.n3shemmy3.kutamba.data.model.MediaItem;
+import dev.n3shemmy3.kutamba.data.model.SectionItem;
 import dev.n3shemmy3.kutamba.ui.adapter.holder.MediaItemHolder;
+import dev.n3shemmy3.kutamba.ui.adapter.holder.SectionItemHolder;
 import dev.n3shemmy3.kutamba.ui.adapter.holder.SingleLineItemViewHolder;
 import dev.n3shemmy3.kutamba.ui.adapter.holder.ThreeLineItemViewHolder;
 import dev.n3shemmy3.kutamba.ui.adapter.holder.TwoLineItemViewHolder;
@@ -27,7 +29,8 @@ public class ItemAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         SingleLine,
         TwoLine,
         ThreeLine,
-        Media
+        Media,
+        Section
 
     }
 
@@ -47,6 +50,8 @@ public class ItemAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         BaseModel item = getItem(position);
         if (item instanceof MediaItem) {
             viewType = ItemType.Media.ordinal();
+        } else if (item instanceof SectionItem) {
+            viewType = ItemType.Section.ordinal();
         } else if (item instanceof ListItem) {
             ListItem listItem = (ListItem) item;
             if (listItem.getTertiary() != null)
@@ -83,6 +88,7 @@ public class ItemAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             case TwoLine -> viewHolder = TwoLineItemViewHolder.create(parent);
             case ThreeLine -> viewHolder = ThreeLineItemViewHolder.create(parent);
             case Media -> viewHolder = MediaItemHolder.create(parent);
+            case Section -> viewHolder = SectionItemHolder.create(parent);
             default -> viewHolder = SingleLineItemViewHolder.create(parent);
         }
         return viewHolder;
@@ -90,12 +96,17 @@ public class ItemAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+        //keep index as position changes
         int index = position;
+
         if (holder instanceof MediaItemHolder) {
-        MediaItem mediaItem = (MediaItem) getItem(index);
+            MediaItem mediaItem = (MediaItem) getItem(index);
             ((MediaItemHolder) holder).onBindViewHolder(mediaItem, null);
+        } else if (holder instanceof SectionItemHolder) {
+            SectionItem item = (SectionItem) getItem(index);
+            ((SectionItemHolder) holder).onBindViewHolder(item, (OnItemClickListener<SectionItem>) null);
         } else {
-                ListItem item = (ListItem) getItem(index);
+            ListItem item = (ListItem) getItem(index);
             if (holder instanceof ThreeLineItemViewHolder) {
                 ((ThreeLineItemViewHolder) holder).onBindViewHolder(item, (OnItemClickListener<ListItem>) null);
             } else if (holder instanceof TwoLineItemViewHolder) {

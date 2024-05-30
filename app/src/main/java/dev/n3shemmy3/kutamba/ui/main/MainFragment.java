@@ -10,9 +10,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.ConcatAdapter;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.PagerSnapHelper;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.recyclerview.widget.SnapHelper;
 
 import com.google.android.material.imageview.ShapeableImageView;
 
@@ -21,9 +19,10 @@ import java.util.ArrayList;
 import dev.n3shemmy3.kutamba.R;
 import dev.n3shemmy3.kutamba.data.model.BaseModel;
 import dev.n3shemmy3.kutamba.data.model.MediaItem;
-import dev.n3shemmy3.kutamba.ui.adapter.pager.DiscoverAdapter;
+import dev.n3shemmy3.kutamba.data.model.SectionItem;
 import dev.n3shemmy3.kutamba.ui.adapter.recycler.ItemAdapter;
 import dev.n3shemmy3.kutamba.ui.base.AppFragment;
+import dev.n3shemmy3.kutamba.ui.util.InsetsUtil;
 
 public class MainFragment extends AppFragment implements Toolbar.OnMenuItemClickListener {
 
@@ -45,15 +44,21 @@ public class MainFragment extends AppFragment implements Toolbar.OnMenuItemClick
         avatar.setOnClickListener(v -> navigate(R.id.openMenu));
 
         ConcatAdapter concatAdapter = new ConcatAdapter();
-        recyclerView.setAdapter(concatAdapter);
         ArrayList<BaseModel> list = new ArrayList<>();
         for (int i = 0; i < 6; i++) {
-            list.add(new MediaItem());
+            ArrayList<MediaItem> items = new ArrayList<>();
+            for (int a = 0; a < 10; a++) {
+                items.add(new MediaItem());
+            }
+            list.add(new SectionItem("Section" + i, items));
         }
-        recyclerView.setLayoutManager(new LinearLayoutManager(requireContext(),LinearLayoutManager.HORIZONTAL,false));
         ItemAdapter itemAdapter = new ItemAdapter();
         itemAdapter.addItems(list);
-        concatAdapter.addAdapter(0,itemAdapter);
+        concatAdapter.addAdapter(0, itemAdapter);
+
+        recyclerView.setAdapter(concatAdapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
+        InsetsUtil.addSystemBarsInsets(recyclerView, false, false, false, true);
     }
 
     @SuppressLint("NonConstantResourceId")

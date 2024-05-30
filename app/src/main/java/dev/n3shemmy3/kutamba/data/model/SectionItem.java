@@ -5,6 +5,14 @@ import java.util.UUID;
 
 public class SectionItem extends BaseModel {
     private String id = UUID.randomUUID().toString();
+    private String title;
+    private ArrayList<MediaItem> items;
+
+
+    public SectionItem(String title, ArrayList<MediaItem> items) {
+        this.title = title;
+        this.items = items;
+    }
 
     public String getId() {
         return id;
@@ -14,8 +22,6 @@ public class SectionItem extends BaseModel {
         this.id = id;
     }
 
-    private String title;
-    private ArrayList<MediaItem> items;
 
     public String getTitle() {
         return title;
