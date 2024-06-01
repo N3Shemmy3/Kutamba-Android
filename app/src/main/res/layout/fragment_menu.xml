@@ -17,8 +17,7 @@
             android:id="@+id/coltoolbar"
             style="?attr/collapsingToolbarLayoutLargeStyle"
             android:layout_width="match_parent"
-            android:minHeight="?attr/collapsingToolbarLayoutLargeSize"
-            android:layout_height="wrap_content"
+            android:layout_height="?attr/collapsingToolbarLayoutLargeSize"
             app:expandedTitleMarginStart="24dp"
             app:expandedTitleTextAppearance="@style/TextAppearance.Material3.HeadlineLarge"
             app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">

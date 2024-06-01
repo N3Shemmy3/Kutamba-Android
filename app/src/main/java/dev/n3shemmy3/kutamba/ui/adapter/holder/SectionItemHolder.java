@@ -32,6 +32,7 @@ public class SectionItemHolder extends BaseViewHolder<SectionItem> {
         adapter = new MediaAdapter();
         layoutManager = new LinearLayoutManager(view.getContext(), LinearLayoutManager.HORIZONTAL, false);
 
+        adapter.setStateRestorationPolicy(RecyclerView.Adapter.StateRestorationPolicy.PREVENT_WHEN_EMPTY);
         layoutManager.setInitialPrefetchItemCount(4);
         itemRecycler.setAdapter(adapter);
         itemRecycler.addItemDecoration(new HorizontalSpaceItemDecoration(view.getContext(), R.dimen.activity_padding_horizontal, R.dimen.zero));

@@ -1,4 +1,4 @@
-package dev.n3shemmy3.kutamba.ui.main;
+package dev.n3shemmy3.kutamba.ui.activity;
 
 import android.os.Bundle;
 

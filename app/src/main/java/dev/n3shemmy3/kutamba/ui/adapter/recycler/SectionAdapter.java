@@ -11,11 +11,10 @@ import java.util.HashMap;
 import dev.n3shemmy3.kutamba.data.model.SectionItem;
 import dev.n3shemmy3.kutamba.ui.adapter.holder.BaseViewHolder;
 import dev.n3shemmy3.kutamba.ui.adapter.holder.SectionItemHolder;
-import dev.n3shemmy3.kutamba.ui.interfaces.OnItemClickListener;
 
 public class SectionAdapter extends BaseAdapter<SectionItem> {
-    private HashMap<String, Parcelable> scrollStates = new HashMap<>();
-    private RecyclerView.RecycledViewPool viewPool = new RecyclerView.RecycledViewPool();
+    private final HashMap<String, Parcelable> scrollStates = new HashMap<>();
+    private final RecyclerView.RecycledViewPool viewPool = new RecyclerView.RecycledViewPool();
     @NonNull
     @Override
     public BaseViewHolder<SectionItem> onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

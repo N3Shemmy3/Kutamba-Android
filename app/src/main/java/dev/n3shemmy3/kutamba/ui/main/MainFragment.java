@@ -21,9 +21,10 @@ import dev.n3shemmy3.kutamba.data.model.MediaItem;
 import dev.n3shemmy3.kutamba.data.model.SectionItem;
 import dev.n3shemmy3.kutamba.ui.adapter.recycler.SectionAdapter;
 import dev.n3shemmy3.kutamba.ui.base.AppFragment;
+import dev.n3shemmy3.kutamba.ui.interfaces.OnItemClickListener;
 import dev.n3shemmy3.kutamba.ui.util.InsetsUtil;
 
-public class MainFragment extends AppFragment implements Toolbar.OnMenuItemClickListener {
+public class MainFragment extends AppFragment implements Toolbar.OnMenuItemClickListener, OnItemClickListener<SectionItem> {
 
 
     private ShapeableImageView avatar;
@@ -44,21 +45,37 @@ public class MainFragment extends AppFragment implements Toolbar.OnMenuItemClick
 
         ConcatAdapter concatAdapter = new ConcatAdapter();
         ArrayList<SectionItem> list = new ArrayList<>();
-        for (int i = 0; i < 6; i++) {
+        LinearLayoutManager layoutManager = new LinearLayoutManager(requireContext());
+        for (int i = 0; i < 3; i++) {
             ArrayList<MediaItem> items = new ArrayList<>();
             for (int a = 0; a < 10; a++) {
-                items.add(new MediaItem());
+                if (a != 9)
+                    items.add(new MediaItem("title"));
+                else
+                    items.add(new MediaItem());
             }
             list.add(new SectionItem("Section " + i, items));
         }
         SectionAdapter sectionAdapter = new SectionAdapter();
         sectionAdapter.addItems(list);
+        sectionAdapter.setStateRestorationPolicy(RecyclerView.Adapter.StateRestorationPolicy.PREVENT_WHEN_EMPTY);
+        sectionAdapter.setOnItemClickListener(this);
         concatAdapter.addAdapter(0, sectionAdapter);
-
         recyclerView.setAdapter(concatAdapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
+        recyclerView.setLayoutManager(layoutManager);
+
+        if (savedInstanceState != null  && recyclerView.getLayoutManager() != null)
+            recyclerView.getLayoutManager().onRestoreInstanceState(savedInstanceState.getParcelable("recycler"));
         InsetsUtil.addSystemBarsInsets(recyclerView, false, false, false, true);
     }
+
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        if (recyclerView.getLayoutManager() != null)
+            outState.putParcelable("recycler", recyclerView.getLayoutManager().onSaveInstanceState());
+    }
+
 
     @SuppressLint("NonConstantResourceId")
     @Override
@@ -68,5 +85,15 @@ public class MainFragment extends AppFragment implements Toolbar.OnMenuItemClick
             case R.id.actionMenu -> navigate(R.id.openMenu);
         }
         return true;
+    }
+
+    @Override
+    public void onItemClick(SectionItem item) {
+        navigate(R.id.openSearch);
+    }
+
+    @Override
+    public void onItemLongClick(SectionItem item) {
+
     }
 }

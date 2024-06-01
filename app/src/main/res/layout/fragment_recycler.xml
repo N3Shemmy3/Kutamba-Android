@@ -3,20 +3,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/refreshLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="?android:colorBackground">
 
     <FrameLayout
         android:id="@+id/wrapperView"
         android:layout_width="match_parent"
-        android:animateLayoutChanges="true"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:nestedScrollingEnabled="false"
-            android:clipToPadding="false" />
+            android:clipToPadding="false"
+            android:nestedScrollingEnabled="false" />
 
         <RelativeLayout
             android:id="@+id/statusView"

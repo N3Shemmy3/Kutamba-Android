@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 import dev.n3shemmy3.kutamba.ui.adapter.holder.BaseViewHolder;
+import dev.n3shemmy3.kutamba.ui.adapter.holder.SingleLineItemViewHolder;
 import dev.n3shemmy3.kutamba.ui.interfaces.OnItemClickListener;
 
 public abstract class BaseAdapter<T> extends RecyclerView.Adapter<BaseViewHolder<T>> {
@@ -16,7 +17,7 @@ public abstract class BaseAdapter<T> extends RecyclerView.Adapter<BaseViewHolder
     @NonNull
     @Override
     public BaseViewHolder<T> onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return null;
+        return (BaseViewHolder<T>) SingleLineItemViewHolder.create(parent);
     }
 
     @Override
