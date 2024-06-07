@@ -15,7 +15,7 @@
         android:theme="@style/Theme.Kutamba"
         tools:targetApi="tiramisu">
         <activity
-            android:name=".ui.main.MainActivity"
+            android:name=".ui.activity.MainActivity"
             android:configChanges="screenSize|orientation"
             android:exported="true"
             android:launchMode="singleTop">
@@ -25,6 +25,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ui.activity.DebugActivity"/>
     </application>
 
 </manifest>

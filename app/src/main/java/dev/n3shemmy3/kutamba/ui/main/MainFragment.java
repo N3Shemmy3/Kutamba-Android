@@ -60,6 +60,17 @@ public class MainFragment extends AppFragment implements Toolbar.OnMenuItemClick
         sectionAdapter.addItems(list);
         sectionAdapter.setStateRestorationPolicy(RecyclerView.Adapter.StateRestorationPolicy.PREVENT_WHEN_EMPTY);
         sectionAdapter.setOnItemClickListener(this);
+        sectionAdapter.setOnMediaItemListener(new OnItemClickListener<MediaItem>() {
+            @Override
+            public void onItemClick(MediaItem item) {
+                navigate(R.id.openDetails);
+            }
+
+            @Override
+            public void onItemLongClick(MediaItem item) {
+
+            }
+        });
         concatAdapter.addAdapter(0, sectionAdapter);
         recyclerView.setAdapter(concatAdapter);
         recyclerView.setLayoutManager(layoutManager);

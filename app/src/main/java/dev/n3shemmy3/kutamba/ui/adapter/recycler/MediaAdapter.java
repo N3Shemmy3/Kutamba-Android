@@ -12,9 +12,8 @@ import dev.n3shemmy3.kutamba.ui.adapter.holder.LoaderItemHolder;
 import dev.n3shemmy3.kutamba.ui.adapter.holder.MediaItemHolder;
 import dev.n3shemmy3.kutamba.ui.adapter.pager.DiscoverAdapter;
 
-public class MediaAdapter extends ListAdapter<MediaItem, RecyclerView.ViewHolder> {
-    public MediaAdapter() {
-        super(DiscoverAdapter.itemCallback);
+public class MediaAdapter extends BaseAdapter<MediaItem> {
+    public MediaAdapter(){
     }
 
     enum ItemType {
@@ -33,7 +32,7 @@ public class MediaAdapter extends ListAdapter<MediaItem, RecyclerView.ViewHolder
 
     @NonNull
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public BaseViewHolder<MediaItem> onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         ItemType value = ItemType.values()[viewType];
         BaseViewHolder viewHolder;
         switch (value) {
@@ -44,8 +43,8 @@ public class MediaAdapter extends ListAdapter<MediaItem, RecyclerView.ViewHolder
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull BaseViewHolder holder, int position) {
         if (holder instanceof MediaItemHolder)
-            ((MediaItemHolder) holder).onBindViewHolder(getItem(position), null);
+            ((MediaItemHolder) holder).onBindViewHolder(getItem(position), onItemClickListener);
     }
 }

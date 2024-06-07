@@ -48,7 +48,7 @@ public class SectionItemHolder extends BaseViewHolder<SectionItem> {
         itemRecycler.post(() -> {
             itemRecycler.setRecycledViewPool(viewPool);
             itemRecycler.setLayoutManager(layoutManager);
-            adapter.submitList(item.getItems());
+            adapter.addItems(item.getItems());
         });
         //restore scroll state
         if (itemRecycler.getLayoutManager() != null) {
@@ -58,14 +58,15 @@ public class SectionItemHolder extends BaseViewHolder<SectionItem> {
                 itemRecycler.getLayoutManager().scrollToPosition(0);
             }
         }
-        if (listener != null) {
-            itemTitle.setOnClickListener(v -> listener.onItemClick(item));
-            itemTitle.setOnLongClickListener(v -> {
-                listener.onItemLongClick(item);
-                return true;
-            });
-        }
+        if (listener == null) return;
+        itemTitle.setOnClickListener(v -> listener.onItemClick(item));
+        itemTitle.setOnLongClickListener(v -> {
+            listener.onItemLongClick(item);
+            return true;
+        });
+
     }
+
     @NonNull
     public static SectionItemHolder create(@NonNull ViewGroup parent) {
         return new SectionItemHolder(
