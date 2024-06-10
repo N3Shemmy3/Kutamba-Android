@@ -1,5 +1,6 @@
 plugins {
     alias(libs.plugins.androidApplication)
+    alias(libs.plugins.androidKotlin)
 }
 
 android {
@@ -34,17 +35,20 @@ dependencies {
     implementation libs.appcompat
     implementation libs.material
     implementation libs.activity
+    implementation libs.common
     implementation libs.constraintlayout
     implementation libs.coordinator
     implementation libs.fragment
     implementation libs.glide
     implementation libs.navigation
     implementation libs.navigationUi
+    implementation libs.livedata
    // implementation project(':materialpreference')
     implementation libs.preference
     implementation libs.recyclerview
     implementation libs.swiperefreshlayout
     implementation libs.viewpager2
+    implementation libs.viewmodel
     testImplementation libs.junit
     androidTestImplementation libs.ext.junit
     androidTestImplementation libs.espresso.core

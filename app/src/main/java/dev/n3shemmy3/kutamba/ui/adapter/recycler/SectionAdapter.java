@@ -43,7 +43,7 @@ public class SectionAdapter extends BaseAdapter<SectionItem> {
 
     @Override
     public void onBindViewHolder(@NonNull BaseViewHolder<SectionItem> holder, int position) {
-        super.onBindViewHolder(holder, position);
+
         SectionItem item = getItem(position);
         String key = getSectionID(holder.getLayoutPosition());
         ((SectionItemHolder) holder).onBindViewHolder(scrollStates.get(key), viewPool, item, onItemClickListener);

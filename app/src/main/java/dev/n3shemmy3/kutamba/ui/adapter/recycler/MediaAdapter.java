@@ -13,7 +13,7 @@ import dev.n3shemmy3.kutamba.ui.adapter.holder.MediaItemHolder;
 import dev.n3shemmy3.kutamba.ui.adapter.pager.DiscoverAdapter;
 
 public class MediaAdapter extends BaseAdapter<MediaItem> {
-    public MediaAdapter(){
+    public MediaAdapter() {
     }
 
     enum ItemType {

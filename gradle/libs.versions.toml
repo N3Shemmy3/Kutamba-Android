@@ -1,5 +1,6 @@
 [versions]
-agp = "8.3.1"
+agp = "8.3.0"
+kotlin = "1.9.22"
 junit = "4.13.2"
 junitVersion = "1.1.5"
 espressoCore = "3.5.1"
@@ -14,8 +15,8 @@ navigation = "2.7.7"
 preference = "1.2.1"
 swiperefreshlayout = "1.1.0"
 recyclerview = "1.3.2"
-viewmodel = "1.0.0"
-lifecycle = "1.1.0"
+lifecycle = "2.8.1"
+viewpager = "1.1.0"
 
 [libraries]
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -27,18 +28,19 @@ activity = { group = "androidx.activity", name = "activity", version.ref = "acti
 constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 coordinator = { group = "androidx.coordinatorlayout", name = "coordinatorlayout", version.ref = "coordinator" }
 fragment = { group = "androidx.fragment", name = "fragment", version.ref = "fragment" }
-glide = { group = "com.github.bumptech.glide", name ="glide", version.ref = "glide" }
+glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "glide" }
 navigation = { group = "androidx.navigation", name = "navigation-fragment", version.ref = "navigation" }
 navigationUi = { group = "androidx.navigation", name = "navigation-ui", version.ref = "navigation" }
 preference = { group = "androidx.preference", name = "preference", version.ref = "preference" }
 recyclerview = { group = "androidx.recyclerview", name = "recyclerview", version.ref = "recyclerview" }
 swiperefreshlayout = { group = "androidx.swiperefreshlayout", name = "swiperefreshlayout", version.ref = "swiperefreshlayout" }
-viewmodel = {group = "androidx.lifecycle", name= "lifecycle-viewmodel", version.ref = "viewmodel"}
-lifecycle = {group = "androidx.lifecycle", name= "lifecycle", version.ref = "lifecycle"}
-viewpager2 = { group = "androidx.viewpager2", name = "viewpager2", version.ref = "lifecycle" }
+viewmodel = { group = "androidx.lifecycle", name = "lifecycle-viewmodel", version.ref = "lifecycle" }
+livedata = { group = "androidx.lifecycle", name = "lifecycle-livedata", version.ref = "lifecycle" }
+common = { group = "androidx.lifecycle", name = "lifecycle-common", version.ref = "lifecycle" }
+viewpager2 = { group = "androidx.viewpager2", name = "viewpager2", version.ref = "viewpager" }
 
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 androidLibrary = { id = "com.android.library", version.ref = "agp" }
-
+androidKotlin = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
