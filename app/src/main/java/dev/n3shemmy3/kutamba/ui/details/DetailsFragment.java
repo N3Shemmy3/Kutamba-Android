@@ -16,4 +16,10 @@ public class DetailsFragment extends AppFragment {
     public int getLayoutId() {
         return R.layout.fragment_details;
     }
+    
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        toolbar.setNavigationIcon(R.drawable.outline_arrow_back_24);
+    }
 }
