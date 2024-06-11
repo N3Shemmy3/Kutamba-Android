@@ -1,0 +1,20 @@
+{
+  "allFiles": [
+    {
+      "file": "/storage/emulated/0/AndroidIDEProjects/Kutamba-Android/gradle.properties",
+      "selection": {
+        "end": {
+          "column": 50,
+          "index": 481,
+          "line": 8
+        },
+        "start": {
+          "column": 50,
+          "index": 481,
+          "line": 8
+        }
+      }
+    }
+  ],
+  "selectedFile": "/storage/emulated/0/AndroidIDEProjects/Kutamba-Android/gradle.properties"
+}
