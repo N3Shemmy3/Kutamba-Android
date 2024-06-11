@@ -18,6 +18,7 @@ recyclerview = "1.3.2"
 lifecycle = "2.8.1"
 viewpager = "1.1.0"
 legacySupportV4 = "1.0.0"
+retrofit = "2.9.0"
 zoomage = "1.3.1"
 
 [libraries]
@@ -41,6 +42,8 @@ lifecycle-livedata = { group = "androidx.lifecycle", name = "lifecycle-livedata"
 common = { group = "androidx.lifecycle", name = "lifecycle-common", version.ref = "lifecycle" }
 viewpager2 = { group = "androidx.viewpager2", name = "viewpager2", version.ref = "viewpager" }
 legacy-support-v4 = { group = "androidx.legacy", name = "legacy-support-v4", version.ref = "legacySupportV4" }
+retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version = "retrofit" }
+retrofit-converter-gson = { group = "com.squareup.retrofit2", name = "converter-gson", version = "retrofit" }
 zoomage = { group = "com.jsibbold", name = "zoomage", version.ref = "zoomage" }
 
 [plugins]

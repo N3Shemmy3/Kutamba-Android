@@ -52,6 +52,8 @@ dependencies {
     implementation libs.recyclerview
     implementation libs.swiperefreshlayout
     implementation libs.viewpager2
+    implementation libs.retrofit
+    implementation libs.retrofit.converter.gson
     implementation libs.zoomage
     testImplementation libs.junit
     androidTestImplementation libs.ext.junit
