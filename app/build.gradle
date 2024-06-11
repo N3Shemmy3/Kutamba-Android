@@ -45,14 +45,14 @@ dependencies {
     implementation libs.glide
     implementation libs.navigation
     implementation libs.navigationUi
-    implementation libs.livedata
-   // implementation project(':materialpreference')
+    implementation libs.lifecycle.livedata
+    implementation libs.lifecycle.viewmodel
+    implementation libs.legacy.support.v4
     implementation libs.preference
     implementation libs.recyclerview
     implementation libs.swiperefreshlayout
     implementation libs.viewpager2
-    implementation libs.viewmodel
-    implementation libs.legacy.support.v4
+    implementation libs.zoomage
     testImplementation libs.junit
     androidTestImplementation libs.ext.junit
     androidTestImplementation libs.espresso.core

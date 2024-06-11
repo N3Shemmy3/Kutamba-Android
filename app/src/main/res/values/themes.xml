@@ -11,11 +11,6 @@
         <item name="android:windowLightStatusBar">@bool/isLightTheme</item>
         <item name="android:navigationBarColor">@android:color/transparent</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
-        <!--
-        <item name="android:textAppearanceListItem">@style/TextAppearance.Preference.MaterialTitle
-        </item>
-        <item name="preferenceTheme">@style/MaterialPreference.Theme</item>
-       -->
         <item name="android:listPreferredItemPaddingLeft">@dimen/activity_padding_horizontal</item>
         <item name="android:listPreferredItemPaddingRight">@dimen/activity_padding_horizontal</item>
 
@@ -68,5 +63,16 @@
         <item name="colorSurfaceContainer">@color/md_theme_surfaceContainer</item>
         <item name="colorSurfaceContainerHigh">@color/md_theme_surfaceContainerHigh</item>
         <item name="colorSurfaceContainerHighest">@color/md_theme_surfaceContainerHighest</item>
+    </style>
+
+
+    <style name="Theme.FullScreen.Dialog" parent="Base.Theme.Kutamba">
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowAnimationStyle">@style/Theme.FadeWindow</item>
+    </style>
+
+    <style name="Theme.FadeWindow" parent="">
+        <item name="android:windowEnterAnimation">@android:anim/fade_in</item>
+        <item name="android:windowExitAnimation">@android:anim/fade_out</item>
     </style>
 </resources>

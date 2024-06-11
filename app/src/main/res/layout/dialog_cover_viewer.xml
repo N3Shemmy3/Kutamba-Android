@@ -1,57 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-     xmlns:android="http://schemas.android.com/apk/res/android"
-     xmlns:app="http://schemas.android.com/apk/res-auto"
-     android:layout_height="match_parent"
-     android:layout_width="match_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
 
-    <com.google.android.material.imageview.ShapeableImageView
-         android:layout_height="match_parent"
-         android:layout_width="match_parent"
-         android:src="@drawable/oddtaxi"
-         android:id="@+id/cover" />
+    <com.jsibbold.zoomage.ZoomageView
+        android:id="@+id/cover"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/oddtaxi"
+        app:zoomage_animateOnReset="true"
+        app:zoomage_autoCenter="true"
+        app:zoomage_autoResetMode="UNDER"
+        app:zoomage_maxScale="8"
+        app:zoomage_minScale="0.6"
+        app:zoomage_restrictBounds="false"
+        app:zoomage_translatable="true"
+        app:zoomage_zoomable="true" />
 
-    <LinearLayout
-         android:layout_height="?actionBarSize"
-         android:layout_width="match_parent"
-         android:paddingVertical="@dimen/view_padding_vertical"
-         android:orientation="horizontal"
-         android:layout_alignParentTop="true"
-         android:paddingHorizontal="@dimen/view_padding_horizontal">
-
-        <Button
-             android:layout_height="wrap_content"
-             android:layout_width="wrap_content"
-             app:icon="@drawable/outline_clear_24"
-             android:tooltipText="@string/action_close"
-             style="@style/Widget.Material3.Button.IconButton"
-             android:id="@+id/actionClose" />
-
-        <Space
-             android:layout_height="wrap_content"
-             android:layout_width="0dp"
-             android:layout_weight="1" />
-
-        <Button
-             android:layout_height="wrap_content"
-             android:layout_width="wrap_content"
-             app:icon="@drawable/outline_save_24"
-             android:tooltipText="@string/action_save"
-             style="@style/Widget.Material3.Button.IconButton"
-             android:id="@+id/actionSave" />
-
-        <Space
-             android:layout_height="wrap_content"
-             android:layout_width="@dimen/view_padding_vertical" />
-
-        <Button
-             android:layout_height="wrap_content"
-             android:layout_width="wrap_content"
-             app:icon="@drawable/outline_share_24"
-             android:tooltipText="@string/action_share"
-             style="@style/Widget.Material3.Button.IconButton"
-             android:id="@+id/actionShare" />
-
-    </LinearLayout>
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolBar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@android:color/transparent"
+        android:elevation="0dp"
+        app:menu="@menu/details_cover_appbar"
+        app:navigationIcon="@drawable/outline_clear_24" />
 
 </RelativeLayout>
