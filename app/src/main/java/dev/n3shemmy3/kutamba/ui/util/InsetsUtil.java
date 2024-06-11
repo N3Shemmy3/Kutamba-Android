@@ -15,7 +15,7 @@ public class InsetsUtil {
     public static void addSystemBarsInsets(View view, boolean left, boolean top, boolean right, boolean bottom) {
         ViewCompat.setOnApplyWindowInsetsListener(view, (v, windowInsets) -> {
             Insets insets = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars());
-            view.setPadding(left ? insets.left : 0, top ? insets.top : 0, right ? insets.right : 0, bottom ? insets.bottom : 0);
+            view.setPadding(left ? insets.left : view.getPaddingLeft(), top ? insets.top : view.getPaddingTop(), right ? insets.right : view.getPaddingRight(), bottom ? insets.bottom : view.getPaddingBottom());
             return WindowInsetsCompat.CONSUMED;
         });
     }

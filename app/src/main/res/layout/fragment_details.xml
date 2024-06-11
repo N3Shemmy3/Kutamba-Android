@@ -1,18 +1,147 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:background="?android:colorBackground">
 
-   <com.google.android.material.imageview.ShapeableImageView
-       android:id="@+id/background"
-       android:scaleType="fitCenter"
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:adjustViewBounds="true"
-       app:srcCompat="@drawable/avatar"
-       android:foreground="@color/header_foreground_overlay"
-       />
-    <include layout="@layout/fragment_collappbar"/>
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:liftOnScrollTargetViewId="@id/recyclerView">
 
-</FrameLayout>
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:paddingStart="4dp"
+            android:paddingEnd="8dp"
+            app:menu="@menu/details_appbar"
+            app:navigationIcon="@drawable/outline_arrow_back_24"
+            app:title="Odd Taxi" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/fragmentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <LinearLayout
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <!-- Header-->
+            <RelativeLayout
+                android:id="@+id/header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/activity_padding_horizontal"
+                android:paddingTop="@dimen/activity_padding_vertical">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/headerCover"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Small"
+                    app:srcCompat="@drawable/avatar" />
+
+                <Space
+                    android:id="@+id/spacer"
+                    android:layout_width="@dimen/view_padding_horizontal"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/headerCover" />
+
+                <TextView
+                    android:id="@+id/headerTitle"
+                    style="@style/TextAppearance.Material3.TitleLarge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/activity_padding_horizontal"
+                    android:layout_toEndOf="@id/spacer"
+                    android:text="Odd Taxi" />
+
+                <TextView
+                    android:id="@+id/headerSubTitle"
+                    style="@style/TextAppearance.Material3.BodyMedium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/headerTitle"
+                    android:layout_toEndOf="@id/spacer"
+                    android:text="Ikamari Hinata" />
+
+                <TextView
+                    android:id="@+id/headerStatus"
+                    style="@style/TextAppearance.Material3.BodyMedium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/headerSubTitle"
+                    android:layout_toEndOf="@id/spacer"
+                    android:text="Ongoing" />
+
+                <View
+                    android:id="@+id/dot"
+                    android:layout_width="2dp"
+                    android:layout_height="2dp"
+                    android:layout_below="@id/headerSubTitle"
+                    android:layout_alignBaseline="@id/headerStatus"
+                    android:layout_margin="5dp"
+                    android:layout_toEndOf="@id/headerStatus"
+                    android:background="?colorOnSurface" />
+
+                <TextView
+                    android:id="@+id/headerDate"
+                    style="@style/TextAppearance.Material3.BodyMedium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/headerSubTitle"
+                    android:layout_toEndOf="@id/dot"
+                    android:text="2024 Spring" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/headerBio"
+                style="@style/TextAppearance.Material3.BodyMedium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/activity_padding_horizontal"
+                android:paddingVertical="@dimen/view_padding_vertical"
+                android:text="@string/lorem" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:id="@+id/bottomBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="?colorSurface"
+        android:paddingHorizontal="@dimen/activity_padding_horizontal"
+        android:paddingVertical="@dimen/view_padding_vertical">
+
+        <Button
+            android:id="@+id/bookmark"
+            style="@style/Widget.Material3.Button.TextButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:minHeight="?actionBarSize"
+            android:text="Bookmark"
+            app:icon="@drawable/outline_star_outline_24"
+            app:iconGravity="textStart"
+            app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.ExtraSmall" />
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
