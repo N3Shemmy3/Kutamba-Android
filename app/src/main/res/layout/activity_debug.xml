@@ -55,8 +55,9 @@
                 android:id="@+id/logs"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingBottom="86dp"
                 android:paddingHorizontal="@dimen/activity_padding_horizontal"
+                android:paddingBottom="86dp"
+                android:textIsSelectable="true"
                 android:typeface="monospace"
                 app:layout_collapseMode="pin" />
         </HorizontalScrollView>
