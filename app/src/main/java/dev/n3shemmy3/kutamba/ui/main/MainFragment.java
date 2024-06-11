@@ -75,7 +75,7 @@ public class MainFragment extends AppFragment implements Toolbar.OnMenuItemClick
         recyclerView.setAdapter(concatAdapter);
         recyclerView.setLayoutManager(layoutManager);
 
-        if (savedInstanceState != null  && recyclerView.getLayoutManager() != null)
+        if (savedInstanceState != null && recyclerView.getLayoutManager() != null)
             recyclerView.getLayoutManager().onRestoreInstanceState(savedInstanceState.getParcelable("recycler"));
         InsetsUtil.addSystemBarsInsets(recyclerView, false, false, false, true);
     }
@@ -83,8 +83,9 @@ public class MainFragment extends AppFragment implements Toolbar.OnMenuItemClick
     @Override
     public void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
-        if (recyclerView.getLayoutManager() != null)
-            outState.putParcelable("recycler", recyclerView.getLayoutManager().onSaveInstanceState());
+        if (recyclerView == null) return;
+        if (recyclerView.getLayoutManager() != null) return;
+        outState.putParcelable("recycler", recyclerView.getLayoutManager().onSaveInstanceState());
     }
 
 
