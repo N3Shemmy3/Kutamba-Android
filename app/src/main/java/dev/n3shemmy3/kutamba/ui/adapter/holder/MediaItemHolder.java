@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.swiperefreshlayout.widget.CircularProgressDrawable;
 
 import com.bumptech.glide.Glide;
 import com.google.android.material.card.MaterialCardView;
@@ -32,16 +33,23 @@ public class MediaItemHolder extends BaseViewHolder<MediaItem> {
 
     @NonNull
     public static MediaItemHolder create(@NonNull ViewGroup parent) {
-        return new MediaItemHolder(LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.item_media, parent, false));
+        return new MediaItemHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_media, parent, false));
     }
 
     @SuppressLint("SetTextI18n")
     public void onBindViewHolder(@NonNull MediaItem item, @Nullable OnItemClickListener<MediaItem> listener) {
         itemTitle.setText(item.getTitle());
-        Glide.with(itemIcon.getContext())
-                .load(item.getImage())
-                .into(itemIcon);
+
+        itemIcon.post(() -> {
+            CircularProgressDrawable drawable = new CircularProgressDrawable(itemIcon.getContext());
+            drawable.setStrokeWidth(2f);
+            drawable.setCenterRadius(24f);
+            drawable.start();
+            Glide.with(itemIcon.getContext())
+                    .load(item.getImage())
+                    .placeholder(drawable)
+                    .into(itemIcon);
+        });
 
 
         if (listener == null) return;

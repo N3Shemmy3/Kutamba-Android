@@ -59,6 +59,7 @@ public class SectionItemHolder extends BaseViewHolder<SectionItem> {
             }
         }
         if (listener == null) return;
+        itemView.setOnClickListener(null);
         itemTitle.setOnClickListener(v -> listener.onItemClick(item));
         itemTitle.setOnLongClickListener(v -> {
             listener.onItemLongClick(item);

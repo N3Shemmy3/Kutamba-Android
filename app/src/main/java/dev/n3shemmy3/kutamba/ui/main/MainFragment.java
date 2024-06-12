@@ -77,7 +77,9 @@ public class MainFragment extends AppFragment implements Toolbar.OnMenuItemClick
     }
 
     private void fetchMedia() {
+
         viewModel.getAnime().observe(getViewLifecycleOwner(), mediaItems -> {
+            sectionAdapter.addItem(new SectionItem("Continue watching", mediaItems));
             sectionAdapter.addItem(new SectionItem("Popular Anime", mediaItems));
         });
         viewModel.getAnimeMovies().observe(getViewLifecycleOwner(), mediaItems -> {
