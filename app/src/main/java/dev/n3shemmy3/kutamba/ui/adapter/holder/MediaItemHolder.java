@@ -12,6 +12,7 @@ import androidx.swiperefreshlayout.widget.CircularProgressDrawable;
 
 import com.bumptech.glide.Glide;
 import com.google.android.material.card.MaterialCardView;
+import com.google.android.material.color.MaterialColors;
 import com.google.android.material.imageview.ShapeableImageView;
 
 import dev.n3shemmy3.kutamba.R;
@@ -44,6 +45,10 @@ public class MediaItemHolder extends BaseViewHolder<MediaItem> {
             CircularProgressDrawable drawable = new CircularProgressDrawable(itemIcon.getContext());
             drawable.setStrokeWidth(5f);
             drawable.setCenterRadius(12f);
+                drawable.setColorSchemeColors(MaterialColors.getColor(
+                itemIcon,
+                com.google.android.material.R.attr.colorOnPrimary
+        ));
             drawable.start();
             Glide.with(itemIcon.getContext())
                     .load(item.getImage())

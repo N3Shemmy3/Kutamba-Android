@@ -26,10 +26,7 @@
                 android:id="@+id/toolBar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                android:background="@android:color/transparent"
-                android:elevation="0dp"
-                android:paddingStart="4dp"
-                android:paddingEnd="8dp"
+                style="@style/Material.Toolbar"
                 app:layout_collapseMode="pin"
                 app:menu="@menu/main_appbar"
                 app:title="@string/label_browse">
@@ -39,7 +36,7 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
+   <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

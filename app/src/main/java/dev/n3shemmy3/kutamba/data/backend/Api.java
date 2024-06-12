@@ -8,6 +8,7 @@ import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public interface Api {
+    
     @GET("/{media}/{provider}/{query}")
     Call<Receiver> fetchMedia(
             @Path("media") String media,

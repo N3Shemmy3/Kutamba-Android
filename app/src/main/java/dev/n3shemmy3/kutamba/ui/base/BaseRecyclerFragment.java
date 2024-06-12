@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.progressindicator.CircularProgressIndicator;
 
 import dev.n3shemmy3.kutamba.R;
+import dev.n3shemmy3.kutamba.ui.util.InsetsUtil;
 import dev.n3shemmy3.kutamba.ui.widget.ThemedSwipeRefreshLayout;
 
 /*
@@ -66,6 +67,8 @@ public abstract class BaseRecyclerFragment extends BaseFragment {
         recyclerView.setHasFixedSize(true);
         recyclerView.setRecycledViewPool(new RecyclerView.RecycledViewPool());
         recyclerView.setItemAnimator(new DefaultItemAnimator());
+        InsetsUtil.addSystemBarsInsets(recyclerView,false,false,false,true);
+        showLoader();
         return root;
     }
     @Override
