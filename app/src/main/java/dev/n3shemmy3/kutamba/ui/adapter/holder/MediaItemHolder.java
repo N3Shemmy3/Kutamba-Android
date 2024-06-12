@@ -42,8 +42,8 @@ public class MediaItemHolder extends BaseViewHolder<MediaItem> {
 
         itemIcon.post(() -> {
             CircularProgressDrawable drawable = new CircularProgressDrawable(itemIcon.getContext());
-            drawable.setStrokeWidth(2f);
-            drawable.setCenterRadius(24f);
+            drawable.setStrokeWidth(5f);
+            drawable.setCenterRadius(12f);
             drawable.start();
             Glide.with(itemIcon.getContext())
                     .load(item.getImage())

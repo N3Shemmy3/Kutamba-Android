@@ -86,15 +86,15 @@ public class MainViewModel extends AndroidViewModel {
                     switch (value) {
                         case Movies -> {
                             if (isMovie)
-                                movies.setValue(results);
+                                movies.postValue(results);
                             else
-                                animeMovies.setValue(results);
+                                animeMovies.postValue(results);
                         }
                         case Series -> {
                             if (isMovie)
-                                tvShows.setValue(results);
+                                tvShows.postValue(results);
                             else
-                                animeShows.setValue(results);
+                                animeShows.postValue(results);
                         }
                     }
                 }
