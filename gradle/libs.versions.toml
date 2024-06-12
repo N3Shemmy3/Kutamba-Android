@@ -33,7 +33,7 @@ coordinator = { group = "androidx.coordinatorlayout", name = "coordinatorlayout"
 fragment = { group = "androidx.fragment", name = "fragment", version.ref = "fragment" }
 glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "glide" }
 navigation = { group = "androidx.navigation", name = "navigation-fragment", version.ref = "navigation" }
-navigationUi = { group = "androidx.navigation", name = "navigation-ui", version.ref = "navigation" }
+navigation-ui = { group = "androidx.navigation", name = "navigation-ui", version.ref = "navigation" }
 preference = { group = "androidx.preference", name = "preference", version.ref = "preference" }
 recyclerview = { group = "androidx.recyclerview", name = "recyclerview", version.ref = "recyclerview" }
 swiperefreshlayout = { group = "androidx.swiperefreshlayout", name = "swiperefreshlayout", version.ref = "swiperefreshlayout" }
@@ -42,8 +42,8 @@ lifecycle-livedata = { group = "androidx.lifecycle", name = "lifecycle-livedata"
 common = { group = "androidx.lifecycle", name = "lifecycle-common", version.ref = "lifecycle" }
 viewpager2 = { group = "androidx.viewpager2", name = "viewpager2", version.ref = "viewpager" }
 legacy-support-v4 = { group = "androidx.legacy", name = "legacy-support-v4", version.ref = "legacySupportV4" }
-retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version = "retrofit" }
-retrofit-converter-gson = { group = "com.squareup.retrofit2", name = "converter-gson", version = "retrofit" }
+retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
+retrofit-converter-gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofit" }
 zoomage = { group = "com.jsibbold", name = "zoomage", version.ref = "zoomage" }
 
 [plugins]

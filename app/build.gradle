@@ -28,13 +28,9 @@ android {
         sourceCompatibility JavaVersion.VERSION_17
         targetCompatibility JavaVersion.VERSION_17
     }
-    buildFeatures {
-        viewBinding true
-    }
 }
 
 dependencies {
-
     implementation libs.appcompat
     implementation libs.material
     implementation libs.activity
@@ -44,7 +40,7 @@ dependencies {
     implementation libs.fragment
     implementation libs.glide
     implementation libs.navigation
-    implementation libs.navigationUi
+    implementation libs.navigation.ui
     implementation libs.lifecycle.livedata
     implementation libs.lifecycle.viewmodel
     implementation libs.legacy.support.v4
