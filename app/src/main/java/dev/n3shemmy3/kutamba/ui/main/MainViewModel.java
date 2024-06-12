@@ -25,8 +25,11 @@ public class MainViewModel extends AndroidViewModel {
     private Api apiService;
 
 
-    private MutableLiveData<ArrayList<MediaItem>> anime = new MutableLiveData<>();
+    private MutableLiveData<ArrayList<MediaItem>> animeMovies = new MutableLiveData<>();
+    private MutableLiveData<ArrayList<MediaItem>> animeShows = new MutableLiveData<>();
+
     private MutableLiveData<ArrayList<MediaItem>> movies = new MutableLiveData<>();
+    private MutableLiveData<ArrayList<MediaItem>> tvShows = new MutableLiveData<>();
 
     public MainViewModel(@NonNull Application application) {
         super(application);
@@ -42,24 +45,35 @@ public class MainViewModel extends AndroidViewModel {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         apiService = retrofit.create(Api.class);
-        getMedia(new Scraper("anime", "gogoanime", "popular", Scraper.MediaType.Anime, 0));
+        getMedia(new Scraper("anime", "gogoanime", "popular", Scraper.MediaType.Series, 0));
+        getMedia(new Scraper("anime", "gogoanime", "popular", Scraper.MediaType.Movies, 0));
         getMedia(new Scraper("movies", "flixhq", "popular", Scraper.MediaType.Movies, 0));
+        getMedia(new Scraper("movies", "flixhq", "popular", Scraper.MediaType.Series, 0));
 
     }
 
     public MutableLiveData<ArrayList<MediaItem>> getAnime() {
-        return anime;
+        return animeShows;
+    }
+
+    public MutableLiveData<ArrayList<MediaItem>> getAnimeMovies() {
+        return animeMovies;
     }
 
     public MutableLiveData<ArrayList<MediaItem>> getMovies() {
         return movies;
     }
 
+
+    public MutableLiveData<ArrayList<MediaItem>> getTvShows() {
+        return tvShows;
+    }
+
     public void getMedia(Scraper scraper) {
         Call<Receiver> call = apiService.fetchMedia(
                 scraper.getMedia(),
                 scraper.getProvider(),
-                scraper.getQuery(),
+                scraper.getType() == Scraper.MediaType.Movies ? "movies" : scraper.getQuery(),
                 scraper.getPage()
         );
         call.enqueue(new Callback<>() {
@@ -68,9 +82,20 @@ public class MainViewModel extends AndroidViewModel {
                 if (response.isSuccessful() && response.body() != null) {
                     ArrayList<MediaItem> results = new ArrayList<>(response.body().getResults());
                     Scraper.MediaType value = Scraper.MediaType.values()[scraper.getType().ordinal()];
+                    boolean isMovie = scraper.getMedia().equalsIgnoreCase("movies");
                     switch (value) {
-                        case Anime -> anime.setValue(results);
-                        case Movies -> movies.setValue(results);
+                        case Movies -> {
+                            if (isMovie)
+                                movies.setValue(results);
+                            else
+                                animeMovies.setValue(results);
+                        }
+                        case Series -> {
+                            if (isMovie)
+                                tvShows.setValue(results);
+                            else
+                                animeShows.setValue(results);
+                        }
                     }
                 }
             }

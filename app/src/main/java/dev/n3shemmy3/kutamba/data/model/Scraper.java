@@ -3,7 +3,7 @@ package dev.n3shemmy3.kutamba.data.model;
 public class Scraper extends BaseModel {
 
     public static enum MediaType {
-        Anime,
+        Series,
         Movies,
     }
 
