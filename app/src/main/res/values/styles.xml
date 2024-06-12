@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <style name="Material.Toolbar" parent="Widget.Material3.Toolbar">
+        <item name="android:paddingStart">4dp</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:paddingEnd">8dp</item>
+        <item name="android:elevation">0dp</item>
+    </style>
+
     <style name="More.Fragment.Button" parent="Widget.Material3.Button.TonalButton">
         <item name="android:paddingVertical">16dp</item>
         <item name="android:paddingHorizontal">10dp</item>
@@ -8,4 +16,5 @@
         <item name="android:inset">0dp</item>
         <item name="shapeAppearanceOverlay">@style/ShapeAppearance.Material3.Corner.Small</item>
     </style>
+
 </resources>

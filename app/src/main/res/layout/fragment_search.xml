@@ -48,7 +48,9 @@
                     android:layout_height="wrap_content"
                     android:contentDescription="@string/action_search"
                     android:tooltipText="@string/label_search"
-                    app:icon="@drawable/outline_search_24" />
+                    app:icon="@drawable/outline_search_24"
+                    app:iconSize="24dp"
+                    app:iconTint="@color/mtrl_text_title" />
 
                 <Button
                     android:id="@+id/clearButton"
@@ -58,7 +60,9 @@
                     android:contentDescription="@string/action_close"
                     android:tooltipText="@string/action_close"
                     android:visibility="gone"
-                    app:icon="@drawable/outline_clear_24" />
+                    app:icon="@drawable/outline_clear_24"
+                    app:iconSize="24dp"
+                    app:iconTint="@color/mtrl_text_title" />
             </LinearLayout>
         </com.google.android.material.appbar.MaterialToolbar>
 
@@ -67,6 +71,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:paddingHorizontal="@dimen/activity_padding_horizontal"
+            android:visibility="gone"
             app:singleLine="true"
             app:singleSelection="true">
 

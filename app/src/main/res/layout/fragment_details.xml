@@ -16,9 +16,7 @@
             android:id="@+id/toolBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
-            android:paddingStart="4dp"
-            android:paddingEnd="8dp"
+            style="@style/Material.Toolbar"
             app:menu="@menu/details_appbar"
             app:navigationIcon="@drawable/outline_arrow_back_24"
             app:title="Odd Taxi" />

@@ -26,9 +26,7 @@
                 android:id="@+id/toolBar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                android:elevation="0dp"
-                android:paddingStart="4dp"
-                android:paddingEnd="8dp"
+                style="@style/Material.Toolbar"
                 app:layout_collapseMode="pin"
                 app:title="@string/label_more">
 

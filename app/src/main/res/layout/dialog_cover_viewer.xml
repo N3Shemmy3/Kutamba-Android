@@ -23,8 +23,7 @@
         android:id="@+id/toolBar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@android:color/transparent"
-        android:elevation="0dp"
+        style="@style/Material.Toolbar"
         app:menu="@menu/details_cover_appbar"
         app:navigationIcon="@drawable/outline_clear_24" />
 

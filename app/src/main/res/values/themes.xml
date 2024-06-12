@@ -13,7 +13,7 @@
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:listPreferredItemPaddingLeft">@dimen/activity_padding_horizontal</item>
         <item name="android:listPreferredItemPaddingRight">@dimen/activity_padding_horizontal</item>
-
+        <item name="toolbarStyle">@style/Material.Toolbar</item>
     </style>
 
     <style name="Theme.Kutamba" parent="Base.Theme.Kutamba">
