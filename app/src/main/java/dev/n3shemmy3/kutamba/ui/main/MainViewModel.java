@@ -42,7 +42,7 @@ public class MainViewModel extends AndroidViewModel {
         apiService = retrofit.create(Api.class);
     }
 
-    public void getLatestMedia(Scraper scraper) {
+    public void getMedia(Scraper scraper) {
         ArrayList<MediaItem> results = new ArrayList<>();
         Call<Reciever> call = apiService.fetchMedia(
                 scraper.getMedia(),
