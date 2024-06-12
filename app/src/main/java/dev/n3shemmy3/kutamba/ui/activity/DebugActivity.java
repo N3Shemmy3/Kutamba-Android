@@ -9,7 +9,6 @@ import android.util.Log;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
-import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.appbar.MaterialToolbar;
@@ -37,27 +36,6 @@ public class DebugActivity extends AppCompatActivity {
         setContentView(R.layout.activity_debug);
         findViews();
         logic(state);
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            getOnBackInvokedDispatcher().registerOnBackInvokedCallback(1, () -> {
-                navigateUp();
-            });
-        } else {
-            getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
-                @Override
-                public void handleOnBackPressed() {
-                    navigateUp();
-                }
-            });
-        }
-    }
-
-    private void navigateUp() {
-        if (logs.toString().isEmpty()) {
-            finish();
-        } else {
-            finishAffinity();
-        }
     }
 
     private void findViews() {
