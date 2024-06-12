@@ -20,6 +20,7 @@ public class App extends Application {
                 .setUseDefaultSharedPreference(true)
                 .build();
     }
+
     void getCrashLogs() {
         Thread.setDefaultUncaughtExceptionHandler((t, e) -> {
             String exceptionMessage = Log.getStackTraceString(e);
