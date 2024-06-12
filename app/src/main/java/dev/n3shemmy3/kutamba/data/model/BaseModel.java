@@ -4,9 +4,10 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 import androidx.annotation.NonNull;
+
 public class BaseModel implements Parcelable {
 
-    private String id;
+    public String id;
 
     public String getId() {
         return id;
@@ -16,7 +17,9 @@ public class BaseModel implements Parcelable {
         this.id = id;
     }
 
-    public BaseModel(){}
+    public BaseModel() {
+    }
+
     protected BaseModel(Parcel in) {
     }
 

@@ -2,16 +2,16 @@ package dev.n3shemmy3.kutamba.data.model;
 
 import java.util.ArrayList;
 
-public class Reciever extends BaseModel {
+public class Receiver extends BaseModel {
     private int currentPage;
     private boolean hasNextPage;
     private String message;
     private ArrayList<MediaItem> results;
 
-    public Reciever() {
+    public Receiver() {
     }
 
-    public Reciever(int currentPage, boolean hasNextPage, String message, ArrayList<MediaItem> results) {
+    public Receiver(int currentPage, boolean hasNextPage, String message, ArrayList<MediaItem> results) {
         this.currentPage = currentPage;
         this.hasNextPage = hasNextPage;
         this.message = message;

@@ -8,13 +8,11 @@ import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
-import androidx.recyclerview.widget.ConcatAdapter;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.imageview.ShapeableImageView;
-
-import java.util.ArrayList;
 
 import dev.n3shemmy3.kutamba.R;
 import dev.n3shemmy3.kutamba.data.model.MediaItem;
@@ -29,6 +27,9 @@ public class MainFragment extends AppFragment implements Toolbar.OnMenuItemClick
 
     private ShapeableImageView avatar;
     private RecyclerView recyclerView;
+    private LinearLayoutManager layoutManager;
+    private SectionAdapter sectionAdapter;
+    private MainViewModel viewModel;
 
     @Override
     public int getLayoutId() {
@@ -37,27 +38,15 @@ public class MainFragment extends AppFragment implements Toolbar.OnMenuItemClick
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        viewModel = new ViewModelProvider(this).get(MainViewModel.class);
         recyclerView = view.findViewById(R.id.recyclerView);
 
         toolbar.setOnMenuItemClickListener(this);
         avatar = toolbar.getMenu().findItem(R.id.actionMenu).getActionView().findViewById(R.id.avatar);
         avatar.setOnClickListener(v -> navigate(R.id.openMenu));
 
-        ConcatAdapter concatAdapter = new ConcatAdapter();
-        ArrayList<SectionItem> list = new ArrayList<>();
-        LinearLayoutManager layoutManager = new LinearLayoutManager(requireContext());
-        for (int i = 0; i < 3; i++) {
-            ArrayList<MediaItem> items = new ArrayList<>();
-            for (int a = 0; a < 10; a++) {
-                if (a != 9)
-                    items.add(new MediaItem("title"));
-                else
-                    items.add(new MediaItem());
-            }
-            list.add(new SectionItem("Section " + i, items));
-        }
-        SectionAdapter sectionAdapter = new SectionAdapter();
-        sectionAdapter.addItems(list);
+        sectionAdapter = new SectionAdapter();
+        layoutManager = new LinearLayoutManager(requireContext());
         sectionAdapter.setStateRestorationPolicy(RecyclerView.Adapter.StateRestorationPolicy.PREVENT_WHEN_EMPTY);
         sectionAdapter.setOnItemClickListener(this);
         sectionAdapter.setOnMediaItemListener(new OnItemClickListener<>() {
@@ -71,10 +60,9 @@ public class MainFragment extends AppFragment implements Toolbar.OnMenuItemClick
 
             }
         });
-        concatAdapter.addAdapter(0, sectionAdapter);
-        recyclerView.setAdapter(concatAdapter);
+        recyclerView.setAdapter(sectionAdapter);
         recyclerView.setLayoutManager(layoutManager);
-
+        fetchMedia();
         if (savedInstanceState != null && recyclerView.getLayoutManager() != null)
             recyclerView.getLayoutManager().onRestoreInstanceState(savedInstanceState.getParcelable("recycler"));
         InsetsUtil.addSystemBarsInsets(recyclerView, false, false, false, true);
@@ -88,6 +76,14 @@ public class MainFragment extends AppFragment implements Toolbar.OnMenuItemClick
         outState.putParcelable("recycler", recyclerView.getLayoutManager().onSaveInstanceState());
     }
 
+    private void fetchMedia() {
+        viewModel.getAnime().observe(getViewLifecycleOwner(), mediaItems -> {
+            sectionAdapter.setItem(0, new SectionItem("Popular Anime", mediaItems));
+        });
+        viewModel.getMovies().observe(getViewLifecycleOwner(), mediaItems -> {
+            sectionAdapter.setItem(1, new SectionItem("Popular Movies", mediaItems));
+        });
+    }
 
     @SuppressLint("NonConstantResourceId")
     @Override

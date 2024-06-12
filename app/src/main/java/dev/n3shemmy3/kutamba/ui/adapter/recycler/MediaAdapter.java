@@ -3,14 +3,11 @@ package dev.n3shemmy3.kutamba.ui.adapter.recycler;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.ListAdapter;
-import androidx.recyclerview.widget.RecyclerView;
 
 import dev.n3shemmy3.kutamba.data.model.MediaItem;
 import dev.n3shemmy3.kutamba.ui.adapter.holder.BaseViewHolder;
 import dev.n3shemmy3.kutamba.ui.adapter.holder.LoaderItemHolder;
 import dev.n3shemmy3.kutamba.ui.adapter.holder.MediaItemHolder;
-import dev.n3shemmy3.kutamba.ui.adapter.pager.DiscoverAdapter;
 
 public class MediaAdapter extends BaseAdapter<MediaItem> {
     public MediaAdapter() {
@@ -45,6 +42,6 @@ public class MediaAdapter extends BaseAdapter<MediaItem> {
     @Override
     public void onBindViewHolder(@NonNull BaseViewHolder holder, int position) {
         if (holder instanceof MediaItemHolder)
-            ((MediaItemHolder) holder).onBindViewHolder(getItem(position), onItemClickListener);
+            holder.onBindViewHolder(getItem(position), onItemClickListener);
     }
 }

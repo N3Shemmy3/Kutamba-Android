@@ -9,6 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.bumptech.glide.Glide;
 import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.imageview.ShapeableImageView;
 
@@ -26,7 +27,7 @@ public class MediaItemHolder extends BaseViewHolder<MediaItem> {
         super(view);
         itemView = view.findViewById(R.id.itemView);
         itemIcon = view.findViewById(R.id.itemIcon);
-        itemTitle = view.findViewById(R.id.itemText);
+        itemTitle = view.findViewById(R.id.itemTitle);
     }
 
     @NonNull
@@ -37,6 +38,12 @@ public class MediaItemHolder extends BaseViewHolder<MediaItem> {
 
     @SuppressLint("SetTextI18n")
     public void onBindViewHolder(@NonNull MediaItem item, @Nullable OnItemClickListener<MediaItem> listener) {
+        itemTitle.setText(item.getTitle());
+        Glide.with(itemIcon.getContext())
+                .load(item.getImage())
+                .into(itemIcon);
+
+
         if (listener == null) return;
         itemView.setOnClickListener(v -> listener.onItemClick(item));
         itemView.setOnLongClickListener(v -> {

@@ -10,7 +10,6 @@ public class MediaItem extends BaseModel {
             "genres": [ "string" ]
     }
     */
-    private String id;
     private String title;
     private String image;
     private String url;
@@ -29,16 +28,6 @@ public class MediaItem extends BaseModel {
         this.image = image;
         this.url = url;
         this.genres = genres;
-    }
-
-    @Override
-    public String getId() {
-        return id;
-    }
-
-    @Override
-    public void setId(String id) {
-        this.id = id;
     }
 
     public String getTitle() {
