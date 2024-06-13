@@ -95,11 +95,12 @@ public class DetailsFragment extends AppFragment implements OnItemClickListener<
         viewModel.getMediaItem().observe(getViewLifecycleOwner(), item -> {
             Glide.with(headerCover).load(item.getImage()).into(headerCover);
             headerCover.post(() -> progressIndicator.hide());
-            headerTitle.setText(item.getTitle());
-            headerSubTitle.setText(item.getProduction());
+            headerTitle.setText(item.getTitle().trim());
+            headerSubTitle.setText(item.getType().equalsIgnoreCase("movie") ? item.getProduction().trim() : item.getSubOrDub().trim());
+            headerStatus.setText(item.getType().equalsIgnoreCase("movie") ? item.getDuration() : item.getStatus().trim());
+
             headerDate.setText(item.getReleaseDate());
-            headerStatus.setText(item.getStatus());
-            headerBio.setText(item.getDescription());
+            headerBio.setText(item.getDescription().trim());
         });
     }
 

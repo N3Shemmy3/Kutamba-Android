@@ -37,7 +37,7 @@ public abstract class BaseSettingsFragment extends BaseFragment {
                 .add(R.id.settingsContainer, fragment)
                 .commit();
         InsetsUtil.addSystemBarsInsets(root.findViewById(R.id.appBar));
-        //requireActivity().getOnBackPressedDispatcher().addCallback(getViewLifecycleOwner(), onBackPressedCallback);
+        requireActivity().getOnBackPressedDispatcher().addCallback(getViewLifecycleOwner(), onBackPressendCallback);
         return root;
     }
 }

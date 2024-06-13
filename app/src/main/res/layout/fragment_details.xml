@@ -18,8 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:menu="@menu/details_appbar"
-            app:navigationIcon="@drawable/outline_arrow_back_24"
-            app:title="Odd Taxi" />
+            app:navigationIcon="@drawable/outline_arrow_back_24" />
 
         <com.google.android.material.progressindicator.LinearProgressIndicator
             android:id="@+id/progressIndicator"

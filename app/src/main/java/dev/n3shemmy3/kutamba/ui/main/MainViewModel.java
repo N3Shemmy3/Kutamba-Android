@@ -74,7 +74,7 @@ public class MainViewModel extends AndroidViewModel {
         call.enqueue(new Callback<>() {
             @Override
             public void onResponse(@NonNull Call<Receiver> call, @NonNull Response<Receiver> response) {
-                if (response.isSuccessful() && response.body() != null) {
+                if (response.code() == 200) {
                     ArrayList<MediaItem> results = new ArrayList<>(response.body().getResults());
                     Scraper.MediaType value = Scraper.MediaType.values()[scraper.getType().ordinal()];
                     boolean isMovie = scraper.getMedia().equalsIgnoreCase("movies");
@@ -99,14 +99,14 @@ public class MainViewModel extends AndroidViewModel {
     }
 
     public void getMediaItem(MediaItem item) {
-        String media = item.getProduction() != null ? "movies" : "anime";
-        String provider = media.equalsIgnoreCase("movie") ? "flixhq" : "gogoanime";
+        String media = item.getType().equalsIgnoreCase("Movie") ? "movies" : "anime";
+        String provider = media.equalsIgnoreCase("movies") ? "flixhq" : "gogoanime";
 
         Call<MediaItem> call = media.equalsIgnoreCase("anime") ? apiService.fetchAnime(media, provider, item.getId()) : apiService.fetchMovie(media, provider, item.getId());
         call.enqueue(new Callback<>() {
             @Override
             public void onResponse(@NonNull Call<MediaItem> call, @NonNull Response<MediaItem> response) {
-                if (response.isSuccessful() && response.body() != null) {
+                if (response.code() == 200) {
                     mediaItem.setValue(response.body());
                 } else {
                     Toast.makeText(getApplication(), item.getId(), Toast.LENGTH_SHORT).show();

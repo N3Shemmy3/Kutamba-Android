@@ -1,6 +1,7 @@
 package dev.n3shemmy3.kutamba.ui.adapter.holder;
 
 import android.os.Parcelable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -52,11 +53,31 @@ public class SectionItemHolder extends BaseViewHolder<SectionItem> {
         itemRecycler.post(() -> {
             itemRecycler.setRecycledViewPool(viewPool);
             itemRecycler.setLayoutManager(layoutManager);
-            adapter.addItems(item.getItems());
             if (!item.getItems().isEmpty()) {
                 progressIndicator.hide();
                 itemRecycler.animate().alpha(1).start();
                 itemRecycler.setVisibility(View.VISIBLE);
+                if (item.getItems().size() >= 5) {
+                    for (int i = 0; i < 5; i++) {
+                        adapter.addItem(item.getItems().get(i));
+                    }
+                } else {
+                    adapter.addItems(item.getItems());
+                }
+            }
+        });
+        itemRecycler.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(@NonNull RecyclerView recyclerView, int newState) {
+                super.onScrollStateChanged(recyclerView, newState);
+                if (!recyclerView.canScrollVertically(1) && newState == RecyclerView.SCROLL_STATE_IDLE) {
+                    Log.d("tag", "scrolled to end");
+                    if (adapter.getItemCount() == item.getItems().size()) return;
+                    int amount = item.getItems().size() - adapter.getItemCount();
+                    for (int i = 0; i < amount; i++) {
+                        adapter.addItem(item.getItems().get(i));
+                    }
+                }
             }
         });
         //restore scroll state
