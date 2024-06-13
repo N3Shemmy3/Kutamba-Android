@@ -40,11 +40,14 @@ public class MainRecyclerFragment extends BaseRecyclerFragment
                 new OnItemClickListener<>() {
                     @Override
                     public void onItemClick(MediaItem item) {
-                        navigate(R.id.openDetails);
+                        Bundle bundle = new Bundle();
+                        bundle.putParcelable("item", item);
+                        getNavController().navigate(R.id.openDetails, bundle);
                     }
 
                     @Override
-                    public void onItemLongClick(MediaItem item) {}
+                    public void onItemLongClick(MediaItem item) {
+                    }
                 });
 
         recyclerView.setAdapter(sectionAdapter);
@@ -87,8 +90,10 @@ public class MainRecyclerFragment extends BaseRecyclerFragment
     }
 
     @Override
-    public void onItemClick(SectionItem item) {}
+    public void onItemClick(SectionItem item) {
+    }
 
     @Override
-    public void onItemLongClick(SectionItem item) {}
+    public void onItemLongClick(SectionItem item) {
+    }
 }

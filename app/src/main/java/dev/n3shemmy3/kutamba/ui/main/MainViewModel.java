@@ -24,12 +24,13 @@ public class MainViewModel extends AndroidViewModel {
     private Retrofit retrofit;
     private Api apiService;
 
-
     private MutableLiveData<ArrayList<MediaItem>> animeMovies = new MutableLiveData<>();
     private MutableLiveData<ArrayList<MediaItem>> animeShows = new MutableLiveData<>();
-
     private MutableLiveData<ArrayList<MediaItem>> movies = new MutableLiveData<>();
     private MutableLiveData<ArrayList<MediaItem>> tvShows = new MutableLiveData<>();
+
+
+    private MutableLiveData<MediaItem> mediaItem = new MutableLiveData<>();
 
     public MainViewModel(@NonNull Application application) {
         super(application);
@@ -38,12 +39,7 @@ public class MainViewModel extends AndroidViewModel {
 
 
     public void onCreate() {
-        retrofit = new Retrofit.Builder()
-                .baseUrl(Prefs.getString(
-                        "repository",
-                        "https://api-consumet-org-zeta.vercel.app/"))
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
+        retrofit = new Retrofit.Builder().baseUrl(Prefs.getString("repository", "https://consumet-api-oh8t.onrender.com/")).addConverterFactory(GsonConverterFactory.create()).build();
         apiService = retrofit.create(Api.class);
         getMedia(new Scraper("anime", "gogoanime", "popular", Scraper.MediaType.Series, 0));
         getMedia(new Scraper("anime", "gogoanime", "popular", Scraper.MediaType.Movies, 0));
@@ -69,13 +65,12 @@ public class MainViewModel extends AndroidViewModel {
         return tvShows;
     }
 
+    public MutableLiveData<MediaItem> getMediaItem() {
+        return mediaItem;
+    }
+
     public void getMedia(Scraper scraper) {
-        Call<Receiver> call = apiService.fetchMedia(
-                scraper.getMedia(),
-                scraper.getProvider(),
-                scraper.getType() == Scraper.MediaType.Movies ? "movies" : scraper.getQuery(),
-                scraper.getPage()
-        );
+        Call<Receiver> call = apiService.fetchMedia(scraper.getMedia(), scraper.getProvider(), scraper.getType() == Scraper.MediaType.Movies ? "movies" : scraper.getQuery(), scraper.getPage());
         call.enqueue(new Callback<>() {
             @Override
             public void onResponse(@NonNull Call<Receiver> call, @NonNull Response<Receiver> response) {
@@ -85,16 +80,12 @@ public class MainViewModel extends AndroidViewModel {
                     boolean isMovie = scraper.getMedia().equalsIgnoreCase("movies");
                     switch (value) {
                         case Movies -> {
-                            if (isMovie)
-                                movies.postValue(results);
-                            else
-                                animeMovies.postValue(results);
+                            if (isMovie) movies.postValue(results);
+                            else animeMovies.postValue(results);
                         }
                         case Series -> {
-                            if (isMovie)
-                                tvShows.postValue(results);
-                            else
-                                animeShows.postValue(results);
+                            if (isMovie) tvShows.postValue(results);
+                            else animeShows.postValue(results);
                         }
                     }
                 }
@@ -105,6 +96,27 @@ public class MainViewModel extends AndroidViewModel {
                 Toast.makeText(getApplication(), throwable.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
+    }
 
+    public void getMediaItem(MediaItem item) {
+        String media = item.getProduction() != null ? "movies" : "anime";
+        String provider = media.equalsIgnoreCase("movie") ? "flixhq" : "gogoanime";
+
+        Call<MediaItem> call = media.equalsIgnoreCase("anime") ? apiService.fetchAnime(media, provider, item.getId()) : apiService.fetchMovie(media, provider, item.getId());
+        call.enqueue(new Callback<>() {
+            @Override
+            public void onResponse(@NonNull Call<MediaItem> call, @NonNull Response<MediaItem> response) {
+                if (response.isSuccessful() && response.body() != null) {
+                    mediaItem.setValue(response.body());
+                } else {
+                    Toast.makeText(getApplication(), item.getId(), Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(@NonNull Call<MediaItem> call, @NonNull Throwable t) {
+
+            }
+        });
     }
 }

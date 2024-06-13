@@ -27,7 +27,7 @@ public abstract class BaseFragment extends Fragment {
         setExitTransition(new MaterialSharedAxis(MaterialSharedAxis.X, true));
         setReenterTransition(new MaterialSharedAxis(MaterialSharedAxis.X, false));
     }
-    
+
     public boolean onBackPressed() {
         return false;
     }
@@ -63,6 +63,7 @@ public abstract class BaseFragment extends Fragment {
     public void navigate(@IdRes int id) {
         getNavController().navigate(id);
     }
+
 
     @MainThread
     public void navigateUp() {

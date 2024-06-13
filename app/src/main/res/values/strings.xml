@@ -43,6 +43,7 @@
     <string name="action_previous">Previous</string>
     <string name="action_close">Close</string>
     <string name="action_save">Save</string>
+    <string name="action_copy">Copy</string>
     <string name="action_cancel">Cancel</string>
     <string name="action_retry">Retry</string>
     <string name="action_skip">Skip</string>

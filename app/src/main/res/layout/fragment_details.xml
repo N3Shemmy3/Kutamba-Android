@@ -9,17 +9,26 @@
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBar"
         android:layout_width="match_parent"
-        app:liftOnScrollTargetViewId="@id/scrollView"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        app:liftOnScrollTargetViewId="@id/scrollView">
 
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolBar"
+            style="@style/Material.Toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/Material.Toolbar"
             app:menu="@menu/details_appbar"
             app:navigationIcon="@drawable/outline_arrow_back_24"
             app:title="Odd Taxi" />
+
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            android:id="@+id/progressIndicator"
+            style="@style/Widget.Material3.LinearProgressIndicator"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            app:showAnimationBehavior="outward"
+            app:trackCornerRadius="8dp" />
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.core.widget.NestedScrollView
@@ -48,7 +57,7 @@
                     android:layout_alignParentStart="true"
                     android:adjustViewBounds="true"
                     app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Small"
-                    app:srcCompat="@drawable/oddtaxi" />
+                    tools:srcCompat="@drawable/oddtaxi" />
 
                 <Space
                     android:id="@+id/spacer"
@@ -63,7 +72,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/activity_padding_horizontal"
                     android:layout_toEndOf="@id/spacer"
-                    android:text="Odd Taxi" />
+                    tools:text="Odd Taxi" />
 
                 <TextView
                     android:id="@+id/headerSubTitle"
@@ -72,7 +81,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/headerTitle"
                     android:layout_toEndOf="@id/spacer"
-                    android:text="Ikamari Hinata" />
+                    tools:text="Ikamari Hinata" />
 
                 <TextView
                     android:id="@+id/headerStatus"
@@ -82,7 +91,7 @@
                     android:layout_below="@id/headerSubTitle"
                     android:layout_alignBottom="@id/headerCover"
                     android:layout_toEndOf="@id/spacer"
-                    android:text="Ongoing" />
+                    tools:text="Ongoing" />
 
                 <View
                     android:id="@+id/dot"
@@ -100,7 +109,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/headerSubTitle"
                     android:layout_toEndOf="@id/dot"
-                    android:text="2024 Spring" />
+                    tools:text="2024 Spring" />
 
             </RelativeLayout>
 
@@ -109,18 +118,19 @@
                 style="@style/TextAppearance.Material3.BodyMedium"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="?selectableItemBackground"
                 android:includeFontPadding="false"
+                android:lines="4"
                 android:paddingHorizontal="@dimen/activity_padding_horizontal"
                 android:paddingVertical="@dimen/view_padding_horizontal"
-                android:text="@string/lorem"
-                android:textIsSelectable="true" />
+                tools:text="@string/lorem" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerView"
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:clipToPadding="false"
                 android:paddingBottom="80dp"
-                android:layout_height="wrap_content"
                 tools:listitem="@layout/item_list_two_line" />
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
@@ -133,9 +143,9 @@
         android:background="?colorSurface"
         android:elevation="2dp"
         android:orientation="horizontal"
-        app:layout_behavior="com.google.android.material.behavior.HideBottomViewOnScrollBehavior"
         android:paddingHorizontal="@dimen/activity_padding_horizontal"
-        android:paddingVertical="@dimen/view_padding_vertical">
+        android:paddingVertical="@dimen/view_padding_vertical"
+        app:layout_behavior="com.google.android.material.behavior.HideBottomViewOnScrollBehavior">
 
         <Button
             android:id="@+id/bookmark"
